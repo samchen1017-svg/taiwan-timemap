@@ -2,13 +2,13 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
-<meta name="theme-color" content="#0a1321"/><title>島嶼時光｜Taiwan TimeMap 2.3</title>
+<meta name="theme-color" content="#0a1321"/><title>島嶼時光｜Taiwan TimeMap 2.4</title>
 <style>
 :root{color-scheme:dark;--bg:#0a1321;--panel:#14243a;--stroke:#31465c;--cream:#f7efde;--mint:#85dfce;--gold:#f6c66d;--text:#f4f7fb;--secondary:#a6b8ce;--shade:#21364a}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:-apple-system,BlinkMacSystemFont,'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif;background:radial-gradient(ellipse at 76% 0%,#1d3852,transparent 35%),var(--bg);color:var(--text);margin:0}button,select{font:inherit}button{cursor:pointer}button:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid var(--gold);outline-offset:3px}a{color:#95d0e5}.shell{width:min(980px,100%);margin:0 auto;padding:22px 20px 55px}.top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:27px}.brand{display:flex;align-items:center;gap:13px}.brand-logo{display:grid;place-items:center;width:45px;height:45px;border-radius:14px;background:linear-gradient(150deg,#ffdc9c,#d69a4e);color:#483318;font-size:27px;box-shadow:0 7px 24px #0004}.brand-name{font-size:19px;font-weight:900;letter-spacing:2px}.brand-sub{font-size:10px;letter-spacing:2px;color:var(--secondary)}.date{color:var(--gold);font-size:12px;padding:7px 11px;border:1px solid #96713e;border-radius:99px;white-space:nowrap}.paper{background:linear-gradient(150deg,#192b43,#122137);border:1px solid #314b64;border-radius:24px;padding:25px}.hero{position:relative;overflow:hidden;padding:30px}.hero:after{content:'◎';position:absolute;right:-8%;top:-10%;font-size:320px;line-height:1;color:#263f55;opacity:.36;pointer-events:none}.hero>*{position:relative;z-index:1}.kicker{font-weight:800;color:var(--gold);font-size:12px;letter-spacing:2px}.hero h1{font-size:clamp(31px,5.4vw,49px);line-height:1.24;letter-spacing:1px;margin:15px 0}.hero h1 em{font-style:normal;color:var(--gold)}.hero p{max-width:620px;color:#c3d3e3;line-height:1.9;font-size:15px}.featurechips{display:flex;flex-wrap:wrap;gap:7px;margin:20px 0 24px}.featurechips span{background:#263c53;border:1px solid #40556a;border-radius:99px;padding:8px 11px;color:#e8eff6;font-size:12px}.btn{min-height:47px;border:0;border-radius:14px;padding:13px 19px;font-size:14px;font-weight:900;transition:transform .14s}.btn:hover:not(:disabled){transform:translateY(-2px)}.primary{background:var(--gold);color:#1c2631}.secondary{background:#283c54;border:1px solid #526882;color:#e5f1ff}.btn:disabled{opacity:.43;cursor:not-allowed}.actions{display:flex;flex-wrap:wrap;gap:10px}.hint{color:var(--secondary);font-size:12px;line-height:1.7}.how{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}.how div{border:1px solid var(--stroke);border-radius:16px;padding:17px 14px;background:#102035}.how b{color:var(--gold);font-size:22px}.how p{font-size:12px;line-height:1.7;color:var(--secondary);margin:7px 0 0}.hidden{display:none!important}.hud{display:flex;justify-content:space-between;align-items:center;margin:4px 0 11px}.hud .position{font-size:13px;color:#d8e7ef}.hud .score{color:var(--gold);font-size:24px;font-weight:900;font-variant-numeric:tabular-nums}.hud small{font-size:12px;color:#99aec0}.progress{display:flex;gap:6px;margin-bottom:14px}.progress div{height:6px;flex:1;border-radius:8px;background:#344961}.progress .active{background:var(--gold)}.progress .done{background:var(--mint)}.question{padding:21px 23px 19px}.qtop{display:flex;justify-content:space-between;gap:10px;align-items:center}.category{display:inline-flex;border:1px solid #588c8b;border-radius:99px;background:#1d3b43;color:var(--mint);padding:5px 12px;font-size:12px;font-weight:700}.qyear{color:var(--secondary);font-size:12px}.question h2{font-size:clamp(19px,3.8vw,27px);line-height:1.55;margin:12px 0 7px}.question .instruction{font-size:12px;line-height:1.75;color:#b8c9d9}.mapframe{background:#cbe3e3;margin-top:14px;border:1px solid #819eae;border-radius:22px;overflow:hidden;position:relative;height:min(68vh,650px);min-height:410px;isolation:isolate}.mapframe svg{display:block;width:100%;height:100%;touch-action:none;cursor:crosshair;background:linear-gradient(#cce5ec,#d5e8e9)}.sea-grid{stroke:#aac8cd;stroke-width:1;opacity:.32}.base-land{fill:#c3d6b3;stroke:#6c9a8b;stroke-width:3;stroke-linejoin:round}.map-county{fill:#c9d8b8;stroke:#648e88;stroke-width:1.45;vector-effect:non-scaling-stroke;stroke-linejoin:round;fill-rule:evenodd;transition:fill .16s}.map-county:nth-child(3n){fill:#b7d3bd}.map-county:nth-child(3n + 1){fill:#d7ddba}.map-county:hover{fill:#e5d8a4}.map-town{fill:transparent;stroke:#96ad9c;stroke-width:.8;vector-effect:non-scaling-stroke;stroke-linejoin:round;stroke-opacity:0;pointer-events:none}.mapframe.detailed .map-town{stroke-opacity:.96;pointer-events:visiblePainted}.mapframe.detailed .map-county{stroke-width:1.6}.town-label,.county-label{fill:#274a52;font-weight:900;paint-order:stroke;stroke:#e5efda;stroke-width:4;stroke-linejoin:round;pointer-events:none}.town-label{fill:#355968;stroke:#e6efe3;stroke-width:3;font-weight:800}.inset{fill:#e4f0ed;stroke:#92b4b3;stroke-width:2;rx:12}.inset-title{font-weight:900;fill:#3e6974;font-size:16;letter-spacing:2;pointer-events:none}.seaname{font-size:22;fill:#85abb8;letter-spacing:6;opacity:.6;pointer-events:none}.pin-outer{fill:#fefefb;stroke:#244255;stroke-width:2}.pin-guess{fill:#df714f}.pin-answer{fill:#11a983}.connector{stroke:#e67952;stroke-width:4;stroke-dasharray:9,7;fill:none}.mapoverlay{position:absolute;z-index:4;pointer-events:none}.mapbadge{left:12px;top:12px;background:#10293de8;color:#fff;border:1px solid #729ba6;border-radius:10px;padding:8px 11px;font-size:11px;max-width:calc(100% - 88px)}.mapinfo{left:12px;bottom:12px;border-radius:9px;background:#10293de0;color:#e6f0ec;padding:7px 10px;font-size:10px;max-width:70%}.zoom{position:absolute;z-index:5;right:12px;top:12px;display:flex;flex-direction:column;gap:6px}.zoom button{display:grid;place-items:center;background:#fff9ed;min-width:43px;min-height:43px;color:#20384e;border:1px solid #85a6a6;border-radius:11px;font-size:23px;box-shadow:0 4px 12px #263f4333}.zoom button:last-child{font-size:19px}.map-panel{background:#15283c;border:1px solid #37526b;border-radius:16px;margin-top:10px;padding:12px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:space-between}.map-panel label{color:#c7d6e3;font-size:12px;font-weight:700}.map-panel select{appearance:none;padding:9px 32px 9px 12px;border-radius:10px;background:#283e54;color:#f0f7ff;border:1px solid #526981;max-width:200px}.map-panel .mapstatus{font-size:12px;color:var(--mint)}.map-panel .mapstatus.warning{color:var(--gold)}.answerbar{margin-top:14px;display:flex;align-items:center;gap:12px;justify-content:space-between}.answerbar .hint{flex:1}.answerbar .btn{white-space:nowrap}.result{background:#1a3045;border:1px solid #4c7380;border-radius:19px;padding:20px;margin-top:14px}.result-head{display:flex;gap:10px;justify-content:space-between;align-items:center}.result-head .km{font-size:14px;font-weight:900;color:var(--mint)}.result-head .points{color:var(--gold);font-size:32px;font-weight:900}.result h3{font-size:20px;margin:12px 0}.result p{font-size:14px;color:#d6e5ed;line-height:1.9}.result a{font-size:12px;display:block;margin:0 0 16px}.result .actions button{flex:1}.statscore{font-size:clamp(62px,12vw,98px);font-weight:900;color:var(--gold);line-height:1.2;letter-spacing:-3px}.statscore span{font-size:21px;color:var(--secondary);font-weight:500;letter-spacing:0}.rank{display:inline-block;border-radius:12px;padding:8px 12px;background:#244944;color:#a8f2d2;font-size:13px;font-weight:900;margin:7px 0 12px}.review{display:flex;justify-content:space-between;gap:12px;padding:11px 14px;margin:9px 0;border:1px solid var(--stroke);border-radius:13px;background:#102238}.review b{font-size:14px}.review small{display:block;font-size:12px;color:var(--secondary);margin-top:5px}.review strong{color:var(--gold)}.footer{color:#8da1b4;text-align:center;font-size:11px;line-height:1.9;margin-top:26px}.inputfallback{width:100%;min-height:110px;background:#102039;color:#fff;border-radius:13px;border:1px solid #46627c;padding:11px;margin-top:12px;resize:vertical}.fineprint{font-size:12px;line-height:1.8;color:#96abbe;margin-top:20px}.loading{font-size:12px;color:#a9dfcc}.typefilters{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}
 @media(max-width:650px){.shell{padding:14px 13px 40px}.brand-name{font-size:16px}.brand-sub{font-size:9px}.brand-logo{width:40px;height:40px;font-size:21px}.date{font-size:10px;padding:5px 7px}.top{margin-bottom:17px}.paper{padding:20px 17px;border-radius:20px}.hero h1{font-size:34px}.hero{padding:23px 20px}.how{grid-template-columns:1fr}.how div{display:flex;gap:12px;align-items:center;padding:10px 14px}.how p{margin:0}.mapframe{height:57vh;min-height:420px;border-radius:18px}.map-panel{align-items:flex-start;gap:9px}.map-panel select{max-width:169px}.answerbar{flex-direction:column;align-items:stretch}.answerbar .btn{width:100%}.question h2{font-size:20px}}
 
-/* v2.3 • Emerald relief map / premium UI */
+/* v2.4 • Emerald relief map / smooth touch gestures */
 :root{--bg:#071b23;--panel:#112e36;--stroke:#31595b;--mint:#9fe2b7;--gold:#e7c47c;--text:#ecf7ef;--secondary:#a1c1c0;--shade:#123139}
 body{background:radial-gradient(ellipse at 75% 0%,#21464b 0%,transparent 40%),radial-gradient(ellipse at 1% 63%,#122f39,transparent 50%),#061a23}
 .shell{width:min(1050px,100%)}
@@ -55,6 +55,12 @@ body{background:radial-gradient(ellipse at 75% 0%,#21464b 0%,transparent 40%),ra
 .result-head .km{color:#a0e6bd}.rank{background:#1d5645;color:#baf6ca}.review{background:#103339;border-color:#416961}
 .launchstatus{margin-top:14px;border:1px solid #bb8f6d;background:#573b2d;color:#fff0dd;border-radius:12px;padding:12px;line-height:1.8;font-size:13px}
 @media(max-width:650px){.mapframe{min-height:450px}.hero:after{font-size:240px}.brand-name{font-size:17px}.mapbadge{font-size:10px;padding:8px}}
+
+/* Reduce SVG repaint cost only while dragging/pinching: relief returns on release. */
+.mapframe.interacting .extruded-land,
+.mapframe.interacting .terrain-lines,
+.mapframe.interacting #seaPatternLayer{visibility:hidden}
+.mapframe.interacting .map-county{transition:none}
 </style></head><body>
 <main class="shell">
 <header class="top"><div class="brand"><div class="brand-logo">⌖</div><div><div class="brand-name">島嶼時光</div><div class="brand-sub">TAIWAN TIMEMAP · 2.3</div></div></div><div class="date" id="dateLabel">每日挑戰</div></header>
@@ -71,7 +77,7 @@ body{background:radial-gradient(ellipse at 75% 0%,#21464b 0%,transparent 40%),ra
 <pattern id="topoLines" width="106" height="92" patternUnits="userSpaceOnUse" patternTransform="rotate(-16)"><g fill="none" stroke="#effee4" stroke-opacity=".18" stroke-width="1.4"><path d="M-33 10C-2 -10 35 7 52 35S90 62 122 38"/><path d="M-26 25C0 7 24 20 39 44S81 77 116 61"/><path d="M-10 39C8 25 20 36 27 54S67 92 107 78"/><path d="M-20 70C2 51 13 64 20 77S63 114 101 101"/><path d="M4 -17C42 -25 69 5 87 22S117 38 132 30"/></g></pattern>
 <filter id="landDrop" x="-28%" y="-28%" width="160%" height="170%"><feDropShadow dx="0" dy="8" stdDeviation="7" flood-color="#011b24" flood-opacity=".77"/></filter>
 <filter id="pinGlow" x="-100%" y="-100%" width="300%" height="300%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#062433" flood-opacity=".75"/></filter>
-</defs><g id="viewContent"><rect x="-2500" y="-2500" width="6000" height="6000" fill="url(#seaGradient)"/><rect x="-2500" y="-2500" width="6000" height="6000" fill="url(#seaLight)"/><rect x="-2500" y="-2500" width="6000" height="6000" fill="url(#seaGrid)"/>
+</defs><g id="viewContent"><rect x="-2500" y="-2500" width="6000" height="6000" fill="url(#seaGradient)"/><rect x="-2500" y="-2500" width="6000" height="6000" fill="url(#seaLight)"/><rect x="-2500" y="-2500" width="6000" height="6000" id="seaPatternLayer" fill="url(#seaGrid)"/>
 <text x="65" y="380" class="seaname" transform="rotate(-90 65 380)">臺灣海峽</text><text x="697" y="522" class="seaname" transform="rotate(90 697 522)">太平洋</text>
 <path id="fallbackCoast" class="base-land"/><g id="countyShadow"></g><g id="counties"></g><g id="terrainLines" pointer-events="none"></g><g id="towns"></g><g id="countyLabels"></g><g id="townLabels"></g>
 <rect class="inset" x="14" y="145" width="188" height="175"/><text class="inset-title" x="27" y="169">馬祖 / 連江</text><rect class="inset" x="14" y="400" width="188" height="167"/><text class="inset-title" x="27" y="424">澎湖</text><rect class="inset" x="14" y="701" width="199" height="154"/><text class="inset-title" x="27" y="724">金門</text><g id="islandShadow"></g><g id="islandAreas"></g><g id="islandTerrain" pointer-events="none"></g><g id="markers"></g></g></svg>
@@ -131,7 +137,7 @@ function choose(lat,lng,place){if(state.locked)return;if(lat<20||lat>27||lng<117
 function submit(){if(state.locked||!state.guess)return;let q=state.qs[state.idx],d=km(state.guess,q),score=calcScore(d);state.locked=true;state.answers.push({id:q.id,distance:d,score});save();$('submit').disabled=true;$('distance').textContent='距離 '+(d<10?d.toFixed(1):Math.round(d))+' 公里';$('points').textContent='+'+score+' 分';$('answerTitle').textContent='正確位置：'+q.name;$('story').textContent=q.story;$('source').href=q.src;$('source').textContent='資料來源：'+q.label+' ↗';$('next').textContent=state.idx===4?'查看總成績 →':'下一題 →';$('result').classList.remove('hidden');$('mapBadge').textContent='🟠 你的圖釘 · 🟢 正確位置';drawMarkers();$('result').scrollIntoView({behavior:'smooth',block:'nearest'})}
 function next(){state.idx++;save();if(state.idx>=5)summary();else{renderQuestion();$('qcount').scrollIntoView({behavior:'smooth',block:'start'})}}
 function summary(){show('summary');let n=total();$('summaryTitle').textContent=state.mode==='daily'?'今日挑戰完成！':'自由練習完成！';$('finalScore').innerHTML=n+'<span> / 500</span>';$('rank').textContent=n>=430?'地圖傳說 🏆':n>=340?'在地達人 🧭':n>=230?'島嶼探索家 🌿':'時光旅人 🗺️';$('review').innerHTML=state.answers.map((a,i)=>{let q=Q.find(x=>x.id===a.id);return `<div class="review"><div><b>${i+1}. ${q.name}</b><small>${types[q.c]} · 距離 ${a.distance<10?a.distance.toFixed(1):Math.round(a.distance)} 公里</small></div><strong>+${a.score}</strong></div>`}).join('');$('shareFallback').classList.add('hidden');save();init()}
-function shareText(){return `🗺️ 島嶼時光 2.3\n${state.mode==='daily'?date+' 每日挑戰':'自由練習'}\n${state.answers.map(a=>a.score>=85?'🟩':a.score>=60?'🟨':a.score>=30?'🟧':'⬜').join('')}\n總分：${total()} / 500\n今天的台灣故事，你猜對幾題？`}
+function shareText(){return `🗺️ 島嶼時光 2.4\n${state.mode==='daily'?date+' 每日挑戰':'自由練習'}\n${state.answers.map(a=>a.score>=85?'🟩':a.score>=60?'🟨':a.score>=30?'🟧':'⬜').join('')}\n總分：${total()} / 500\n今天的台灣故事，你猜對幾題？`}
 async function share(){let t=shareText();try{if(navigator.share){await navigator.share({title:'島嶼時光',text:t});return}if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(t);$('share').textContent='已複製 ✓';return}}catch(e){if(e.name==='AbortError')return}let el=$('shareFallback');el.value=t;el.classList.remove('hidden');el.focus();el.select();try{document.execCommand('copy')}catch(e){}}
 // A single topological vector map: GeoJSON/TopoJSON geometry decodes entirely in the browser.
 // The map needs no raster tile server. In offline mode, the approximate coast remains available.
@@ -146,8 +152,30 @@ function createSVG(tag,attrs,text){let el=document.createElementNS(ns,tag);for(c
 function clearLandVisuals(){for(const id of ['countyShadow','islandShadow','terrainLines','islandTerrain'])$(id).replaceChildren()}
 function addLandVisual(d,island){let behind=$(island?'islandShadow':'countyShadow');let texture=$(island?'islandTerrain':'terrainLines');behind.append(createSVG('path',{d,class:'extruded-land',transform:'translate(0 6)'}));texture.append(createSVG('path',{d,class:'terrain-lines',fill:'url(#topoLines)'}))}
 function initOfflineCountyMap(){let co=$('counties'),is=$('islandAreas');co.replaceChildren();is.replaceChildren();clearLandVisuals();for(const [name,d] of BUILTIN_COUNTIES){let el=createSVG('path',{d,class:'map-county','data-county':name});let island=['澎湖縣','金門縣','連江縣'].includes(name);(island?is:co).append(el);addLandVisual(d,island);try{let b=el.getBBox();countyBounds[name]={x:b.x+b.width/2,y:b.y+b.height/2}}catch(e){}}$('fallbackCoast').style.display='none';$('mapcredit').textContent='翡翠立體地形圖 · 內建 22 縣市';$('mapstatus').textContent='✓ 22 縣市翡翠地形圖 · 載入行政區';applyView()}
-function applyView(){const w=780/view.z,h=960/view.z;view.cx=Math.max(w/2,Math.min(780-w/2,view.cx));view.cy=Math.max(h/2,Math.min(960-h/2,view.cy));svg.setAttribute('viewBox',`${view.cx-w/2} ${view.cy-h/2} ${w} ${h}`);frame.classList.toggle('detailed',detailedLoaded&&view.z>=2.4);$('towns').style.display=view.z>=2.4?'':'none';$('townLabels').style.display=view.z>=3.4?'':'none';renderLabels()}
-function zoom(factor,focus){let next=Math.min(detailedLoaded?18:11,Math.max(1,view.z*factor));if(focus){let prop=view.z/next;view.cx=focus.x+(view.cx-focus.x)*prop;view.cy=focus.y+(view.cy-focus.y)*prop}view.z=next;applyView()}
+let viewRaf=0,labelsDirty=false,gestureRect=null,wheelIdle=0;
+function applyView(refreshLabels=true){
+ const w=780/view.z,h=960/view.z;
+ view.cx=Math.max(w/2,Math.min(780-w/2,view.cx));
+ view.cy=Math.max(h/2,Math.min(960-h/2,view.cy));
+ svg.setAttribute('viewBox',`${view.cx-w/2} ${view.cy-h/2} ${w} ${h}`);
+ const detailed=detailedLoaded&&view.z>=2.4;
+ if(frame.classList.contains('detailed')!==detailed)frame.classList.toggle('detailed',detailed);
+ const townDisplay=view.z>=2.4?'':'none';
+ if($('towns').style.display!==townDisplay)$('towns').style.display=townDisplay;
+ const labelDisplay=view.z>=3.4?'':'none';
+ if($('townLabels').style.display!==labelDisplay)$('townLabels').style.display=labelDisplay;
+ if(refreshLabels){renderLabels();labelsDirty=false}else labelsDirty=true;
+}
+function scheduleView(){
+ if(viewRaf)return;
+ viewRaf=requestAnimationFrame(()=>{viewRaf=0;applyView(false)});
+}
+function finishView(){
+ if(viewRaf){cancelAnimationFrame(viewRaf);viewRaf=0}
+ if(labelsDirty)applyView(true);
+ frame.classList.remove('interacting');
+}
+function zoom(factor,focus,transient=false){let next=Math.min(detailedLoaded?18:11,Math.max(1,view.z*factor));if(focus){let prop=view.z/next;view.cx=focus.x+(view.cx-focus.x)*prop;view.cy=focus.y+(view.cy-focus.y)*prop}view.z=next;if(transient)scheduleView();else applyView()}
 function resetView(){view.cx=390;view.cy=480;view.z=1;applyView()}
 function focusAt(pt,z){view.cx=pt.x;view.cy=pt.y;view.z=z;applyView()}
 function renderLabels(){let cg=$('countyLabels');cg.replaceChildren();let z=view.z;for(const [name,lat,lng] of countyCenters){let p=project(lat,lng);if(z>=4.1&&detailedLoaded)continue;let compact=z<1.8;let shortName=compact?name.replace(/(?:縣|市)$/,'').replace('臺','台'):name.replace('臺','台');let nord=['新北市','臺北市','基隆市','桃園市','新竹縣','新竹市'].includes(name);let tweaks={'新北市':[-19,-15],'臺北市':[16,12],'基隆市':[13,-10],'新竹市':[-14,14],'新竹縣':[8,11],'桃園市':[-14,0]};if(compact&&tweaks[name]){p.x+=tweaks[name][0];p.y+=tweaks[name][1]}let font=Math.max(2.5,Math.min(23,(compact&&nord?18:21)/z));let lbl=createSVG('text',{x:p.x,y:p.y,'text-anchor':'middle','dominant-baseline':'middle','font-size':font,class:'county-label',style:'stroke-width:'+Math.min(3.2,3/view.z)+'px'},shortName);cg.append(lbl)}let tg=$('townLabels');tg.replaceChildren();if(z<3.4||!detailedLoaded)return;let w=780/z,h=960/z;let n=0;for(const r of townsData){let p=r.centroid;if(Math.abs(p.x-view.cx)>w/2-5||Math.abs(p.y-view.cy)>h/2-5)continue;if(n++>80)break;let name=r.name;if(!name)continue;tg.append(createSVG('text',{x:p.x,y:p.y,'text-anchor':'middle','dominant-baseline':'middle','font-size':Math.max(1.1,15/z),class:'town-label',style:'stroke-width:'+Math.min(2.2,2/view.z)+'px'},name))}}
@@ -159,12 +187,54 @@ function marker(p,which){return `<circle class="pin-outer" cx="${p.x}" cy="${p.y
 function drawMarkers(){let el=$('markers'),q=state.qs[state.idx];if(!q){el.innerHTML='';return}let a=state.guess?project(state.guess.lat,state.guess.lng):null,b=project(q.lat,q.lng);let h='';if(a&&state.locked)h+=`<path class="connector" d="M${a.x} ${a.y} L${b.x} ${b.y}"/>`;if(a)h+=marker(a,'guess');if(state.locked)h+=marker(b,'answer');el.innerHTML=h}
 function svgpt(clientX,clientY){let p=svg.createSVGPoint();p.x=clientX;p.y=clientY;return p.matrixTransform(svg.getScreenCTM().inverse())}
 function pointerDistance(){let arr=[...pointers.values()];return arr.length>=2?Math.hypot(arr[0].x-arr[1].x,arr[0].y-arr[1].y):0}
-svg.addEventListener('pointerdown',e=>{pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});drag={x:e.clientX,y:e.clientY,moved:false};suppressClick=false;try{svg.setPointerCapture(e.pointerId)}catch(_){}if(pointers.size===2)pinchDist=pointerDistance()});
-svg.addEventListener('pointermove',e=>{if(!pointers.has(e.pointerId))return;let prev=pointers.get(e.pointerId);pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});if(pointers.size>=2){const d=pointerDistance();if(pinchDist&&d>0)zoom(d/pinchDist);pinchDist=d;suppressClick=true;return}if(!drag)return;let dx=e.clientX-prev.x,dy=e.clientY-prev.y;if(Math.abs(e.clientX-drag.x)+Math.abs(e.clientY-drag.y)>4)drag.moved=true;if(drag.moved){let rect=svg.getBoundingClientRect();view.cx-=dx*(780/view.z)/rect.width;view.cy-=dy*(960/view.z)/rect.height;applyView()}});
-function release(e){if(drag?.moved)suppressClick=true;pointers.delete(e.pointerId);if(!pointers.size){drag=null;pinchDist=0}}svg.addEventListener('pointerup',release);svg.addEventListener('pointercancel',release);
+svg.addEventListener('pointerdown',e=>{
+ pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});
+ drag={x:e.clientX,y:e.clientY,moved:false};
+ gestureRect=svg.getBoundingClientRect();
+ if(pointers.size===1)suppressClick=false;
+ try{svg.setPointerCapture(e.pointerId)}catch(_){}
+ if(pointers.size===2){pinchDist=pointerDistance();suppressClick=true;frame.classList.add('interacting')}
+});
+svg.addEventListener('pointermove',e=>{
+ if(!pointers.has(e.pointerId))return;
+ let prev=pointers.get(e.pointerId);
+ pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});
+ if(pointers.size>=2){
+  const d=pointerDistance();
+  if(pinchDist&&d>0)zoom(d/pinchDist,undefined,true);
+  pinchDist=d;suppressClick=true;frame.classList.add('interacting');return;
+ }
+ if(!drag)return;
+ let dx=e.clientX-prev.x,dy=e.clientY-prev.y;
+ if(Math.abs(e.clientX-drag.x)+Math.abs(e.clientY-drag.y)>4)drag.moved=true;
+ if(drag.moved){
+  frame.classList.add('interacting');
+  const rect=gestureRect||svg.getBoundingClientRect();
+  view.cx-=dx*(780/view.z)/Math.max(1,rect.width);
+  view.cy-=dy*(960/view.z)/Math.max(1,rect.height);
+  scheduleView();
+ }
+});
+function release(e){
+ if(drag?.moved)suppressClick=true;
+ pointers.delete(e.pointerId);
+ if(!pointers.size){
+  drag=null;pinchDist=0;gestureRect=null;finishView();
+ }else if(pointers.size===1){
+  const left=[...pointers.values()][0];
+  drag={x:left.x,y:left.y,moved:true};
+  pinchDist=0;
+ }
+}
+svg.addEventListener('pointerup',release);svg.addEventListener('pointercancel',release);
 svg.addEventListener('click',e=>{if(state.locked||suppressClick){suppressClick=false;return}let pt=svgpt(e.clientX,e.clientY);if(pt.x<0||pt.x>780||pt.y<0||pt.y>960)return;let coord=unproject(pt.x,pt.y);let target=e.target.closest('[data-town],[data-county]');let where=target?.dataset.town?`${target.dataset.county} ${target.dataset.town}`:target?.dataset.county||'';choose(coord.lat,coord.lng,where)});
 svg.addEventListener('dblclick',e=>{e.preventDefault();zoom(1.65,svgpt(e.clientX,e.clientY))});
-svg.addEventListener('wheel',e=>{e.preventDefault();let pt=svgpt(e.clientX,e.clientY);zoom(e.deltaY<0?1.34:1/1.34,pt)},{passive:false});
+svg.addEventListener('wheel',e=>{
+ e.preventDefault();
+ frame.classList.add('interacting');
+ zoom(e.deltaY<0?1.34:1/1.34,svgpt(e.clientX,e.clientY),true);
+ clearTimeout(wheelIdle);wheelIdle=setTimeout(finishView,140);
+},{passive:false});
 $('zoomIn').addEventListener('click',()=>zoom(1.8));$('zoomOut').addEventListener('click',()=>zoom(1/1.8));$('zoomHome').addEventListener('click',resetView);
 let sel=$('jumpCounty');for(const [name] of countyCenters)sel.add(new Option(name,name));sel.addEventListener('change',()=>{let name=sel.value;if(!name)return resetView();let row=countyCenters.find(x=>x[0]===name);let p=project(row[1],row[2]);focusAt(p,name==='金門縣'||name==='連江縣'||name==='澎湖縣'?3.6:5.2)});
 $('viewAnswer').addEventListener('click',()=>{let q=state.qs[state.idx];let p=project(q.lat,q.lng);focusAt(p,8);drawMarkers()});
