@@ -171,8 +171,9 @@ function scheduleView(){
  viewRaf=requestAnimationFrame(()=>{viewRaf=0;applyView(false)});
 }
 function finishView(){
- if(viewRaf){cancelAnimationFrame(viewRaf);viewRaf=0}
- if(labelsDirty)applyView(true);
+ const pending=!!viewRaf;
+ if(pending){cancelAnimationFrame(viewRaf);viewRaf=0}
+ if(pending||labelsDirty)applyView(true);
  frame.classList.remove('interacting');
 }
 function zoom(factor,focus,transient=false){let next=Math.min(detailedLoaded?18:11,Math.max(1,view.z*factor));if(focus){let prop=view.z/next;view.cx=focus.x+(view.cx-focus.x)*prop;view.cy=focus.y+(view.cy-focus.y)*prop}view.z=next;if(transient)scheduleView();else applyView()}
