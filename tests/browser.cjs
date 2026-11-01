@@ -30,7 +30,7 @@ async function run(){
    check(engine.name()+' wheel up scrolls page without zoom',await p.evaluate(()=>scrollY)<y-20&&await box(p)===v);
    pt=await position(p);y=await p.evaluate(()=>scrollY);await p.mouse.move(pt.x,pt.y);await p.mouse.wheel(0,90);await pause(p);
    check(engine.name()+' wheel over map still scrolls the page',await p.evaluate(()=>scrollY)>y+20&&await box(p)===v);
-   await p.locator('#themap').click({position:{x:100,y:100}});check(engine.name()+' desktop tap places a pin',await p.locator('#submit').isEnabled());
+   {const mb=await p.locator('#themap').boundingBox();await p.locator('#themap').click({position:{x:mb.width*.55,y:mb.height*.52}})}check(engine.name()+' desktop tap places a pin',await p.locator('#submit').isEnabled());
    await p.locator('#zoomIn').click();await pause(p);check(engine.name()+' plus zooms',await box(p)!==v);v=await box(p);
    await p.locator('#counties').evaluate(el=>{window.originalCountyNode=el.firstChild;window.geometryMutations=0;window.geometryObserver=new MutationObserver(records=>window.geometryMutations+=records.length);window.geometryObserver.observe(el,{childList:true,subtree:true})});
    pt=await position(p);await p.mouse.move(pt.x,pt.y);await p.mouse.down();await p.mouse.move(pt.x+60,pt.y+70,{steps:8});await p.mouse.up();await pause(p);
