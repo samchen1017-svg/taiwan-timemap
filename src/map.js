@@ -55,10 +55,11 @@ function setMapInteraction(enabled){
  pointers.clear();drag=null;pinchDist=0;gestureRect=null;suppressClick=false;finishView();
  frame.classList.toggle('map-interaction',enabled);
  $('mapInteraction').setAttribute('aria-pressed',String(enabled));
- $('mapInteraction').textContent=enabled?'完成移動，回到插旗':'移動／縮放地圖';
+ $('mapInteraction').textContent=enabled?'✓ 完成地圖操作':'✋ 拖曳／縮放';
  $('mapHelp').textContent=enabled
-  ?'地圖操作中：單指拖曳、雙指縮放，可用 ＋／－ 縮放；此模式不插旗。完成後點上方按鈕恢復頁面滑動。滑鼠滾輪仍可捲動頁面。'
-  :'手機：單指上下滑動可捲動頁面，輕觸插旗。開啟「操作地圖」後，可單指拖曳、雙指縮放；完成後請關閉。電腦：拖曳移動，滾輪捲動頁面；皆可用 ＋／－ 縮放。';
+  ?'地圖操作中：單指拖曳、雙指縮放；短點一下仍可重新插旗。完成後按「完成地圖操作」，即可恢復在地圖上上下滑動整頁。'
+  :'手機預設可上下滑頁、輕觸插旗；要移動視角時，點地圖右下角「拖曳／縮放」。';
+ $('mapBadge').textContent=enabled?'✋ 拖曳移動 · 雙指縮放 · 輕觸插旗':state.guess?'📍 已插旗 · 可重新輕觸':'📍 輕觸地圖插旗';
 }
 $('mapInteraction').addEventListener('click',()=>setMapInteraction(!mapInteraction));
 function pointerDistance(){let arr=[...pointers.values()];return arr.length>=2?Math.hypot(arr[0].x-arr[1].x,arr[0].y-arr[1].y):0}
@@ -109,7 +110,7 @@ function release(e){
  }
 }
 svg.addEventListener('pointerup',release);svg.addEventListener('pointercancel',release);svg.addEventListener('lostpointercapture',release);
-svg.addEventListener('click',e=>{if(state.locked||mapInteraction||suppressClick){suppressClick=false;return}let pt=svgpt(e.clientX,e.clientY);if(pt.x<0||pt.x>780||pt.y<0||pt.y>960)return;let coord=unproject(pt.x,pt.y);let target=e.target.closest('[data-town],[data-county]');let where=target?.dataset.town?`${target.dataset.county} ${target.dataset.town}`:target?.dataset.county||'';choose(coord.lat,coord.lng,where)});
+svg.addEventListener('click',e=>{if(state.locked||suppressClick){suppressClick=false;return}let pt=svgpt(e.clientX,e.clientY);if(pt.x<0||pt.x>780||pt.y<0||pt.y>960)return;let coord=unproject(pt.x,pt.y);let target=e.target.closest('[data-town],[data-county]');let where=target?.dataset.town?`${target.dataset.county} ${target.dataset.town}`:target?.dataset.county||'';choose(coord.lat,coord.lng,where)});
 svg.addEventListener('dblclick',e=>{e.preventDefault();zoom(1.65,svgpt(e.clientX,e.clientY))});
 // No wheel handler: native page scrolling works over the map in both modes.
 $('zoomIn').addEventListener('click',()=>zoom(1.8));$('zoomOut').addEventListener('click',()=>zoom(1/1.8));$('zoomHome').addEventListener('click',resetView);
