@@ -26,8 +26,7 @@ function applyView(refreshLabels=true){
  if($('towns').style.display!==townDisplay)$('towns').style.display=townDisplay;
  const labelDisplay=view.z>=3.4?'':'none';
  if($('townLabels').style.display!==labelDisplay)$('townLabels').style.display=labelDisplay;
- drawMarkers();
- if(refreshLabels){renderLabels();labelsDirty=false}else labelsDirty=true;
+ if(refreshLabels){drawMarkers();renderLabels();labelsDirty=false}else labelsDirty=true;
 }
 function scheduleView(){
  if(viewRaf)return;
@@ -54,14 +53,49 @@ function setMapInteraction(enabled){
  mapInteraction=enabled;
  pointers.clear();drag=null;pinchDist=0;gestureRect=null;suppressClick=false;finishView();
  frame.classList.toggle('map-interaction',enabled);
- $('mapInteraction').setAttribute('aria-pressed',String(enabled));
- $('mapInteraction').textContent=enabled?'✓ 完成地圖操作':'✋ 拖曳／縮放';
  $('mapHelp').textContent=enabled
-  ?'地圖操作中：單指拖曳、雙指縮放；短點一下仍可重新插旗。完成後按「完成地圖操作」，即可恢復在地圖上上下滑動整頁。'
-  :'手機預設可上下滑頁、輕觸插旗；要移動視角時，點地圖右下角「拖曳／縮放」。';
- $('mapBadge').textContent=enabled?'✋ 拖曳移動 · 雙指縮放 · 輕觸插旗':state.guess?'📍 已插旗 · 可重新輕觸':'📍 輕觸地圖插旗';
+  ?'全螢幕地圖：單指拖曳、雙指縮放、輕觸插旗。'
+  :'手機使用全螢幕地圖選點；電腦可直接操作下方地圖。滑鼠滾輪只捲動頁面。';
+ $('mapBadge').textContent=state.locked?'🟠 你的圖釘 · 🟢 正確位置':state.guess?'📍 已插旗 · 可繼續拖曳或重新選點':'📍 拖曳地圖 · 輕觸插旗';
+ syncMobilePicker();
 }
-$('mapInteraction').addEventListener('click',()=>setMapInteraction(!mapInteraction));
+function isMobilePicker(){return window.matchMedia('(max-width:650px)').matches}
+function syncMobilePicker(){
+ const status=$('mobileMapStatus'),done=$('mobileMapDone');
+ if(!status||!done)return;
+ if(state.locked){
+  status.textContent='橘色是你的圖釘，綠色是正確位置';
+  done.textContent='返回結果';
+  done.disabled=false;
+ }else if(state.guess){
+  status.textContent='位置已選好，可繼續拖曳微調或完成選點';
+  done.textContent='完成選點';
+  done.disabled=false;
+ }else{
+  status.textContent='拖曳地圖找到位置，再輕觸插旗';
+  done.textContent='完成選點';
+  done.disabled=true;
+ }
+}
+function openMobilePicker(){
+ if(!isMobilePicker())return;
+ document.body.classList.add('map-picker-open');
+ frame.classList.add('mobile-map-open');
+ setMapInteraction(true);
+ requestAnimationFrame(()=>applyView(true));
+}
+function closeMobilePicker(scrollToSelection=true){
+ if(!frame.classList.contains('mobile-map-open')){setMapInteraction(false);return}
+ setMapInteraction(false);
+ frame.classList.remove('mobile-map-open');
+ document.body.classList.remove('map-picker-open');
+ if(scrollToSelection){
+  requestAnimationFrame(()=>{(state.locked?$('result'):$('selectionText'))?.scrollIntoView({behavior:'smooth',block:'center'})});
+ }
+}
+$('mobileMapLaunch')?.addEventListener('click',openMobilePicker);
+$('mobileMapCancel')?.addEventListener('click',()=>closeMobilePicker(false));
+$('mobileMapDone')?.addEventListener('click',()=>closeMobilePicker(true));
 function pointerDistance(){let arr=[...pointers.values()];return arr.length>=2?Math.hypot(arr[0].x-arr[1].x,arr[0].y-arr[1].y):0}
 svg.addEventListener('pointerdown',e=>{
  if(e.button!==0)return;
@@ -110,16 +144,16 @@ function release(e){
  }
 }
 svg.addEventListener('pointerup',release);svg.addEventListener('pointercancel',release);svg.addEventListener('lostpointercapture',release);
-svg.addEventListener('click',e=>{if(state.locked||suppressClick){suppressClick=false;return}let pt=svgpt(e.clientX,e.clientY);if(pt.x<0||pt.x>780||pt.y<0||pt.y>960)return;let coord=unproject(pt.x,pt.y);let target=e.target.closest('[data-town],[data-county]');let where=target?.dataset.town?`${target.dataset.county} ${target.dataset.town}`:target?.dataset.county||'';choose(coord.lat,coord.lng,where)});
+svg.addEventListener('click',e=>{if(state.locked||suppressClick){suppressClick=false;return}let pt=svgpt(e.clientX,e.clientY);if(pt.x<0||pt.x>780||pt.y<0||pt.y>960)return;let coord=unproject(pt.x,pt.y);let target=e.target.closest('[data-town],[data-county]');let where=target?.dataset.town?`${target.dataset.county} ${target.dataset.town}`:target?.dataset.county||'';choose(coord.lat,coord.lng,where);syncMobilePicker()});
 svg.addEventListener('dblclick',e=>{e.preventDefault();zoom(1.65,svgpt(e.clientX,e.clientY))});
 // No wheel handler: native page scrolling works over the map in both modes.
 $('zoomIn').addEventListener('click',()=>zoom(1.8));$('zoomOut').addEventListener('click',()=>zoom(1/1.8));$('zoomHome').addEventListener('click',resetView);
 let sel=$('jumpCounty');for(const [name] of countyCenters)sel.add(new Option(name,name));sel.addEventListener('change',()=>{let name=sel.value;if(!name)return resetView();let row=countyCenters.find(x=>x[0]===name);let p=project(row[1],row[2]);focusAt(p,name==='金門縣'||name==='連江縣'||name==='澎湖縣'?3.6:5.2)});
-$('viewAnswer').addEventListener('click',()=>{let q=state.qs[state.idx];let p=project(q.lat,q.lng);focusAt(p,8);drawMarkers()});
+$('viewAnswer').addEventListener('click',()=>{let q=state.qs[state.idx];let p=project(q.lat,q.lng);focusAt(p,8);drawMarkers();syncMobilePicker();openMobilePicker()});
 
 try{initOfflineCountyMap();resetView()}catch(e){console.warn(e);$('mapstatus').textContent='地圖簡化模式'}
 loadGeo().catch(e=>console.warn(e));
 svg.addEventListener('keydown',e=>{const directions={ArrowLeft:[-1,0],ArrowRight:[1,0],ArrowUp:[0,-1],ArrowDown:[0,1]};if(directions[e.key]){e.preventDefault();const [x,y]=directions[e.key];view.cx+=x*80/view.z;view.cy+=y*80/view.z;applyView()}if(e.key==='Enter'){e.preventDefault();chooseCenter()}});
-function chooseCenter(){const p=unproject(view.cx,view.cy);choose(p.lat,p.lng,'地圖中心')}
-return {setMapInteraction,resetView,drawMarkers,chooseCenter};
+function chooseCenter(){const p=unproject(view.cx,view.cy);choose(p.lat,p.lng,'地圖中心');syncMobilePicker()}
+return {setMapInteraction,resetView,drawMarkers,chooseCenter,openMobilePicker,closeMobilePicker,syncMobilePicker};
 }
