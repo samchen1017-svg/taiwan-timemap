@@ -28,9 +28,9 @@ async function run(){
    check(engine.name()+' wheel down scrolls page without zoom',await p.evaluate(()=>scrollY)>y+30&&await box(p)===v);
    y=await p.evaluate(()=>scrollY);await p.mouse.wheel(0,-100);await pause(p);
    check(engine.name()+' wheel up scrolls page without zoom',await p.evaluate(()=>scrollY)<y-20&&await box(p)===v);
-   await p.locator('#mapInteraction').click();pt=await position(p);y=await p.evaluate(()=>scrollY);await p.mouse.move(pt.x,pt.y);await p.mouse.wheel(0,90);await pause(p);
-   check(engine.name()+' wheel scrolls with map mode enabled',await p.evaluate(()=>scrollY)>y+20&&await box(p)===v);
-   await p.locator('#themap').click({position:{x:100,y:100}});check(engine.name()+' map mode still allows a deliberate tap to pin',await p.locator('#submit').isEnabled());
+   pt=await position(p);y=await p.evaluate(()=>scrollY);await p.mouse.move(pt.x,pt.y);await p.mouse.wheel(0,90);await pause(p);
+   check(engine.name()+' wheel over map still scrolls the page',await p.evaluate(()=>scrollY)>y+20&&await box(p)===v);
+   await p.locator('#themap').click({position:{x:100,y:100}});check(engine.name()+' desktop tap places a pin',await p.locator('#submit').isEnabled());
    await p.locator('#zoomIn').click();await pause(p);check(engine.name()+' plus zooms',await box(p)!==v);v=await box(p);
    await p.locator('#counties').evaluate(el=>{window.originalCountyNode=el.firstChild;window.geometryMutations=0;window.geometryObserver=new MutationObserver(records=>window.geometryMutations+=records.length);window.geometryObserver.observe(el,{childList:true,subtree:true})});
    pt=await position(p);await p.mouse.move(pt.x,pt.y);await p.mouse.down();await p.mouse.move(pt.x+60,pt.y+70,{steps:8});await p.mouse.up();await pause(p);
@@ -40,7 +40,7 @@ async function run(){
    check(engine.name()+' minus zooms out',Number((await box(p)).split(' ')[2])>Number(v.split(' ')[2]));
    await p.locator('#zoomHome').click();
    // Finish a real five-question daily run through the public UI.
-   await p.locator('#mapInteraction').click();let sum=0,ids;
+   let sum=0,ids;
    for(let i=0;i<5;i++){
     await p.locator('#zoomHome').click();await p.locator('#themap').click({position:{x:(await p.locator('#themap').boundingBox()).width/2,y:(await p.locator('#themap').boundingBox()).height/2}});
     await p.locator('#submit').click();
@@ -55,7 +55,7 @@ async function run(){
    check(engine.name()+' total equals sum of scores',Number((await p.locator('#finalScore').textContent()).split('/')[0])===sum);
    await p.reload();await p.locator('#dailyStart').click();check(engine.name()+' completed daily persists',await p.locator('#summary').isVisible());
    await p.evaluate(()=>{Object.defineProperty(navigator,'share',{value:undefined,configurable:true});Object.defineProperty(navigator,'clipboard',{value:{writeText:async text=>{window.sharedText=text}},configurable:true})});await p.locator('#share').click();check(engine.name()+' share contains score without answer spoilers',await p.evaluate(()=>window.sharedText.includes('/ 500')&&!window.sharedText.includes('正確位置')));
-   await p.locator('#again').click();check(engine.name()+' practice still works',(await p.locator('#qcount').textContent()).includes('自由練習')&&await p.locator('#mapInteraction').getAttribute('aria-pressed')==='false');
+   await p.locator('#again').click();check(engine.name()+' practice still works',(await p.locator('#qcount').textContent()).includes('自由練習')&&await p.locator('#mobileMapLaunch').isHidden());
    check(engine.name()+' daily history recorded once',await p.locator('#historyList li').count()===1);
    check(engine.name()+' no JavaScript errors',errors.length===0);
    const axe=require('axe-core');await p.addScriptTag({content:axe.source});const audit=await p.evaluate(()=>axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa']}}));fs.writeFileSync('test-output/'+engine.name()+'-axe.json',JSON.stringify(audit.violations,null,2));check(engine.name()+' WCAG A/AA automated checks',audit.violations.length===0);
@@ -67,31 +67,29 @@ async function run(){
    const midnightContext=await b.newContext(),mp=await midnightContext.newPage();await mp.clock.install({time:new Date('2026-10-26T15:59:50Z')});await mp.goto(base);await mp.locator('#dailyStart').click();const original=await mp.locator('#qtitle').textContent();await mp.clock.fastForward(40000);check(engine.name()+' midnight preserves active run and announces new day',await mp.locator('#dayNotice').isVisible()&&await mp.locator('#qtitle').textContent()===original);await midnightContext.close();
    const mobile=await b.newContext({...devices['iPhone 13']}),m=await mobile.newPage();
    await m.goto(base);await m.locator('#dailyStart').tap();
-   check(engine.name()+' mobile defaults to native page gestures',await m.locator('#themap').evaluate(e=>getComputedStyle(e).touchAction)==='pan-y pinch-zoom');
+   check(engine.name()+' mobile uses a dedicated location picker',await m.locator('#mobileMapLaunch').isVisible()&&await m.locator('#mapframe').isHidden());
+   await m.locator('#mobileMapLaunch').tap();
+   check(engine.name()+' fullscreen map opens with direct gestures',await m.locator('#mapframe').isVisible()&&await m.locator('#mapframe').evaluate(e=>e.classList.contains('mobile-map-open'))&&await m.locator('#themap').evaluate(e=>getComputedStyle(e).touchAction)==='none');
    pt=await position(m);await m.touchscreen.tap(pt.x,pt.y);
-   check(engine.name()+' mobile tap places flag',await m.locator('#submit').isEnabled());
-   await m.reload();await m.locator('#dailyStart').tap();
+   check(engine.name()+' fullscreen tap places flag',await m.locator('#submit').isEnabled()&&await m.locator('#mobileMapDone').isEnabled());
    if(engine===chromium){
     const c=await mobile.newCDPSession(m);pt=await position(m);v=await box(m);y=await m.evaluate(()=>scrollY);
-    await swipe(c,m,pt.x,pt.y+100,-140);
-    check('mobile swipe up scrolls down without moving map or placing flag',await m.evaluate(()=>scrollY)>y+30&&await box(m)===v&&await m.locator('#submit').isDisabled());
-    pt=await position(m);y=await m.evaluate(()=>scrollY);await swipe(c,m,pt.x,pt.y,130);
-    check('mobile swipe down scrolls up',await m.evaluate(()=>scrollY)<y-30&&await box(m)===v);
-    await m.locator('#mapInteraction').tap();check('mobile map mode owns gestures',await m.locator('#themap').evaluate(e=>getComputedStyle(e).touchAction)==='none');
-    pt=await position(m);await m.touchscreen.tap(pt.x,pt.y);check('mobile map mode still allows tap to pin',await m.locator('#submit').isEnabled());
-    await m.locator('#zoomIn').tap();pt=await position(m);v=await box(m);y=await m.evaluate(()=>scrollY);await swipe(c,m,pt.x,pt.y,80);
-    check('mobile deliberate drag pans without page scroll and preserves flag',await box(m)!==v&&Math.abs(await m.evaluate(()=>scrollY)-y)<3&&await m.locator('#submit').isEnabled());
+    await m.locator('#zoomIn').tap();pt=await position(m);v=await box(m);await swipe(c,m,pt.x,pt.y,80);
+    check('mobile fullscreen drag pans without page scroll and preserves flag',await box(m)!==v&&Math.abs(await m.evaluate(()=>scrollY)-y)<3&&await m.locator('#submit').isEnabled());
     pt=await position(m);v=await box(m);
     await c.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x:pt.x-30,y:pt.y,id:1},{x:pt.x+30,y:pt.y,id:2}]});
     for(let i=1;i<=8;i++)await c.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{x:pt.x-30-i*4,y:pt.y,id:1},{x:pt.x+30+i*4,y:pt.y,id:2}]});
     await c.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});await pause(m);
-    check('mobile deliberate pinch zooms and preserves flag',await box(m)!==v&&await m.locator('#submit').isEnabled());
-    await m.locator('#mapInteraction').tap();pt=await position(m);y=await m.evaluate(()=>scrollY);v=await box(m);await swipe(c,m,pt.x,pt.y+100,-140);
-    check('mobile disabling mode restores page scroll',await m.evaluate(()=>scrollY)>y+30&&await box(m)===v);
-    pt=await position(m);await m.touchscreen.tap(pt.x,pt.y);check('mobile tap works after scrolling and pinching',await m.locator('#submit').isEnabled());
+    check('mobile fullscreen pinch zooms and preserves flag',await box(m)!==v&&await m.locator('#submit').isEnabled());
    }
-   await m.locator('#mapInteraction').scrollIntoViewIfNeeded();check(engine.name()+' no horizontal overflow',await m.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
-   check(engine.name()+' touch buttons at least 48px',await m.locator('button:visible').evaluateAll(els=>els.every(e=>e.getBoundingClientRect().width>=48&&e.getBoundingClientRect().height>=48)));
+   await m.locator('#mobileMapDone').tap();
+   check(engine.name()+' completing picker returns to question',await m.locator('#mapframe').isHidden()&&!await m.locator('body').evaluate(e=>e.classList.contains('map-picker-open'))&&await m.locator('#submit').isEnabled());
+   if(engine===chromium){
+    const c=await mobile.newCDPSession(m);y=await m.evaluate(()=>scrollY);await swipe(c,m,200,620,-150);
+    check('mobile page scroll works after closing picker',await m.evaluate(()=>scrollY)>y+20);
+   }
+   check(engine.name()+' no horizontal overflow',await m.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+   check(engine.name()+' touch buttons at least 44px',await m.locator('button:visible').evaluateAll(els=>els.every(e=>e.getBoundingClientRect().width>=44&&e.getBoundingClientRect().height>=44)));
    await m.screenshot({path:'test-output/'+engine.name()+'-mobile.png',fullPage:true});await mobile.close();
   }finally{await b.close()}
  }
