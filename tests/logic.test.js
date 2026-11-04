@@ -6,6 +6,27 @@ test('Taiwan midnight independent of system time',()=>{assert.equal(taipeiDate(n
 test('daily stable, five regions, no duplicate, rotation covers catalog',()=>{const seen=new Set();for(let i=0;i<180;i++){const date=taipeiDate(new Date(Date.UTC(2026,0,i+1)));const ids=makeSet(date);assert.deepEqual(ids,makeSet(date));assert.equal(new Set(ids).size,5);assert.equal(new Set(ids.map(id=>Q.find(q=>q.id===id).region)).size,5);ids.forEach(id=>seen.add(id))}assert.equal(seen.size,Q.length)});
 test('score and geographic distance boundaries',()=>{assert.equal(km(Q[0],Q[0]),0);assert.equal(calcScore(0),100);assert.equal(calcScore(10000),0);assert.ok(km({lat:25,lng:121},{lat:24,lng:121})>110);assert.ok(calcScore(20)>calcScore(100))});
 test('question contract: sources, location, lesson, editorial metadata',()=>{assert.equal(new Set(Q.map(q=>q.id)).size,Q.length);for(const q of Q){assert.ok(q.lat>20&&q.lat<27&&q.lng>117&&q.lng<123,q.id);assert.ok(new URL(q.src).protocol==='https:');assert.ok(LESSONS[q.id]?.fact);assert.ok(q.difficulty>=1&&q.difficulty<=3);assert.ok(q.audit?.locationNote);assert.ok(q.audit?.checkedAt)}});
+
+test('2026-11-04 sourced question expansion has complete and distinct records',()=>{
+ const ids=['jian-qingxiu','lanyang-museum','hongye-baseball','matsu-northsea','penghu-crossbridge','dongyin-lighthouse','chihkan','kaohsiung-lighthouse','chiayi-tropic','changhua-roundhouse'];
+ assert.equal(Q.length,31);
+ for(const id of ids){
+  const q=Q.find(x=>x.id===id);assert.ok(q,id);
+  assert.ok(q.title.length>=12&&q.story.length>=20,id);
+  assert.ok(['north','central','south','east','islands'].includes(q.region),id);
+  assert.ok(['history','social','sports'].includes(q.c),id);
+  assert.ok(q.audit.checkedAt==='2026-11-04',id);
+  assert.equal(q.audit.factStatus,'reviewed',id);
+  assert.equal(q.audit.sourceAvailability,'readable',id);
+  assert.ok(['official-point','approximate-site'].includes(q.audit.locationPrecision),id);
+  assert.ok(new URL(q.audit.coordinateSource).protocol==='https:',id);
+  assert.ok(new URL(q.lesson.src).protocol==='https:',id);
+  assert.ok(q.lesson.fact.length>=12&&q.lesson.key.length>=12,id);
+ }
+ const regionCounts=Object.fromEntries(['east','islands','south','central'].map(r=>[r,Q.filter(q=>q.region===r).length]));
+ assert.ok(regionCounts.east>=5&&regionCounts.islands>=6&&regionCounts.south>=8&&regionCounts.central>=5);
+});
+
 const run=()=>({ids:makeSet('2026-10-26'),idx:0,answers:[]});
 test('corrupt saves rejected, legacy saves supported, quota failures graceful',()=>{const data=new Map();let failed=false;const store=createStorage({getItem:k=>data.get(k),setItem:(k,v)=>data.set(k,v)});const r=run();data.set('timemap:v2:2026-10-26',JSON.stringify(r));assert.deepEqual(store.load('2026-10-26').ids,r.ids);assert.equal(validateRun({...r,ids:['unknown']}),null);assert.equal(validateRun({...r,answers:[{id:r.ids[0],distance:NaN,score:100}]}),null);data.set('timemap:v3:2026-10-27','broken');assert.equal(store.load('2026-10-27'),null);assert.equal(createStorage({setItem(){throw Error()},getItem(){throw Error()}},()=>failed=true).save('x',r),false);assert.ok(failed)});
 test('history idempotent and streak allows yesterday but expires after gap',()=>{const data=new Map(),store=createStorage({getItem:k=>data.get(k),setItem:(k,v)=>data.set(k,v)});const r=run();r.answers=r.ids.map(id=>({id,distance:0,score:100}));store.complete('2026-10-25',r);store.complete('2026-10-25',r);assert.equal(store.history().length,1);assert.equal(streak(store.history(),'2026-10-26'),1);assert.equal(streak(store.history(),'2026-10-27'),0);store.complete('2026-10-26',r);assert.equal(streak(store.history(),'2026-10-26'),2)});
