@@ -3,7 +3,7 @@ export function createMap({state,choose}) {
 // A single topological vector map: GeoJSON/TopoJSON geometry decodes entirely in the browser.
 // The map needs no raster tile server. In offline mode, the approximate coast remains available.
 const $=id=>document.getElementById(id);
-const svg=$('themap'),frame=$('mapframe'),ns='http://www.w3.org/2000/svg';const view={cx:390,cy:480,z:1};let detailedLoaded=false,townsData=[],countiesData=[],islandGeom=[],countyGeom=[],countyBounds={};let drag=null,pointers=new Map(),pinchDist=0,suppressClick=false;
+const svg=$('themap'),frame=$('mapframe'),ns='http://www.w3.org/2000/svg';const view={cx:390,cy:480,z:1};let detailedLoaded=false,townsData=[],countiesData=[];let drag=null,pointers=new Map(),pinchDist=0,suppressClick=false;
 const coast=[[121.55,25.31],[121.72,25.28],[121.83,25.18],[121.95,25.05],[121.88,24.9],[121.84,24.72],[121.78,24.52],[121.73,24.32],[121.65,24.12],[121.63,23.95],[121.55,23.73],[121.46,23.52],[121.39,23.33],[121.32,23.14],[121.23,22.95],[121.16,22.75],[121.07,22.55],[120.96,22.32],[120.85,22.08],[120.82,21.91],[120.73,21.91],[120.69,22.03],[120.61,22.22],[120.51,22.44],[120.4,22.61],[120.29,22.78],[120.23,22.94],[120.18,23.13],[120.12,23.34],[120.11,23.51],[120.15,23.75],[120.24,23.92],[120.36,24.09],[120.48,24.27],[120.59,24.43],[120.69,24.61],[120.83,24.79],[121,24.98],[121.18,25.13],[121.38,25.27]];
 function isIsland(lat,lng){return lat>25.7?'matsu':lng<118.9?'kinmen':lng<119.80&&lat>23.1&&lat<24.05?'penghu':'main'}
 function project(lat,lng){const type=isIsland(lat,lng);return type==='matsu'?{x:40+(lng-119.82)*170,y:183+(26.42-lat)*185}:type==='kinmen'?{x:35+(lng-118.18)*240,y:728+(24.59-lat)*215}:type==='penghu'?{x:30+(lng-119.30)*200,y:431+(23.95-lat)*200}:{x:215+(lng-119.7)*182,y:95+(25.45-lat)*197}}
@@ -13,14 +13,16 @@ const BUILTIN_COUNTIES=[["連江縣","M56,228L64,231L56,234L56,228ZM70,217L70,21
 function createSVG(tag,attrs,text){let el=document.createElementNS(ns,tag);for(const [k,v] of Object.entries(attrs||{}))el.setAttribute(k,v);if(text!==undefined)el.textContent=text;return el}
 function clearLandVisuals(){for(const id of ['countyShadow','islandShadow','terrainLines','islandTerrain'])$(id).replaceChildren()}
 function addLandVisual(d,island){let behind=$(island?'islandShadow':'countyShadow');let texture=$(island?'islandTerrain':'terrainLines');behind.append(createSVG('path',{d,class:'extruded-land',transform:'translate(0 6)'}));texture.append(createSVG('path',{d,class:'terrain-lines',fill:'url(#topoLines)'}))}
-function initOfflineCountyMap(){let co=$('counties'),is=$('islandAreas');co.replaceChildren();is.replaceChildren();clearLandVisuals();for(const [name,d] of BUILTIN_COUNTIES){let el=createSVG('path',{d,class:'map-county','data-county':name});let island=['澎湖縣','金門縣','連江縣'].includes(name);(island?is:co).append(el);addLandVisual(d,island);try{let b=el.getBBox();countyBounds[name]={x:b.x+b.width/2,y:b.y+b.height/2}}catch(e){}}$('fallbackCoast').style.display='none';$('mapcredit').textContent='翡翠立體地形圖 · 內建 22 縣市';$('mapstatus').textContent='✓ 22 縣市翡翠地形圖 · 載入行政區';applyView()}
-let viewRaf=0,labelsDirty=false,gestureRect=null,mapInteraction=false;
+function initOfflineCountyMap(){let co=$('counties'),is=$('islandAreas');co.replaceChildren();is.replaceChildren();clearLandVisuals();for(const [name,d] of BUILTIN_COUNTIES){let el=createSVG('path',{d,class:'map-county','data-county':name});let island=['澎湖縣','金門縣','連江縣'].includes(name);(island?is:co).append(el);addLandVisual(d,island);}$('fallbackCoast').style.display='none';$('mapcredit').textContent='翡翠立體地形圖 · 內建 22 縣市';$('mapstatus').textContent='✓ 22 縣市翡翠地形圖 · 載入行政區';applyView()}
+let viewRaf=0,labelsDirty=false,gestureRect=null,mapInteraction=false,started=false,townsMounted=false;
+let modalSiblings=[],panelHome=null;
 function applyView(refreshLabels=true){
  const w=780/view.z,h=960/view.z;
  view.cx=Math.max(w/2,Math.min(780-w/2,view.cx));
  view.cy=Math.max(h/2,Math.min(960-h/2,view.cy));
  svg.setAttribute('viewBox',`${view.cx-w/2} ${view.cy-h/2} ${w} ${h}`);
  const detailed=detailedLoaded&&view.z>=2.4;
+ if(refreshLabels&&detailed&&!townsMounted)mountTowns();
  if(frame.classList.contains('detailed')!==detailed)frame.classList.toggle('detailed',detailed);
  const townDisplay=view.z>=2.4?'':'none';
  if($('towns').style.display!==townDisplay)$('towns').style.display=townDisplay;
@@ -41,11 +43,52 @@ function finishView(){
 function zoom(factor,focus,transient=false){let next=Math.min(detailedLoaded?18:11,Math.max(1,view.z*factor));if(focus){let prop=view.z/next;view.cx=focus.x+(view.cx-focus.x)*prop;view.cy=focus.y+(view.cy-focus.y)*prop}view.z=next;if(transient)scheduleView();else applyView()}
 function resetView(){view.cx=390;view.cy=480;view.z=1;applyView()}
 function focusAt(pt,z){view.cx=pt.x;view.cy=pt.y;view.z=z;applyView()}
-function renderLabels(){let cg=$('countyLabels');cg.replaceChildren();let z=view.z;for(const [name,lat,lng] of countyCenters){let p=project(lat,lng);if(z>=4.1&&detailedLoaded)continue;let compact=z<1.8;let shortName=compact?name.replace(/(?:縣|市)$/,'').replace('臺','台'):name.replace('臺','台');let nord=['新北市','臺北市','基隆市','桃園市','新竹縣','新竹市'].includes(name);let tweaks={'新北市':[-19,-15],'臺北市':[16,12],'基隆市':[13,-10],'新竹市':[-14,14],'新竹縣':[8,11],'桃園市':[-14,0]};if(compact&&tweaks[name]){p.x+=tweaks[name][0];p.y+=tweaks[name][1]}let font=Math.max(2.5,Math.min(23,(compact&&nord?18:21)/z));let lbl=createSVG('text',{x:p.x,y:p.y,'text-anchor':'middle','dominant-baseline':'middle','font-size':font,class:'county-label',style:'stroke-width:'+Math.min(3.2,3/view.z)+'px'},shortName);cg.append(lbl)}let tg=$('townLabels');tg.replaceChildren();if(z<3.4||!detailedLoaded)return;let w=780/z,h=960/z;let n=0,placed=[];for(const r of townsData){let p=r.centroid;if(Math.abs(p.x-view.cx)>w/2-5||Math.abs(p.y-view.cy)>h/2-5)continue;if(n>=60)break;let name=r.name;if(!name)continue;const width=name.length*15/z;if(placed.some(b=>Math.abs(p.x-b.x)<(width+b.width)/2+5/z&&Math.abs(p.y-b.y)<20/z))continue;placed.push({...p,width});n++;tg.append(createSVG('text',{x:p.x,y:p.y,'text-anchor':'middle','dominant-baseline':'middle','font-size':Math.max(1.1,15/z),class:'town-label',style:'stroke-width:'+Math.min(2.2,2/view.z)+'px'},name))}}
+function renderLabels(){let cg=$('countyLabels');cg.replaceChildren();let z=view.z;for(const [name,lat,lng] of countyCenters){let p=project(lat,lng);if(z>=4.1&&detailedLoaded)continue;let compact=z<1.8;let shortName=compact?({'嘉義市':'嘉市','嘉義縣':'嘉縣','新竹市':'竹市','新竹縣':'竹縣'}[name]||name.replace(/(?:縣|市)$/,'').replace('臺','台')):name.replace('臺','台');let nord=['新北市','臺北市','基隆市','桃園市','新竹縣','新竹市'].includes(name);let tweaks={'新北市':[-19,-15],'臺北市':[16,12],'基隆市':[13,-10],'新竹市':[-14,14],'新竹縣':[8,11],'桃園市':[-14,0],'嘉義市':[-16,11],'嘉義縣':[10,-11]};if(compact&&tweaks[name]){p.x+=tweaks[name][0];p.y+=tweaks[name][1]}let font=Math.max(2.5,Math.min(23,(compact&&nord?18:21)/z));let lbl=createSVG('text',{x:p.x,y:p.y,'text-anchor':'middle','dominant-baseline':'middle','font-size':font,class:'county-label',style:'stroke-width:'+Math.min(3.2,3/view.z)+'px'},shortName);cg.append(lbl)}let tg=$('townLabels');tg.replaceChildren();if(z<3.4||!detailedLoaded)return;let w=780/z,h=960/z;let n=0,placed=[];for(const r of townsData){let p=r.centroid;if(Math.abs(p.x-view.cx)>w/2-5||Math.abs(p.y-view.cy)>h/2-5)continue;if(n>=60)break;let name=r.name;if(!name)continue;const width=name.length*15/z;if(placed.some(b=>Math.abs(p.x-b.x)<(width+b.width)/2+5/z&&Math.abs(p.y-b.y)<20/z))continue;placed.push({...p,width});n++;tg.append(createSVG('text',{x:p.x,y:p.y,'text-anchor':'middle','dominant-baseline':'middle','font-size':Math.max(1.1,15/z),class:'town-label',style:'stroke-width:'+Math.min(2.2,2/view.z)+'px'},name))}}
 function decodeTopology(topo){let cache=new Map();function getArc(i){let k=i>=0?i:~i,reverse=i<0;if(!cache.has(k)){let raw=topo.arcs[k],coords=[],x=0,y=0;for(const [dx,dy] of raw){x+=dx;y+=dy;coords.push([x*topo.transform.scale[0]+topo.transform.translate[0],y*topo.transform.scale[1]+topo.transform.translate[1]])}cache.set(k,coords)}let list=cache.get(k);return reverse?[...list].reverse():list}function join(arcs){let out=[];for(const i of arcs){let pts=getArc(i);out.push(...(out.length?pts.slice(1):pts))}return out}function rings(g){let parts=g.type==='Polygon'?[g.arcs]:g.type==='MultiPolygon'?g.arcs:[];return parts.flatMap(p=>p.map(join))}let countyObj=topo.objects.counties||null,townObj=topo.objects.towns||null;if(!countyObj||!townObj)return false;countiesData=countyObj.geometries.map(g=>({name:g.properties.COUNTYNAME||g.properties.name||'',rings:rings(g)}));townsData=townObj.geometries.map(g=>({name:g.properties.TOWNNAME||g.properties.name||'',county:g.properties.COUNTYNAME||'',rings:rings(g)}));return true}
 function pathFromRings(rings){return rings.map(r=>pth(r)).join(' ')}
-function displayGeo(){let co=$('counties'),tw=$('towns'),is=$('islandAreas');co.replaceChildren();tw.replaceChildren();is.replaceChildren();clearLandVisuals();countyBounds={};for(const c of countiesData){let d=pathFromRings(c.rings),el=createSVG('path',{d,class:'map-county','data-county':c.name});let island=['金門縣','連江縣','澎湖縣'].includes(c.name);(island?is:co).append(el);addLandVisual(d,island);try{let b=el.getBBox();countyBounds[c.name]={x:b.x+b.width/2,y:b.y+b.height/2}}catch(e){}}for(const t of townsData){let d=pathFromRings(t.rings),el=createSVG('path',{d,class:'map-town','data-county':t.county,'data-town':t.name});(t.county==='金門縣'||t.county==='連江縣'||t.county==='澎湖縣'?is:tw).append(el);let xy=t.rings.flat().map(q=>project(q[1],q[0]));let xs=xy.map(q=>q.x),ys=xy.map(q=>q.y);t.centroid=xs.length?{x:(Math.min(...xs)+Math.max(...xs))/2,y:(Math.min(...ys)+Math.max(...ys))/2}:project(24,121)}$('fallbackCoast').style.display='none';detailedLoaded=true;$('mapstatus').classList.remove('warning');$('mapstatus').textContent='✓ '+countiesData.length+' 縣市、'+townsData.length+' 鄉鎮市區';$('mapcredit').textContent='行政區向量圖資 © 內政部國土測繪中心';applyView()}
-async function loadGeo(){let cache=null;try{cache=localStorage.getItem('timemap:topology:towns10t')}catch(e){}if(cache){try{if(decodeTopology(JSON.parse(cache))){displayGeo();return}}catch(e){console.warn('cached topology invalid',e)}}const urls=[new URL('../assets/towns-10t.json',import.meta.url).href];let loaded=false;for(let u of urls){try{let ctrl=new AbortController();let timer;let resp;try{const ctrl=new AbortController();timer=setTimeout(()=>ctrl.abort(),5000);resp=await fetch(u,{signal:ctrl.signal})}finally{clearTimeout(timer)}if(!resp.ok)continue;let text=await resp.text(),geo=JSON.parse(text);if(decodeTopology(geo)){loaded=true;displayGeo();try{localStorage.setItem('timemap:topology:towns10t',text)}catch(e){}break}}catch(e){console.warn('向量圖資未連線',u,e.message)}}if(!loaded){$('mapstatus').textContent='✓ 22 縣市可操作 · 詳細圖資暫時無法載入';$('mapstatus').classList.add('warning');$('mapcredit').textContent='內建翡翠地圖 · 詳細界線載入失敗'}}
+function displayGeo(){
+ const counties=$('counties'),towns=$('towns'),islands=$('islandAreas');
+ counties.replaceChildren();towns.replaceChildren();islands.replaceChildren();clearLandVisuals();
+ for(const county of countiesData){
+  const d=pathFromRings(county.rings),el=createSVG('path',{d,class:'map-county','data-county':county.name});
+  const island=['金門縣','連江縣','澎湖縣'].includes(county.name);
+  (island?islands:counties).append(el);addLandVisual(d,island);
+ }
+ townsMounted=false;
+ for(const town of townsData){
+  town.path=pathFromRings(town.rings);
+  let minX=Infinity,minY=Infinity,maxX=-Infinity,maxY=-Infinity;
+  for(const ring of town.rings)for(const q of ring){
+   const p=project(q[1],q[0]);minX=Math.min(minX,p.x);maxX=Math.max(maxX,p.x);minY=Math.min(minY,p.y);maxY=Math.max(maxY,p.y);
+  }
+  town.centroid=Number.isFinite(minX)?{x:(minX+maxX)/2,y:(minY+maxY)/2}:project(24,121);
+  delete town.rings;
+ }
+ $('fallbackCoast').style.display='none';detailedLoaded=true;
+ $('mapstatus').classList.remove('warning');
+ $('mapstatus').textContent='✓ '+countiesData.length+' 縣市、'+townsData.length+' 鄉鎮市區';
+ $('mapcredit').textContent='行政區向量圖資 © 內政部國土測繪中心';applyView();
+}
+function mountTowns(){
+ const fragment=document.createDocumentFragment();
+ for(const t of townsData)fragment.append(createSVG('path',{d:t.path,class:'map-town','data-county':t.county,'data-town':t.name}));
+ $('towns').replaceChildren(fragment);townsMounted=true;
+}
+async function loadGeo(){
+ try{
+  const response=await fetch(new URL('../assets/towns-10t.json',import.meta.url),{signal:AbortSignal.timeout(5000)});
+  if(!response.ok||!decodeTopology(await response.json()))throw Error('Invalid topology');
+  // Decode once per visit. HTTP caching replaces a large synchronous localStorage copy.
+  if(pointers.size)await new Promise(resolve=>{const check=()=>pointers.size?setTimeout(check,100):resolve();check()});
+  displayGeo();
+ }catch(e){
+  console.warn('詳細界線暫時不可用',e.message);
+  $('mapstatus').textContent='✓ 22 縣市可操作 · 詳細圖資暫時無法載入';
+  $('mapstatus').classList.add('warning');$('mapcredit').textContent='內建翡翠地圖 · 詳細界線載入失敗';
+ }
+}
+function ensureLoaded(){if(started)return;started=true;initOfflineCountyMap();requestAnimationFrame(()=>setTimeout(()=>loadGeo(),0))}
+
 function marker(p,which){return `<circle class="pin-outer" cx="${p.x}" cy="${p.y}" r="${Math.max(2,11/view.z)}"/><circle class="pin-${which}" cx="${p.x}" cy="${p.y}" r="${Math.max(1.5,7/view.z)}"/>`}
 function drawMarkers(){let el=$('markers'),q=state.qs[state.idx];if(!q){el.innerHTML='';return}let a=state.guess?project(state.guess.lat,state.guess.lng):null,b=project(q.lat,q.lng);let h='';if(a&&state.locked)h+=`<path class="connector" d="M${a.x} ${a.y} L${b.x} ${b.y}"/>`;if(a)h+=marker(a,'guess');if(state.locked)h+=marker(b,'answer');el.innerHTML=h}
 function svgpt(clientX,clientY){let p=svg.createSVGPoint();p.x=clientX;p.y=clientY;return p.matrixTransform(svg.getScreenCTM().inverse())}
@@ -55,7 +98,7 @@ function setMapInteraction(enabled){
  frame.classList.toggle('map-interaction',enabled);
  $('mapHelp').textContent=enabled
   ?'全螢幕地圖：單指拖曳、雙指縮放、輕觸插旗。'
-  :'手機使用全螢幕地圖選點；電腦可直接操作下方地圖。滑鼠滾輪只捲動頁面。';
+  :isMobilePicker()?'選點後按「確認位置」揭曉故事；揭曉前可隨時調整。':'直接在地圖選點；滑鼠滾輪只捲動頁面。';
  $('mapBadge').textContent=state.locked?'🟠 你的圖釘 · 🟢 正確位置':state.guess?'📍 已插旗 · 可繼續拖曳或重新選點':'📍 拖曳地圖 · 輕觸插旗';
  syncMobilePicker();
 }
@@ -79,15 +122,25 @@ function syncMobilePicker(){
 }
 function openMobilePicker(){
  if(!isMobilePicker())return;
+ ensureLoaded();
+ if(frame.classList.contains('mobile-map-open'))return;
+ frame.setAttribute('role','dialog');frame.setAttribute('aria-modal','true');frame.setAttribute('aria-labelledby','pickerTitle');
+ modalSiblings=[];let child=frame;while(child.parentElement&&child.parentElement!==document.body){for(const sibling of child.parentElement.children)if(sibling!==child){modalSiblings.push([sibling,sibling.inert]);sibling.inert=true}child=child.parentElement}
+ const panel=document.querySelector('.map-panel');panelHome=document.createComment('county selector home');panel.before(panelHome);frame.append(panel);panel.inert=false;
  document.body.classList.add('map-picker-open');
  frame.classList.add('mobile-map-open');
  setMapInteraction(true);
+ $('mobileMapCancel').focus({preventScroll:true});
  requestAnimationFrame(()=>applyView(true));
 }
 function closeMobilePicker(scrollToSelection=true){
  if(!frame.classList.contains('mobile-map-open')){setMapInteraction(false);return}
  setMapInteraction(false);
  frame.classList.remove('mobile-map-open');
+ frame.removeAttribute('role');frame.removeAttribute('aria-modal');frame.removeAttribute('aria-labelledby');
+ for(const [sibling,wasInert] of modalSiblings)sibling.inert=wasInert;modalSiblings=[];
+ if(panelHome){panelHome.replaceWith(frame.querySelector('.map-panel'));panelHome=null}
+ (state.locked?$('viewAnswer'):$('mobileMapLaunch')).focus({preventScroll:true});
  document.body.classList.remove('map-picker-open');
  if(scrollToSelection){
   requestAnimationFrame(()=>{(state.locked?$('result'):$('selectionText'))?.scrollIntoView({behavior:'smooth',block:'center'})});
@@ -151,9 +204,17 @@ $('zoomIn').addEventListener('click',()=>zoom(1.8));$('zoomOut').addEventListene
 let sel=$('jumpCounty');for(const [name] of countyCenters)sel.add(new Option(name,name));sel.addEventListener('change',()=>{let name=sel.value;if(!name)return resetView();let row=countyCenters.find(x=>x[0]===name);let p=project(row[1],row[2]);focusAt(p,name==='金門縣'||name==='連江縣'||name==='澎湖縣'?3.6:5.2)});
 $('viewAnswer').addEventListener('click',()=>{let q=state.qs[state.idx];let p=project(q.lat,q.lng);focusAt(p,8);drawMarkers();syncMobilePicker();openMobilePicker()});
 
-try{initOfflineCountyMap();resetView()}catch(e){console.warn(e);$('mapstatus').textContent='地圖簡化模式'}
-loadGeo().catch(e=>console.warn(e));
+document.addEventListener('keydown',e=>{
+ if(!frame.classList.contains('mobile-map-open'))return;
+ if(e.key==='Escape'){e.preventDefault();closeMobilePicker(false)}
+ if(e.key==='Tab'){
+  const focusable=[...frame.querySelectorAll('button:not(:disabled),select,[tabindex="0"]')].filter(el=>el.getClientRects().length);
+  const first=focusable[0],last=focusable.at(-1);
+  if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}
+ }
+});
+window.matchMedia('(max-width:650px)').addEventListener('change',()=>{if(!isMobilePicker())closeMobilePicker(false)});
 svg.addEventListener('keydown',e=>{const directions={ArrowLeft:[-1,0],ArrowRight:[1,0],ArrowUp:[0,-1],ArrowDown:[0,1]};if(directions[e.key]){e.preventDefault();const [x,y]=directions[e.key];view.cx+=x*80/view.z;view.cy+=y*80/view.z;applyView()}if(e.key==='Enter'){e.preventDefault();chooseCenter()}});
 function chooseCenter(){const p=unproject(view.cx,view.cy);choose(p.lat,p.lng,'地圖中心');syncMobilePicker()}
-return {setMapInteraction,resetView,drawMarkers,chooseCenter,openMobilePicker,closeMobilePicker,syncMobilePicker};
+return {ensureLoaded,setMapInteraction,resetView,drawMarkers,chooseCenter,openMobilePicker,closeMobilePicker,syncMobilePicker};
 }

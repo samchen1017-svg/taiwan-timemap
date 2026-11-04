@@ -131,3 +131,31 @@ button,select{min-height:48px;min-width:48px}button{touch-action:manipulation}.z
   .mapframe.mobile-map-open .mapinfo{display:none}
   .map-help{margin-top:9px}
 }
+
+/* v3.1: readable cards, calm history, and a lighter mobile map. */
+.bank-info{color:var(--mint)!important;font-size:13px!important;font-weight:700;margin:0 0 18px}
+.story-details{margin:16px 0;line-height:1.8;border-top:1px solid #659a8066;padding-top:8px}
+.story-details summary{cursor:pointer;min-height:48px;display:list-item;padding:12px 0;font-weight:700;color:#e4f0de}
+.story-details a,.lesson-link{overflow-wrap:anywhere;line-height:1.8}
+.history ol{list-style:none;padding:0}.history li{border-top:1px solid var(--stroke)}
+.history summary{cursor:pointer;padding:12px 0;min-height:48px;font-variant-numeric:tabular-nums}
+.history details p{font-size:14px;line-height:1.9;margin:4px 0 16px}.history details a{white-space:nowrap}
+.history[hidden]{display:none}.recap summary,.story-details summary,.history summary{outline-offset:3px}
+.recap summary:focus-visible,.story-details summary:focus-visible,.history summary:focus-visible{outline:3px solid var(--gold)}
+.mobile-map-back{min-height:48px;min-width:48px}
+@media(max-width:650px){
+ .top{flex-wrap:wrap;row-gap:12px}.date{font-size:11px}.hero{padding:24px 20px}.hero h1{font-size:34px}
+ .hero .actions{display:grid;grid-template-columns:1fr}.featurechips{margin:16px 0}.featurechips span{padding:6px 9px}
+ .shell{padding-inline:16px}.how{gap:8px}.how div{padding:12px 10px}.how p{font-size:12px}
+ .lesson-kicker{flex-wrap:wrap}.lesson-fact{line-height:1.8}.result{padding:17px}.result h3{line-height:1.6}
+ .result .actions{display:grid;grid-template-columns:1fr 1fr}.result .actions button{padding:12px 8px}
+ .mapframe .extruded-land{filter:none}.mapframe .terrain-lines{display:none}
+ .mobile-map-header,.mobile-map-footer,.mapbadge{backdrop-filter:none}
+ .mapframe.mobile-map-open .map-panel{display:flex;position:absolute;z-index:15;left:12px;bottom:calc(86px + env(safe-area-inset-bottom));padding:6px;margin:0;max-width:calc(100% - 24px)}
+ .mapframe.mobile-map-open .map-panel select{max-width:170px}
+ .mapframe.mobile-map-open .map-panel .mapstatus{display:none}
+ #keyboardHelp,#keyboardPin{display:none}
+}
+
+.mobile-instruction{display:none}.footer details{text-align:left;margin-inline:auto;max-width:650px}.footer summary{text-align:center;cursor:pointer;padding:12px;min-height:48px}
+@media(max-width:650px){.map-panel{display:none}.mobile-instruction{display:inline}.desktop-instruction{display:none}}

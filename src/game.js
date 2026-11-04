@@ -9,9 +9,9 @@ const state={mode:'daily',qs:[],idx:0,answers:[],guess:null,locked:false};
 const store=createStorage({getItem:key=>localStorage.getItem(key),setItem:(key,value)=>localStorage.setItem(key,value)},()=>{$('storageNotice').hidden=false});
 function getSaved(){return store.load(date)}
 function save(){if(state.mode==='daily'){const run={version:3,ids:state.qs.map(q=>q.id),idx:state.idx,answers:state.answers};store.save(date,run);if(state.answers.length===5)store.complete(date,run)}}
-function show(id){for(const x of ['home','game','summary'])$(x).classList.toggle('hidden',x!==id);window.scrollTo(0,0)}
+function show(id){$('historySection').hidden=id==='game';for(const x of ['home','game','summary'])$(x).classList.toggle('hidden',x!==id);window.scrollTo(0,0)}
 const map=createMap({state,choose});
-function init(){renderHistory();let s=getSaved();$('dailyInfo').textContent=s?.answers?.length>=5?'今日挑戰已完成，可回顧成績或繼續自由練習':s?.answers?.length?'今日已完成 '+s.answers.length+' 題，可以繼續挑戰':'每日 5 題 · 全台分區出題 · 滿分 500 分 · 免費試玩';$('dailyStart').textContent=s?.answers?.length>=5?'查看今日成績 →':s?.answers?.length?'繼續今日挑戰 →':'開始今日挑戰 →'}
+function init(){$('bankInfo').textContent=Q.length+' 段故事 · 北、中、南、東、離島每天各一題';renderHistory();let s=getSaved();$('dailyInfo').textContent=s?.answers?.length>=5?'今日挑戰已完成，可回顧成績或繼續自由練習':s?.answers?.length?'今日已完成 '+s.answers.length+' 題，可以繼續挑戰':'每日 5 題 · 全台分區出題 · 滿分 500 分 · 免費試玩';$('dailyStart').textContent=s?.answers?.length>=5?'查看今日成績 →':s?.answers?.length?'繼續今日挑戰 →':'開始今日挑戰 →'}
 function start(mode){
  date=taipeiDate();$('dateLabel').textContent=date+' · 臺灣時間';$('dayNotice').hidden=true;
  state.mode=mode;const old=mode==='daily'?getSaved():null;
@@ -19,11 +19,11 @@ function start(mode){
  state.qs=ids.map(id=>Q.find(q=>q.id===id));state.answers=old?.answers||[];
  state.idx=old?.idx||0;state.locked=false;state.guess=null;
  if(state.answers.length===5)return summary();
- show('game');renderQuestion();
+ show('game');map.ensureLoaded();renderQuestion();
  if(old&&old.answers.length>state.idx){const a=old.answers[state.idx];state.answers.pop();state.guess=a.guess||{lat:state.qs[state.idx].lat,lng:state.qs[state.idx].lng};if(a.guess)submit();else{state.answers.push(a);state.idx++;if(state.idx>=5)summary();else renderQuestion()}}
 }
 function total(){return state.answers.reduce((sum,a)=>sum+a.score,0)}
-function renderQuestion(){map.closeMobilePicker(false);state.locked=false;state.guess=null;let q=state.qs[state.idx];$('qcount').textContent=`第 ${state.idx+1} / 5 題 · ${state.mode==='daily'?'每日挑戰':'自由練習'}`;$('score').textContent=total();$('progress').innerHTML=state.qs.map((_,i)=>`<div class="${i<state.idx?'done':i===state.idx?'active':''}"></div>`).join('');$('cat').textContent=types[q.c];$('year').textContent=q.year+(/^[0-9]+$/.test(q.year)?' 年':'');$('qtitle').textContent=q.title;$('difficulty').textContent=['','入門','進階','挑戰'][q.difficulty||2];$('flowStep').textContent='01 閱讀線索 → 02 地圖插旗 → 03 確認答案';$('qtitle').focus({preventScroll:true});$('submit').disabled=true;$('mobileMapLaunch').textContent='📍 選擇地點';$('selectionText').textContent='尚未插旗 · 手機點「選擇地點」，電腦直接在地圖選點';$('mapBadge').textContent='📍 拖曳地圖 · 輕觸插旗';$('result').classList.add('hidden');$('jumpCounty').value='';map.resetView();map.drawMarkers();map.syncMobilePicker();}
+function renderQuestion(){map.closeMobilePicker(false);state.locked=false;state.guess=null;let q=state.qs[state.idx];$('qcount').textContent=`第 ${state.idx+1} / 5 題 · ${state.mode==='daily'?'每日挑戰':'自由練習'}`;$('score').textContent=total();$('progress').innerHTML=state.qs.map((_,i)=>`<div class="${i<state.idx?'done':i===state.idx?'active':''}"></div>`).join('');$('cat').textContent=types[q.c];$('year').textContent=q.year+(/^[0-9]+$/.test(q.year)?' 年':'');$('qtitle').textContent=q.title;$('difficulty').textContent=['','入門','進階','挑戰'][q.difficulty||2];$('flowStep').textContent='讀線索 → 選地點 → 揭曉故事';$('qtitle').focus({preventScroll:true});$('submit').disabled=true;$('mobileMapLaunch').textContent='📍 選擇地點';$('selectionText').textContent='尚未插旗 · 手機點「選擇地點」，電腦直接在地圖選點';$('mapBadge').textContent='📍 拖曳地圖 · 輕觸插旗';$('result').classList.add('hidden');$('storyDetails').open=false;$('jumpCounty').value='';map.resetView();map.drawMarkers();map.syncMobilePicker();}
 function choose(lat,lng,place){if(state.locked)return;if(lat<20||lat>27||lng<117||lng>123)return;state.guess={lat,lng};$('submit').disabled=false;$('mobileMapLaunch').textContent='📍 調整地點';$('selectionText').textContent=place?`已在 ${place} 插旗，可重新點選或確認`:'已插旗 · 可重新點選或確認位置';$('mapBadge').textContent='📍 已插旗 · 可拖曳微調或重新選點';map.drawMarkers();map.syncMobilePicker()}
 function submit(){if(state.locked||!state.guess)return;let q=state.qs[state.idx],d=km(state.guess,q),score=calcScore(d);state.locked=true;state.answers.push({id:q.id,distance:d,score,guess:{...state.guess}});save();$('score').textContent=total();$('submit').disabled=true;$('distance').textContent='距離 '+(d<10?d.toFixed(1):Math.round(d))+' 公里';$('points').textContent='+'+score+' 分';$('answerTitle').textContent='正確位置：'+q.name;
 const lesson=LESSONS[q.id];
@@ -32,7 +32,7 @@ $('lessonFact').textContent=lesson?.fact||q.story;
 $('lessonKey').textContent=lesson?.key||'讀完這段故事，你又多認識一個臺灣的角落。';
 $('lessonSource').href=lesson?.src||q.src;
 $('lessonSource').textContent='查閱史料：'+(lesson?.label||q.label)+' ↗';
-$('story').textContent=q.story;$('locationNote').textContent='本題定位：'+q.audit.locationType+'。'+(q.audit.locationPrecision==='approximate-site'?'採場址概略位置。':'採官方列示點位。');$('source').href=q.src;$('source').textContent='資料來源：'+q.label+' ↗';$('next').textContent=state.idx===4?'查看總成績 →':'下一題 →';$('result').classList.remove('hidden');$('flowStep').textContent='04 揭曉與學習 → 05 下一個故事';$('answerTitle').focus({preventScroll:true});$('mapBadge').textContent='🟠 你的圖釘 · 🟢 正確位置';map.drawMarkers();$('result').scrollIntoView({behavior:'smooth',block:'nearest'})}
+$('story').textContent=q.story;$('coordinateSource').href=q.audit.coordinateSource;$('auditDate').textContent='史料核對：'+q.audit.checkedAt+' · 難度為編輯評估';$('locationNote').textContent='本題定位：'+q.audit.locationType+'。'+(q.audit.locationPrecision==='approximate-site'?'採場址概略位置。':'採官方列示點位。');$('source').href=q.src;$('source').textContent='資料來源：'+q.label+' ↗';$('next').textContent=state.idx===4?'查看總成績 →':'下一題 →';$('result').classList.remove('hidden');$('flowStep').textContent='讀懂這個地方，再前往下一段故事';$('answerTitle').focus({preventScroll:true});$('mapBadge').textContent='🟠 你的圖釘 · 🟢 正確位置';map.drawMarkers();$('result').scrollIntoView({behavior:'smooth',block:'nearest'})}
 function next(){if(!state.locked)return;state.idx++;save();if(state.idx>=5)summary();else{renderQuestion();$('qcount').scrollIntoView({behavior:'smooth',block:'start'})}}
 function summary(){map.closeMobilePicker(false);show('summary');$('summaryTitle').focus({preventScroll:true});let n=total();$('summaryTitle').textContent=state.mode==='daily'?'今日挑戰完成！':'自由練習完成！';$('finalScore').innerHTML=n+'<span> / 500</span>';$('rank').textContent=n>=430?'地圖傳說 🏆':n>=340?'在地達人 🧭':n>=230?'島嶼探索家 🌿':'時光旅人 🗺️';$('review').innerHTML=state.answers.map((a,i)=>{let q=Q.find(x=>x.id===a.id);return `<div class="review"><div><b>${i+1}. ${q.name}</b><small>${types[q.c]} · 距離 ${a.distance<10?a.distance.toFixed(1):Math.round(a.distance)} 公里</small></div><strong>+${a.score}</strong></div>`}).join('');const wrap=$('learnReview');wrap.replaceChildren();
 state.answers.forEach((answer,i)=>{
@@ -45,14 +45,25 @@ state.answers.forEach((answer,i)=>{
  link.textContent='查閱史料 ↗';link.href=lesson.src||q.src;link.target='_blank';link.rel='noopener noreferrer';
  body.append(fact,hint,link);details.append(heading,body);wrap.append(details);
 });
-$('shareFallback').classList.add('hidden');save();init()}
-function shareText(){return `🗺️ 島嶼時光 3.0\n${state.mode==='daily'?date+' 每日挑戰':'自由練習'}\n${state.answers.map(a=>a.score>=85?'🟩':a.score>=60?'🟨':a.score>=30?'🟧':'⬜').join('')}\n總分：${total()} / 500\n今天的台灣故事，你猜對幾題？\nhttps://taiwan-timemap.pages.dev/`}
+$('summaryLearning').textContent='走過五個區域，讀到 '+new Set(state.qs.map(q=>q.c)).size+' 種主題。今天最靠近的故事是'+state.qs[state.answers.indexOf(state.answers.reduce((best,a)=>a.distance<best.distance?a:best))].name+'。';$('shareFallback').classList.add('hidden');$('share').textContent='分享成績';save();init()}
+function shareText(){return `🗺️ 島嶼時光 3.1\n${state.mode==='daily'?date+' 每日挑戰':'自由練習'}\n${state.answers.map(a=>a.score>=85?'🟩':a.score>=60?'🟨':a.score>=30?'🟧':'⬜').join('')}\n總分：${total()} / 500\n今天的台灣故事，你猜對幾題？\nhttps://taiwan-timemap.pages.dev/`}
 async function share(){let t=shareText();try{if(navigator.share){await navigator.share({title:'島嶼時光',text:t});return}if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(t);$('share').textContent='已複製 ✓';return}}catch(e){if(e.name==='AbortError')return}let el=$('shareFallback');el.value=t;el.classList.remove('hidden');el.focus();el.select();try{document.execCommand('copy')}catch(e){}}
-function safeStart(mode){const el=$('launchStatus');el.classList.add('hidden');const btn=$(mode==='daily'?'dailyStart':'practiceStart');btn.disabled=true;try{start(mode);if(!$('game').classList.contains('hidden')||!$('summary').classList.contains('hidden')){el.textContent='';return;}throw new Error('遊戲畫面未顯示')}catch(e){console.error('遊戲啟動錯誤',e);el.textContent='啟動遇到問題：'+(e?.message||'未知錯誤')+'。請改用 Safari 或 Chrome 開啟下載的 HTML 檔案。';el.classList.remove('hidden');}finally{btn.disabled=false}}
+function safeStart(mode){const el=$('launchStatus');el.classList.add('hidden');const btn=$(mode==='daily'?'dailyStart':'practiceStart');btn.disabled=true;try{start(mode);if(!$('game').classList.contains('hidden')||!$('summary').classList.contains('hidden')){el.textContent='';return;}throw new Error('遊戲畫面未顯示')}catch(e){console.error('遊戲啟動錯誤',e);el.textContent='啟動遇到問題：'+(e?.message||'未知錯誤')+'。請重新整理，或使用 Safari／Chrome 開啟網站。';el.classList.remove('hidden');}finally{btn.disabled=false}}
 $('dailyStart').addEventListener('click',()=>safeStart('daily'));$('practiceStart').addEventListener('click',()=>safeStart('practice'));$('submit').addEventListener('click',submit);$('next').addEventListener('click',next);$('share').addEventListener('click',share);$('again').addEventListener('click',()=>start('practice'));$('goHome').addEventListener('click',()=>{show('home');date=taipeiDate();$('dateLabel').textContent=date+' · 臺灣時間';$('dayNotice').hidden=true;init()});
 init();
 
-function renderHistory(){const rows=store.history();$('streak').textContent=streak(rows)+' 天';$('bestScore').textContent=rows.length?Math.max(...rows.map(r=>r.score))+' 分':'—';$('historyList').replaceChildren(...rows.slice(-7).reverse().map(r=>{const el=document.createElement('li');el.textContent=r.date+' · '+r.score+' / 500';return el}));$('historyEmpty').hidden=rows.length>0}
+function renderHistory(){
+ const rows=store.history(),days=streak(rows);
+ $('streak').textContent=days+' 天';
+ $('streakHint').textContent=rows.some(r=>r.date===taipeiDate())?'今天的五段故事已收進足跡。':days?'昨天的足跡還在，完成今日挑戰就能延續。':'每天完成五題，累積連續探索的日子。';
+ $('bestScore').textContent=rows.length?Math.max(...rows.map(r=>r.score))+' 分':'—';
+ $('historyList').replaceChildren(...rows.slice(-7).reverse().map(r=>{
+  const el=document.createElement('li'),details=document.createElement('details'),heading=document.createElement('summary');
+  heading.textContent=r.date+' · '+r.score+' / 500';details.append(heading);
+  for(const id of r.ids||[]){const q=Q.find(q=>q.id===id);if(!q)continue;const p=document.createElement('p'),a=document.createElement('a');p.textContent=q.name+'：'+q.lesson.fact+' ';a.textContent='查閱史料 ↗';a.href=q.src;a.target='_blank';a.rel='noopener noreferrer';p.append(a);details.append(p)}
+  el.append(details);return el;
+ }));$('historyEmpty').hidden=rows.length>0;
+}
 function checkDate(){if(taipeiDate()!==date){if($('home').classList.contains('hidden')){$('dayNotice').hidden=false}else{date=taipeiDate();$('dateLabel').textContent=date+' · 臺灣時間';init()}}}
 setInterval(checkDate,30000);document.addEventListener('visibilitychange',checkDate);
 $('keyboardPin').addEventListener('click',()=>map.chooseCenter());

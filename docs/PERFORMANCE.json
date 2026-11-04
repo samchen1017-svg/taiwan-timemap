@@ -1,0 +1,22 @@
+{
+  "baselineCommit": "487959c",
+  "environment": "Chromium iPhone 13 emulation, localhost, cold browser contexts; counts are not real-device FPS or network latency.",
+  "versions": {
+    "baseline": {
+      "homeTopologyRequests": 1,
+      "homeTopologyBytes": 512094,
+      "homeMapPaths": 441,
+      "homeTownPaths": 368,
+      "homeResourceBytes": 597314,
+      "gameTownPathsBeforeZoom": 368
+    },
+    "candidate": {
+      "homeTopologyRequests": 0,
+      "homeTopologyBytes": 0,
+      "homeMapPaths": 7,
+      "homeTownPaths": 0,
+      "homeResourceBytes": 129665,
+      "gameTownPathsBeforeZoom": 0
+    }
+  }
+}
