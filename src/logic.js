@@ -16,10 +16,13 @@ export function makeSet(key){
    const categories=new Set(chosen.map(q=>q.c)).size;
    const levels=new Set(chosen.map(q=>q.difficulty)).size;
    const hard=chosen.filter(q=>q.difficulty===3).length;
-   const score=categories*6+levels*4-Math.abs(hard-1)*3-rotationCost*5;
+   // At most 4^5 = 1024 combinations even as the catalog grows.
+   const topics=new Set(chosen.map(q=>q.topic)).size;
+   const largest=Math.max(...Object.values(chosen.reduce((counts,q)=>(counts[q.c]=(counts[q.c]||0)+1,counts),{})));
+   const score=categories*100+levels*40+topics*18-Math.max(0,largest-2)*80-Math.abs(hard-1)*8-rotationCost*4;
    if(score>bestScore){bestScore=score;best=chosen}return;
   }
-  bags[chosen.length].forEach((q,i)=>visit([...chosen,q],rotationCost+i));
+  bags[chosen.length].slice(0,4).forEach((q,i)=>visit([...chosen,q],rotationCost+i));
  }
  visit([],0);
  return shuffle(best,random).map(q=>q.id);
