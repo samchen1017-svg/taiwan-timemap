@@ -37,6 +37,7 @@ body{background:radial-gradient(ellipse at 75% 0%,#21464b 0%,transparent 40%),ra
 .mapframe.detailed .map-county{stroke:#d7f3cf;stroke-opacity:.5;stroke-width:1.7}
 .county-label,.town-label{fill:#123b35;stroke:#cceacb;stroke-width:4.5;paint-order:stroke;letter-spacing:.4px;font-weight:900}
 .town-label{fill:#133e36;stroke:#cde6cb;stroke-width:3.5}
+.county-label-zoomed{fill:#0b332f;stroke:#f0f7df;stroke-width:5;font-weight:950;letter-spacing:.7px}
 .inset{fill:#113d47;stroke:#689891;stroke-width:1.5;fill-opacity:.92}
 .inset-title{fill:#c1e9d2;font-weight:850}
 .pin-outer{fill:#f2ffe7;stroke:#174339;stroke-width:2;filter:url(#pinGlow)}
