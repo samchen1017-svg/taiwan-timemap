@@ -32,6 +32,7 @@ async function run(){
    check(engine.name()+' wheel over map still scrolls the page',await p.evaluate(()=>scrollY)>y+20&&await box(p)===v);
    {const mb=await p.locator('#themap').boundingBox();await p.locator('#themap').click({position:{x:mb.width*.55,y:mb.height*.52}})}check(engine.name()+' desktop tap places a pin',await p.locator('#submit').isEnabled());
    await p.locator('#zoomIn').click();await pause(p);check(engine.name()+' plus zooms',await box(p)!==v);v=await box(p);
+   await p.locator('#jumpCounty').selectOption('臺中市');await pause(p);check(engine.name()+' county labels remain visible at detailed zoom',(await p.locator('#countyLabels').textContent()).includes('台中市')&&await p.locator('#countyLabels .county-label-zoomed').count()>0);
    await p.locator('#counties').evaluate(el=>{window.originalCountyNode=el.firstChild;window.geometryMutations=0;window.geometryObserver=new MutationObserver(records=>window.geometryMutations+=records.length);window.geometryObserver.observe(el,{childList:true,subtree:true})});
    pt=await position(p);await p.mouse.move(pt.x,pt.y);await p.mouse.down();await p.mouse.move(pt.x+60,pt.y+70,{steps:8});await p.mouse.up();await pause(p);
    check(engine.name()+' mouse drag pans while preserving the selected pin',await box(p)!==v&&await p.locator('#submit').isEnabled());
