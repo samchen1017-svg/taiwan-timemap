@@ -652,5 +652,316 @@ export const Q=[
       "coordinateSource": "https://www.dst.tycg.gov.tw/cp.aspx?Create=1&n=11738"
     }
   }
+,
+  {
+    "id": "jian-qingxiu",
+    "c": "history",
+    "region": "east",
+    "county": "花蓮縣",
+    "year": "日治時期",
+    "title": "花蓮曾有名為「吉野」的日本移民村，留下了一座保存八十八尊石佛的日式宗教建築。如今的「慶修院」在哪裡？",
+    "name": "花蓮吉安・慶修院",
+    "lat": 23.973688,
+    "lng": 121.56471,
+    "story": "吉安慶修院前身是真言宗吉野布教所，曾是日治時期移民村的宗教信仰中心。院內的八十八尊石佛、木造寺院樣式，保存了一段花蓮移民聚落的生活記憶。",
+    "src": "https://www.hccc.gov.tw/zh-tw/LocalCulturalHall/Detail/23",
+    "label": "花蓮縣文化局：吉安慶修院",
+    "lesson": {
+      "fact": "吉安的「吉野」地名與日治時期日本移民村有關；慶修院原本是移民的宗教據點，而非單純為觀光興建的日式景點。",
+      "key": "老建築記錄的不只是風格，還有移民與地方社會的變化。",
+      "src": "https://www.hccc.gov.tw/zh-tw/LocalCulturalHall/Detail/23",
+      "label": "花蓮縣文化局"
+    },
+    "difficulty": 2,
+    "audit": {
+      "checkedAt": "2026-11-04",
+      "factStatus": "reviewed",
+      "locationType": "歷史寺院",
+      "locationPrecision": "official-point",
+      "locationNote": "採交通部觀光署所列慶修院景點座標 23.973688,121.56471；對應吉安鄉中興路345-1號。",
+      "factNote": "文化局與觀光署證實吉野移民村及八十八尊石佛；各官方檔案對創建年份有1916／1917差異，本題使用「日治時期」。",
+      "sourceAvailability": "readable",
+      "coordinateSource": "https://www.taiwan.net.tw/m1.aspx?id=A12-00292&sno=0001016"
+    }
+  },
+  {
+    "id": "lanyang-museum",
+    "c": "history",
+    "region": "east",
+    "county": "宜蘭縣",
+    "year": "2010",
+    "title": "2010 年正式開館，一座外型像東北角「單面山」的博物館，建在烏石港濕地旁。它位於哪裡？",
+    "name": "宜蘭頭城・蘭陽博物館",
+    "lat": 24.869007,
+    "lng": 121.83277,
+    "story": "蘭陽博物館在 2010 年 10 月 16 日正式開館，源自地方人士希望保存烏石港歷史文化的倡議。建築呼應東北角單面山地形，展示宜蘭的山、平原、海與人文。",
+    "src": "https://www.lym.gov.tw/ch/audience-service/faq/",
+    "label": "蘭陽博物館：常見問答",
+    "lesson": {
+      "fact": "蘭陽博物館不是把濕地填平後孤立的建築；它的設計融入單面山、岩層節理與烏石港濕地景觀。",
+      "key": "建築外觀也可以成為理解地方地理的第一堂課。",
+      "src": "https://www.taiwan.net.tw/m1.aspx?id=A12-00569&sNo=0001106",
+      "label": "交通部觀光署：蘭陽博物館"
+    },
+    "difficulty": 1,
+    "audit": {
+      "checkedAt": "2026-11-04",
+      "factStatus": "reviewed",
+      "locationType": "博物館",
+      "locationPrecision": "official-point",
+      "locationNote": "採交通部觀光署景點座標 24.869007,121.83277；地址頭城鎮青雲路三段750號。",
+      "factNote": "2010/10/16正式開館依博物館官方FAQ；建築單面山與濕地依觀光署。",
+      "sourceAvailability": "readable",
+      "coordinateSource": "https://www.taiwan.net.tw/m1.aspx?id=A12-00569&sNo=0001106"
+    }
+  },
+  {
+    "id": "hongye-baseball",
+    "c": "sports",
+    "region": "east",
+    "county": "臺東縣",
+    "year": "1968",
+    "title": "1968 年，一支來自臺東布農族部落的少棒隊擊敗日本和歌山隊，掀起臺灣棒球熱。紀念這段傳奇的紅葉少棒紀念館在哪裡？",
+    "name": "臺東延平・紅葉少棒紀念館",
+    "lat": 22.89352,
+    "lng": 121.06372,
+    "story": "1968 年臺東紅葉少棒隊的勝利引起關注，鼓舞日後臺灣少棒發展。紀念館設在紅葉國小校園內，保存球具、照片和球隊故事；這題定位的是紀念館，不是當年對戰球場。",
+    "src": "https://media.taiwan.net.tw/en-us/portal/travel/details/attraction_a15010300h_000056",
+    "label": "交通部觀光署花東縱谷管理處：紅葉少棒紀念館",
+    "lesson": {
+      "fact": "紅葉少棒紀念館在 1992 年落成開放，館內除了球隊歷史，也連結紅葉村的布農族文化。",
+      "key": "臺灣棒球的熱潮，也有來自東部部落的起點。",
+      "src": "https://media.taiwan.net.tw/en-us/portal/travel/details/attraction_376540000a_000233",
+      "label": "臺東縣政府觀光資料"
+    },
+    "difficulty": 2,
+    "audit": {
+      "checkedAt": "2026-11-04",
+      "factStatus": "reviewed",
+      "locationType": "少棒紀念館",
+      "locationPrecision": "approximate-site",
+      "locationNote": "採臺東景點開放資料位置約 22.89352,121.06372；紀念館在紅葉國小校園內，非1968對日比賽原球場。",
+      "factNote": "觀光署明載1968對日本和歌山少棒隊與1992紀念館啟用，場址依臺東縣觀光資料紅谷路1號；精度視為校園內概略點。",
+      "sourceAvailability": "readable",
+      "coordinateSource": "https://media.taiwan.net.tw/en-us/portal/travel/details/attraction_376540000a_000233"
+    }
+  },
+  {
+    "id": "matsu-northsea",
+    "c": "history",
+    "region": "islands",
+    "county": "連江縣",
+    "year": "1968",
+    "title": "1968 年起的「北海計畫」在馬祖挖鑿地下碼頭，專供戰艇隱蔽停泊。南竿有座井字形水道坑道，位於何處？",
+    "name": "馬祖南竿・北海坑道",
+    "lat": 26.143015,
+    "lng": 119.92881,
+    "story": "北海坑道沿南竿鐵板海岸的花崗岩鑿建，形成可以停放船艇的地下水道。這項戰備設施後來轉為戰地文化景點，開放方式仍可能隨整修與潮汐改變。",
+    "src": "https://www.taiwan.net.tw/m1.aspx?id=A12-00590&sNo=0001127",
+    "label": "交通部觀光署：南竿北海坑道",
+    "lesson": {
+      "fact": "北海坑道最初不是天然海蝕洞，而是戰地時期為藏放軍用小艇而人工鑿出的巨大水道。",
+      "key": "岩石裡的地下碼頭，是馬祖戰地生活留下的空間證據。",
+      "src": "https://www.taiwan.net.tw/m1.aspx?id=A12-00590&sNo=0001127",
+      "label": "交通部觀光署：南竿北海坑道"
+    },
+    "difficulty": 3,
+    "audit": {
+      "checkedAt": "2026-11-04",
+      "factStatus": "reviewed",
+      "locationType": "戰備坑道",
+      "locationPrecision": "official-point",
+      "locationNote": "採觀光署景點座標 26.143015,119.92881，位於南竿北海坑道區域。",
+      "factNote": "1968指北海計畫起始年，不宣稱坑道於當年即完工；觀光署公告2026/10至2027/3整修，遊戲不保證現場開放。",
+      "sourceAvailability": "readable",
+      "coordinateSource": "https://www.taiwan.net.tw/m1.aspx?id=A12-00590&sNo=0001127"
+    }
+  },
+  {
+    "id": "penghu-crossbridge",
+    "c": "history",
+    "region": "islands",
+    "county": "澎湖縣",
+    "year": "1970",
+    "title": "1970 年通車，後來拓寬為雙線，跨越吼門水道連接白沙與西嶼兩島的著名大橋在哪裡？",
+    "name": "澎湖・跨海大橋",
+    "lat": 23.657823,
+    "lng": 119.55453,
+    "story": "澎湖跨海大橋連通白沙與西嶼，1970 年首次完工通車，早期單線車道會車不易；後來重建拓寬，1996 年完成雙線橋面，讓島間往返更加便利。",
+    "src": "https://www.taiwan.net.tw/m1.aspx?id=658&sNo=0001125",
+    "label": "交通部觀光署：澎湖跨海大橋",
+    "lesson": {
+      "fact": "今天的澎湖跨海大橋不是1970年的原始單線橋，1996年完成重建拓寬。",
+      "key": "跨島交通的演進，也能從同一座橋的前後樣貌看出來。",
+      "src": "https://www.taiwan.net.tw/m1.aspx?id=658&sNo=0001125",
+      "label": "交通部觀光署：澎湖跨海大橋"
+    },
+    "difficulty": 1,
+    "audit": {
+      "checkedAt": "2026-11-04",
+      "factStatus": "reviewed",
+      "locationType": "跨海橋梁",
+      "locationPrecision": "approximate-site",
+      "locationNote": "採觀光署景點列示座標 23.657823,119.55453；橋梁為線狀場址，單點代表橋體附近。",
+      "factNote": "1970首次通車、1996拓寬完工依觀光署，避免混稱同一次完工。",
+      "sourceAvailability": "readable",
+      "coordinateSource": "https://www.taiwan.net.tw/m1.aspx?id=658&sNo=0001125"
+    }
+  },
+  {
+    "id": "dongyin-lighthouse",
+    "c": "history",
+    "region": "islands",
+    "county": "連江縣",
+    "year": "1904",
+    "title": "1904 年完工，曾因軍事因素停止點燈、1989 年恢復運作。馬祖東引島這座白色燈塔在哪裡？",
+    "name": "馬祖東引・東引島燈塔",
+    "lat": 26.365429,
+    "lng": 120.51049,
+    "story": "東引島燈塔又稱東湧島燈塔，坐落東引島東側。1904 年完工；1958 年因軍事因素停用，1989 年恢復發光，見證航海安全與戰地管制的交錯歷史。",
+    "src": "https://www.taiwan.net.tw/m1.aspx?id=A12-00213&sno=0001016",
+    "label": "交通部觀光署：東引島燈塔",
+    "lesson": {
+      "fact": "燈塔也會因軍事需求暫停運作：東引燈塔曾在1958年停用，到1989年才恢復發光。",
+      "key": "離島燈塔既是航海路標，也映照出戰地年代的變遷。",
+      "src": "https://www.taiwan.net.tw/m1.aspx?id=A12-00213&sno=0001016",
+      "label": "交通部觀光署：東引島燈塔"
+    },
+    "difficulty": 3,
+    "audit": {
+      "checkedAt": "2026-11-04",
+      "factStatus": "reviewed",
+      "locationType": "燈塔",
+      "locationPrecision": "official-point",
+      "locationNote": "採觀光署 26.365429,120.51049；位於東引島，與南竿島坑道不同。",
+      "factNote": "1904完工、1958停用、1989復燈依觀光署。",
+      "sourceAvailability": "readable",
+      "coordinateSource": "https://www.taiwan.net.tw/m1.aspx?id=A12-00213&sno=0001016"
+    }
+  },
+  {
+    "id": "chihkan",
+    "c": "history",
+    "region": "south",
+    "county": "臺南市",
+    "year": "1653",
+    "title": "1653 年荷蘭人興建「普羅民遮堡」，鄭氏時期又成為重要行政據點。今天人們稱它什麼、在哪裡？",
+    "name": "臺南中西區・赤崁樓",
+    "lat": 22.997478,
+    "lng": 120.20254,
+    "story": "赤崁樓前身是1653年荷蘭人建造的普羅民遮堡，與安平的熱蘭遮堡是不同據點。經歷鄭氏與清領時期變遷後，今日建築風貌已經與荷蘭初建時不同。",
+    "src": "https://www.taiwan.net.tw/m1.aspx?id=10889&sno=0001016",
+    "label": "交通部觀光署：赤崁樓",
+    "lesson": {
+      "fact": "安平古堡的舊稱是熱蘭遮堡；赤崁樓的前身則是普羅民遮堡，兩處不能混為一談。",
+      "key": "同在臺南，兩座荷蘭時期古堡代表了不同的歷史據點。",
+      "src": "https://www.taiwan.net.tw/m1.aspx?id=10889&sno=0001016",
+      "label": "交通部觀光署：赤崁樓"
+    },
+    "difficulty": 2,
+    "audit": {
+      "checkedAt": "2026-11-04",
+      "factStatus": "reviewed",
+      "locationType": "古堡遺址",
+      "locationPrecision": "official-point",
+      "locationNote": "採觀光署 22.997478,120.20254；臺南市中西區民族路二段212號。",
+      "factNote": "1653創建與普羅民遮堡舊名可核對；本題與既有安平古堡角度不同，刻意對比而非重複同一位置。",
+      "sourceAvailability": "readable",
+      "coordinateSource": "https://www.taiwan.net.tw/m1.aspx?id=10889&sno=0001016"
+    }
+  },
+  {
+    "id": "kaohsiung-lighthouse",
+    "c": "history",
+    "region": "south",
+    "county": "高雄市",
+    "year": "1883",
+    "title": "1883 年設置、如今以白色八角形磚造塔身聞名的百年燈塔，從高處守望高雄港船隻。它在哪裡？",
+    "name": "高雄旗津・旗後燈塔",
+    "lat": 22.615459,
+    "lng": 120.26495,
+    "story": "高雄燈塔又稱旗後燈塔，最早在1883年設置，因打狗港與海上商船日漸繁盛而興建。今日所見八角形白塔見證高雄港的航運發展；不同年代的塔體曾經改建。",
+    "src": "https://www.taiwan.net.tw/m1.aspx?id=a12-00183&sNo=0001016",
+    "label": "交通部觀光署：高雄燈塔",
+    "lesson": {
+      "fact": "高雄燈塔設置於清代，今日白色八角塔並非完全等同1883年最初的塔體。",
+      "key": "一座燈塔可以跨越清領、日治與戰後，不同時期的航運需求都留下痕跡。",
+      "src": "https://www.taiwan.net.tw/m1.aspx?id=a12-00183&sNo=0001016",
+      "label": "交通部觀光署：高雄燈塔"
+    },
+    "difficulty": 2,
+    "audit": {
+      "checkedAt": "2026-11-04",
+      "factStatus": "reviewed",
+      "locationType": "燈塔",
+      "locationPrecision": "official-point",
+      "locationNote": "採觀光署旗後燈塔 22.615459,120.26495；旗津區旗下巷34號。",
+      "factNote": "1883設置與現八角型塔見觀光署；塔體改建資料亦見高雄市文化局古蹟調查，避免將1883直接說成現塔建造年。",
+      "sourceAvailability": "readable",
+      "coordinateSource": "https://www.taiwan.net.tw/m1.aspx?id=a12-00183&sNo=0001016"
+    }
+  },
+  {
+    "id": "chiayi-tropic",
+    "c": "history",
+    "region": "south",
+    "county": "嘉義市",
+    "year": "2004",
+    "title": "2004 年夏至，嘉義一處路口正式啟用多座歷年北回歸線標誌群。這座「全球北回歸線標誌第十處」在哪裡？",
+    "name": "嘉義市西區・北回歸線標誌群",
+    "lat": 23.466307,
+    "lng": 120.42613,
+    "story": "嘉義市博愛路與世賢路口在2004年6月21日啟用北回歸線標誌群，結合地球科學、地方地名與城市道路景觀，是可以在街道上認識地理的一處特殊場址。",
+    "src": "https://www.taiwan.net.tw/m1.aspx?id=8969&sNo=0001117",
+    "label": "交通部觀光署：全球北回歸線標誌第十處",
+    "lesson": {
+      "fact": "北回歸線不是只在課本上的緯線：嘉義市某個日常路口就有一組跨年代留下的標誌。",
+      "key": "一座路口的地標，也可以連結地球科學和城市歷史。",
+      "src": "https://www.taiwan.net.tw/m1.aspx?id=8969&sNo=0001117",
+      "label": "交通部觀光署：全球北回歸線標誌第十處"
+    },
+    "difficulty": 3,
+    "audit": {
+      "checkedAt": "2026-11-04",
+      "factStatus": "reviewed",
+      "locationType": "地理標誌群",
+      "locationPrecision": "official-point",
+      "locationNote": "採觀光署列示 23.466307,120.42613；位置是嘉義市博愛路與世賢路交會處，非嘉義縣其他北回歸線公園。",
+      "factNote": "2004/6/21及全球第十處等表述直接取自觀光署特定景點頁。",
+      "sourceAvailability": "readable",
+      "coordinateSource": "https://www.taiwan.net.tw/m1.aspx?id=8969&sNo=0001117"
+    }
+  },
+  {
+    "id": "changhua-roundhouse",
+    "c": "history",
+    "region": "central",
+    "county": "彰化縣",
+    "year": "1922",
+    "title": "1922 年興建、鐵軌圍繞中央調車轉盤像扇子張開，被暱稱「火車頭旅館」的車庫位於哪裡？",
+    "name": "彰化市・扇形車庫",
+    "lat": 24.085948,
+    "lng": 120.54017,
+    "story": "彰化扇形車庫建於1922年，火車頭可由中央轉盤進入不同股道接受保養與休息。十二股軌道像扇骨向外展開，讓它成為鐵道文化的重要古蹟。",
+    "src": "https://www.tad.gov.tw/m1.aspx?id=A12-00401&sNo=0001113",
+    "label": "交通部觀光署：彰化扇形車庫",
+    "lesson": {
+      "fact": "扇形車庫被稱作「火車頭旅館」，因為火車頭長途運轉後會回到這裡檢修、保養。",
+      "key": "工業設施也可以成為城市文化記憶的一部分。",
+      "src": "https://www.tad.gov.tw/m1.aspx?id=A12-00401&sNo=0001113",
+      "label": "交通部觀光署：彰化扇形車庫"
+    },
+    "difficulty": 2,
+    "audit": {
+      "checkedAt": "2026-11-04",
+      "factStatus": "reviewed",
+      "locationType": "鐵道車庫",
+      "locationPrecision": "official-point",
+      "locationNote": "採觀光署 24.085948,120.54017；彰化市彰美路一段1號。",
+      "factNote": "1922建造、調車轉盤與十二股道依交通部觀光署。",
+      "sourceAvailability": "readable",
+      "coordinateSource": "https://www.tad.gov.tw/m1.aspx?id=A12-00401&sNo=0001113"
+    }
+  }
 ];
 export const LESSONS=Object.fromEntries(Q.map(q=>[q.id,q.lesson]));
