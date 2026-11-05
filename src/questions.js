@@ -1,5 +1,5 @@
-// Editorial bank: one record contains the question, lesson, and audit trail.
-export const types={history:'🏛 台灣歷史',social:'✊ 社會記憶',sports:'⚾ 體育文化'};
+// Original editorial summaries; public source and coordinate provenance travel with every question.
+export const types={"history":"🏛 台灣歷史","social":"✊ 社會記憶","culture":"🎨 文化生活","sports":"⚾ 體育文化"};
 export const Q=[
   {
     "id": "tianma",
@@ -30,7 +30,8 @@ export const Q=[
       "factNote": "來源改為直接場址記錄。",
       "sourceAvailability": "readable",
       "coordinateSource": "https://tcmb.culture.tw/zh-tw/detail?id=476225&indexCode=Culture_Place"
-    }
+    },
+    "topic": "heritage"
   },
   {
     "id": "dragon",
@@ -61,7 +62,8 @@ export const Q=[
       "factNote": "1935 震毀及 1999 再受損均可核對。",
       "sourceAvailability": "readable",
       "coordinateSource": "https://www.tad.gov.tw/m1.aspx?id=C100_342&sno=0001016"
-    }
+    },
+    "topic": "heritage"
   },
   {
     "id": "wushe",
@@ -92,7 +94,8 @@ export const Q=[
       "factNote": "保留事件／紀念地區別。",
       "sourceAvailability": "readable",
       "coordinateSource": "https://tcmb.culture.tw/zh-tw/detail?id=618941&indexCode=Culture_Place"
-    }
+    },
+    "topic": "heritage"
   },
   {
     "id": "xiluo",
@@ -123,7 +126,8 @@ export const Q=[
       "factNote": "1952 完工與 1953 通車須區分；本題問通車。",
       "sourceAvailability": "readable",
       "coordinateSource": "https://publicworks.chcg.gov.tw/getFile.aspx?did=25347&file=2&file_id=422161&type=2"
-    }
+    },
+    "topic": "heritage"
   },
   {
     "id": "anping",
@@ -154,7 +158,8 @@ export const Q=[
       "factNote": "1624 起建與後續增建須區分。",
       "sourceAvailability": "readable",
       "coordinateSource": "https://www.tad.gov.tw/m1.aspx?id=147&sno=0001016"
-    }
+    },
+    "topic": "heritage"
   },
   {
     "id": "beinan",
@@ -185,7 +190,8 @@ export const Q=[
       "factNote": "1980、13 次發掘可核對。",
       "sourceAvailability": "readable",
       "coordinateSource": "https://www.taiwan.net.tw/m1.aspx?id=9576&sno=0001123"
-    }
+    },
+    "topic": "heritage"
   },
   {
     "id": "lindashan",
@@ -216,7 +222,8 @@ export const Q=[
       "factNote": "1939 開發、1960 年代小上海依林業署；非首次人類活動年份。",
       "sourceAvailability": "readable",
       "coordinateSource": "https://www.forest.gov.tw/0000221"
-    }
+    },
+    "topic": "heritage"
   },
   {
     "id": "penghu-fort",
@@ -247,7 +254,8 @@ export const Q=[
       "factNote": "官方資料有1887興建、1888或1889完工歧異，移除唯一精確年宣稱。",
       "sourceAvailability": "readable",
       "coordinateSource": "https://www.tad.gov.tw/m1.aspx?id=2139&sNo=0001016"
-    }
+    },
+    "topic": "heritage"
   },
   {
     "id": "kinmen-battle",
@@ -278,7 +286,8 @@ export const Q=[
       "factNote": "保留1949事件年，館舍為後設紀念場所。",
       "sourceAvailability": "readable",
       "coordinateSource": "https://www.tad.gov.tw/m1.aspx?id=C100_216&sNo=0001126"
-    }
+    },
+    "topic": "heritage"
   },
   {
     "id": "matsu88",
@@ -309,7 +318,8 @@ export const Q=[
       "factNote": "官方可核對命名及用途；未直接佐證1974，年份改戰地時期。",
       "sourceAvailability": "readable",
       "coordinateSource": "https://www.tad.gov.tw/m1.aspx?id=10447&sNo=0001127"
-    }
+    },
+    "topic": "heritage"
   },
   {
     "id": "quake",
@@ -340,7 +350,8 @@ export const Q=[
       "factNote": "國中校址保存；冷知識移除未重新核實的精確隆起高度。",
       "sourceAvailability": "readable",
       "coordinateSource": "https://tcmb.culture.tw/zh-tw/detail?id=148080&indexCode=Culture_Place"
-    }
+    },
+    "topic": "memory"
   },
   {
     "id": "formosa",
@@ -371,7 +382,8 @@ export const Q=[
       "factNote": "原來源137為雜誌社服務處，改交通局歷史文獻。",
       "sourceAvailability": "readable",
       "coordinateSource": "https://www.tbkc.gov.tw/FileOutput/Page/%E5%85%AC%E8%BB%8A%E5%A5%97%E6%9B%B82%E8%BF%BD%E5%85%AC%E8%BB%8A%E7%9A%84%E8%A8%98%E6%86%B6%28%E5%85%A8%29-%E5%96%AE%E9%A0%81-%E5%90%88%E4%BD%B5.pdf?id=bd57dd88-361f-43ea-93e0-7e0fa8fd9861"
-    }
+    },
+    "topic": "memory"
   },
   {
     "id": "lily",
@@ -402,7 +414,8 @@ export const Q=[
       "factNote": "1990年3月、廣場靜坐及訴求可核對。",
       "sourceAvailability": "readable",
       "coordinateSource": "https://tcmb.culture.tw/zh-tw/detail?id=28310051057&indexCode=MOCCOLLECTIONS"
-    }
+    },
+    "topic": "memory"
   },
   {
     "id": "xiaolin",
@@ -433,7 +446,8 @@ export const Q=[
       "factNote": "462人、2009災難與2012公園啟用可核對。",
       "sourceAvailability": "readable",
       "coordinateSource": "https://khh.travel/zh-tw/attractions/detail/52/"
-    }
+    },
+    "topic": "memory"
   },
   {
     "id": "baseball01",
@@ -464,7 +478,8 @@ export const Q=[
       "factNote": "原球場資訊不足佐證賽事，補臺北畫刊專訪。",
       "sourceAvailability": "readable",
       "coordinateSource": "https://www-ws.gov.taipei/001/Upload/public/MMO/READ/585_01.pdf"
-    }
+    },
+    "topic": "baseball"
   },
   {
     "id": "worldgames09",
@@ -495,7 +510,8 @@ export const Q=[
       "factNote": "2009開閉幕與太陽能屋頂可核對。",
       "sourceAvailability": "readable",
       "coordinateSource": "https://khh.travel/zh-tw/attractions/detail/164/"
-    }
+    },
+    "topic": "multisport"
   },
   {
     "id": "universiade17",
@@ -508,25 +524,26 @@ export const Q=[
     "lat": 25.04944,
     "lng": 121.55111,
     "story": "2017 年 8 月 19 日，臺北世大運開幕典禮在臺北田徑場舉行。",
-    "src": "https://travel.taipei/zh-tw/event-calendar/details/8895",
-    "label": "臺北旅遊網：世大運開幕",
+    "src": "https://www.fisu.net/2017/08/19/29th-summer-universiade-opens-in-splendor/",
+    "label": "FISU：2017世大運開幕報導",
     "lesson": {
       "fact": "2017 年臺北世大運開幕場地是臺北田徑場，不是同在臺北的其他大型室內場館。",
       "key": "同一場國際賽，開幕典禮與不同項目可能分散於多座場館。",
-      "src": "https://travel.taipei/zh-tw/event-calendar/details/8895",
-      "label": "臺北旅遊網：世大運開幕"
+      "src": "https://www.fisu.net/2017/08/19/29th-summer-universiade-opens-in-splendor/",
+      "label": "FISU：2017世大運開幕報導"
     },
     "difficulty": 2,
     "audit": {
-      "checkedAt": "2026-10-26",
+      "checkedAt": "2026-11-05",
       "factStatus": "reviewed",
       "locationType": "田徑場",
       "locationPrecision": "approximate-site",
       "locationNote": "沿用臺北田徑場概略點；非小巨蛋。",
-      "factNote": "來源從首頁改為2017/8/19活動頁。",
+      "factNote": "原臺北旅遊網啟用防爬驗證，改採FISU當日開幕報導；場址另採市府交通管制記錄。 本輪再次核對FISU開幕報導，原臺北旅遊網來源遇403。",
       "sourceAvailability": "readable",
-      "coordinateSource": "https://travel.taipei/zh-tw/event-calendar/details/8895"
-    }
+      "coordinateSource": "https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&s=4FCD6FEB4EAA1171&sms=72544237BBE4C5F6"
+    },
+    "topic": "multisport"
   },
   {
     "id": "cpbl90",
@@ -557,7 +574,8 @@ export const Q=[
       "factNote": "原404來源改文獻館具日期／場地記錄。",
       "sourceAvailability": "readable",
       "coordinateSource": "https://www.th.gov.tw/Epaper_Content/238/7969/"
-    }
+    },
+    "topic": "baseball"
   },
   {
     "id": "intercontinental",
@@ -588,7 +606,8 @@ export const Q=[
       "factNote": "來源改固定2023賽事頁，避免現屆賽事首頁。",
       "sourceAvailability": "readable",
       "coordinateSource": "https://www.mlb.com/world-baseball-classic/2023-bracket-standings"
-    }
+    },
+    "topic": "baseball"
   },
   {
     "id": "chengching",
@@ -619,7 +638,8 @@ export const Q=[
       "factNote": "1999首賽事依鳥松區公所；移除只指首頁的連結。",
       "sourceAvailability": "readable",
       "coordinateSource": "https://niaosong.kcg.gov.tw/cp.aspx?n=D03E02AAC03A7B22"
-    }
+    },
+    "topic": "baseball"
   },
   {
     "id": "taoyuanball",
@@ -650,6 +670,955 @@ export const Q=[
       "factNote": "2009/12/12完工、12/13啟用依體育局。",
       "sourceAvailability": "readable",
       "coordinateSource": "https://www.dst.tycg.gov.tw/cp.aspx?Create=1&n=11738"
+    },
+    "topic": "baseball"
+  },
+  {
+    "id": "jian-qingxiu",
+    "c": "culture",
+    "region": "east",
+    "county": "花蓮縣",
+    "year": "日治時期",
+    "title": "花蓮曾有名為「吉野」的日本移民村，留下了一座保存八十八尊石佛的日式宗教建築。如今的「慶修院」在哪裡？",
+    "name": "花蓮吉安・慶修院",
+    "lat": 23.973688,
+    "lng": 121.56471,
+    "story": "吉安慶修院前身是真言宗吉野布教所，曾是日治時期移民村的宗教信仰中心。院內的八十八尊石佛、木造寺院樣式，保存了一段花蓮移民聚落的生活記憶。",
+    "src": "https://www.hccc.gov.tw/zh-tw/LocalCulturalHall/Detail/23",
+    "label": "花蓮縣文化局：吉安慶修院",
+    "lesson": {
+      "fact": "吉安的「吉野」地名與日治時期日本移民村有關；慶修院原本是移民的宗教據點，而非單純為觀光興建的日式景點。",
+      "key": "老建築記錄的不只是風格，還有移民與地方社會的變化。",
+      "src": "https://www.hccc.gov.tw/zh-tw/LocalCulturalHall/Detail/23",
+      "label": "花蓮縣文化局"
+    },
+    "difficulty": 2,
+    "audit": {
+      "checkedAt": "2026-11-04",
+      "factStatus": "reviewed",
+      "locationType": "歷史寺院",
+      "locationPrecision": "official-point",
+      "locationNote": "採交通部觀光署所列慶修院景點座標 23.973688,121.56471；對應吉安鄉中興路345-1號。",
+      "factNote": "文化局與觀光署證實吉野移民村及八十八尊石佛；各官方檔案對創建年份有1916／1917差異，本題使用「日治時期」。",
+      "sourceAvailability": "readable",
+      "coordinateSource": "https://www.taiwan.net.tw/m1.aspx?id=A12-00292&sno=0001016"
+    },
+    "topic": "faith"
+  },
+  {
+    "id": "lanyang-museum",
+    "c": "culture",
+    "region": "east",
+    "county": "宜蘭縣",
+    "year": "2010",
+    "title": "2010 年正式開館，一座外型像東北角「單面山」的博物館，建在烏石港濕地旁。它位於哪裡？",
+    "name": "宜蘭頭城・蘭陽博物館",
+    "lat": 24.869007,
+    "lng": 121.83277,
+    "story": "蘭陽博物館在 2010 年 10 月 16 日正式開館，源自地方人士希望保存烏石港歷史文化的倡議。建築呼應東北角單面山地形，展示宜蘭的山、平原、海與人文。",
+    "src": "https://www.lym.gov.tw/ch/audience-service/faq/",
+    "label": "蘭陽博物館：常見問答",
+    "lesson": {
+      "fact": "蘭陽博物館不是把濕地填平後孤立的建築；它的設計融入單面山、岩層節理與烏石港濕地景觀。",
+      "key": "建築外觀也可以成為理解地方地理的第一堂課。",
+      "src": "https://www.taiwan.net.tw/m1.aspx?id=A12-00569&sNo=0001106",
+      "label": "交通部觀光署：蘭陽博物館"
+    },
+    "difficulty": 1,
+    "audit": {
+      "checkedAt": "2026-11-04",
+      "factStatus": "reviewed",
+      "locationType": "博物館",
+      "locationPrecision": "official-point",
+      "locationNote": "採交通部觀光署景點座標 24.869007,121.83277；地址頭城鎮青雲路三段750號。",
+      "factNote": "2010/10/16正式開館依博物館官方FAQ；建築單面山與濕地依觀光署。",
+      "sourceAvailability": "readable",
+      "coordinateSource": "https://www.taiwan.net.tw/m1.aspx?id=A12-00569&sNo=0001106"
+    },
+    "topic": "heritage"
+  },
+  {
+    "id": "hongye-baseball",
+    "c": "sports",
+    "region": "east",
+    "county": "臺東縣",
+    "year": "1968",
+    "title": "1968 年，一支來自臺東布農族部落的少棒隊擊敗日本和歌山隊，掀起臺灣棒球熱。紀念這段傳奇的紅葉少棒紀念館在哪裡？",
+    "name": "臺東延平・紅葉少棒紀念館",
+    "lat": 22.89352,
+    "lng": 121.06372,
+    "story": "1968 年臺東紅葉少棒隊的勝利引起關注，鼓舞日後臺灣少棒發展。紀念館設在紅葉國小校園內，保存球具、照片和球隊故事；這題定位的是紀念館，不是當年對戰球場。",
+    "src": "https://media.taiwan.net.tw/en-us/portal/travel/details/attraction_a15010300h_000056",
+    "label": "交通部觀光署花東縱谷管理處：紅葉少棒紀念館",
+    "lesson": {
+      "fact": "紅葉少棒紀念館在 1992 年落成開放，館內除了球隊歷史，也連結紅葉村的布農族文化。",
+      "key": "臺灣棒球的熱潮，也有來自東部部落的起點。",
+      "src": "https://media.taiwan.net.tw/en-us/portal/travel/details/attraction_376540000a_000233",
+      "label": "臺東縣政府觀光資料"
+    },
+    "difficulty": 2,
+    "audit": {
+      "checkedAt": "2026-11-04",
+      "factStatus": "reviewed",
+      "locationType": "少棒紀念館",
+      "locationPrecision": "approximate-site",
+      "locationNote": "採臺東景點開放資料位置約 22.89352,121.06372；紀念館在紅葉國小校園內，非1968對日比賽原球場。",
+      "factNote": "觀光署明載1968對日本和歌山少棒隊與1992紀念館啟用，場址依臺東縣觀光資料紅谷路1號；精度視為校園內概略點。",
+      "sourceAvailability": "readable",
+      "coordinateSource": "https://media.taiwan.net.tw/en-us/portal/travel/details/attraction_376540000a_000233"
+    },
+    "topic": "baseball"
+  },
+  {
+    "id": "matsu-northsea",
+    "c": "history",
+    "region": "islands",
+    "county": "連江縣",
+    "year": "1968",
+    "title": "1968 年起的「北海計畫」在馬祖挖鑿地下碼頭，專供戰艇隱蔽停泊。南竿有座井字形水道坑道，位於何處？",
+    "name": "馬祖南竿・北海坑道",
+    "lat": 26.143015,
+    "lng": 119.92881,
+    "story": "北海坑道沿南竿鐵板海岸的花崗岩鑿建，形成可以停放船艇的地下水道。這項戰備設施後來轉為戰地文化景點，開放方式仍可能隨整修與潮汐改變。",
+    "src": "https://www.taiwan.net.tw/m1.aspx?id=A12-00590&sNo=0001127",
+    "label": "交通部觀光署：南竿北海坑道",
+    "lesson": {
+      "fact": "北海坑道最初不是天然海蝕洞，而是戰地時期為藏放軍用小艇而人工鑿出的巨大水道。",
+      "key": "岩石裡的地下碼頭，是馬祖戰地生活留下的空間證據。",
+      "src": "https://www.taiwan.net.tw/m1.aspx?id=A12-00590&sNo=0001127",
+      "label": "交通部觀光署：南竿北海坑道"
+    },
+    "difficulty": 3,
+    "audit": {
+      "checkedAt": "2026-11-04",
+      "factStatus": "reviewed",
+      "locationType": "戰備坑道",
+      "locationPrecision": "official-point",
+      "locationNote": "採觀光署景點座標 26.143015,119.92881，位於南竿北海坑道區域。",
+      "factNote": "1968指北海計畫起始年，不宣稱坑道於當年即完工；觀光署公告2026/10至2027/3整修，遊戲不保證現場開放。",
+      "sourceAvailability": "readable",
+      "coordinateSource": "https://www.taiwan.net.tw/m1.aspx?id=A12-00590&sNo=0001127"
+    },
+    "topic": "military"
+  },
+  {
+    "id": "penghu-crossbridge",
+    "c": "social",
+    "region": "islands",
+    "county": "澎湖縣",
+    "year": "島間交通",
+    "title": "跨越吼門水道，連接白沙與西嶼的大橋，改變了居民的島間往來。請找澎湖跨海大橋的白沙端。",
+    "name": "澎湖白沙・跨海大橋白沙端",
+    "lat": 23.657823,
+    "lng": 119.55453,
+    "story": "原先單線的大橋讓會車不便，後來重建拓寬為雙線。橋的故事不只在長度，也在島民如何更方便地往返、運送物資與生活。",
+    "src": "https://www.tad.gov.tw/m1.aspx?id=658&sNo=0001016",
+    "label": "交通部觀光署：澎湖跨海大橋",
+    "lesson": {
+      "fact": "跨海大橋連接的是白沙與西嶼，並不是一座通往臺灣本島的橋。",
+      "key": "一條交通線，也能改變離島居民的生活距離。",
+      "src": "https://www.tad.gov.tw/m1.aspx?id=658&sNo=0001016",
+      "label": "交通部觀光署：澎湖跨海大橋"
+    },
+    "difficulty": 1,
+    "audit": {
+      "checkedAt": "2026-11-04",
+      "reviewBatch": "PR2-revised",
+      "factStatus": "reviewed",
+      "locationType": "橋頭",
+      "locationPrecision": "official-point",
+      "locationNote": "採觀光署列點（白沙端），題幹明示橋端；不把橋頭說成橋中點。",
+      "factNote": "跨海大橋連接的是白沙與西嶼，並不是一座通往臺灣本島的橋。",
+      "sourceAvailability": "readable",
+      "coordinateSource": "https://www.tad.gov.tw/m1.aspx?id=658&sNo=0001016"
+    },
+    "topic": "transport"
+  },
+  {
+    "id": "dongyin-lighthouse",
+    "c": "history",
+    "region": "islands",
+    "county": "連江縣",
+    "year": "1904",
+    "title": "1904 年完工，曾因軍事因素停止點燈、1989 年恢復運作。馬祖東引島這座白色燈塔在哪裡？",
+    "name": "馬祖東引・東引島燈塔",
+    "lat": 26.365429,
+    "lng": 120.51049,
+    "story": "東引島燈塔又稱東湧島燈塔，坐落東引島東側。1904 年完工；1958 年因軍事因素停用，1989 年恢復發光，見證航海安全與戰地管制的交錯歷史。",
+    "src": "https://www.taiwan.net.tw/m1.aspx?id=A12-00213&sno=0001016",
+    "label": "交通部觀光署：東引島燈塔",
+    "lesson": {
+      "fact": "燈塔也會因軍事需求暫停運作：東引燈塔曾在1958年停用，到1989年才恢復發光。",
+      "key": "離島燈塔既是航海路標，也映照出戰地年代的變遷。",
+      "src": "https://www.taiwan.net.tw/m1.aspx?id=A12-00213&sno=0001016",
+      "label": "交通部觀光署：東引島燈塔"
+    },
+    "difficulty": 3,
+    "audit": {
+      "checkedAt": "2026-11-04",
+      "factStatus": "reviewed",
+      "locationType": "燈塔",
+      "locationPrecision": "official-point",
+      "locationNote": "採觀光署 26.365429,120.51049；位於東引島，與南竿島坑道不同。",
+      "factNote": "1904完工、1958停用、1989復燈依觀光署。",
+      "sourceAvailability": "readable",
+      "coordinateSource": "https://www.taiwan.net.tw/m1.aspx?id=A12-00213&sno=0001016"
+    },
+    "topic": "heritage"
+  },
+  {
+    "id": "chihkan",
+    "c": "history",
+    "region": "south",
+    "county": "臺南市",
+    "year": "1653",
+    "title": "1653 年荷蘭人興建「普羅民遮堡」，鄭氏時期又成為重要行政據點。今天人們稱它什麼、在哪裡？",
+    "name": "臺南中西區・赤崁樓",
+    "lat": 22.997478,
+    "lng": 120.20254,
+    "story": "赤崁樓前身是1653年荷蘭人建造的普羅民遮堡，與安平的熱蘭遮堡是不同據點。經歷鄭氏與清領時期變遷後，今日建築風貌已經與荷蘭初建時不同。",
+    "src": "https://www.taiwan.net.tw/m1.aspx?id=10889&sno=0001016",
+    "label": "交通部觀光署：赤崁樓",
+    "lesson": {
+      "fact": "安平古堡的舊稱是熱蘭遮堡；赤崁樓的前身則是普羅民遮堡，兩處不能混為一談。",
+      "key": "同在臺南，兩座荷蘭時期古堡代表了不同的歷史據點。",
+      "src": "https://www.taiwan.net.tw/m1.aspx?id=10889&sno=0001016",
+      "label": "交通部觀光署：赤崁樓"
+    },
+    "difficulty": 2,
+    "audit": {
+      "checkedAt": "2026-11-04",
+      "factStatus": "reviewed",
+      "locationType": "古堡遺址",
+      "locationPrecision": "official-point",
+      "locationNote": "採觀光署 22.997478,120.20254；臺南市中西區民族路二段212號。",
+      "factNote": "1653創建與普羅民遮堡舊名可核對；本題與既有安平古堡角度不同，刻意對比而非重複同一位置。",
+      "sourceAvailability": "readable",
+      "coordinateSource": "https://www.taiwan.net.tw/m1.aspx?id=10889&sno=0001016"
+    },
+    "topic": "heritage"
+  },
+  {
+    "id": "kaohsiung-lighthouse",
+    "c": "history",
+    "region": "south",
+    "county": "高雄市",
+    "year": "1883",
+    "title": "1883 年設置、如今以白色八角形磚造塔身聞名的百年燈塔，從高處守望高雄港船隻。它在哪裡？",
+    "name": "高雄旗津・旗後燈塔",
+    "lat": 22.615459,
+    "lng": 120.26495,
+    "story": "高雄燈塔又稱旗後燈塔，最早在1883年設置，因打狗港與海上商船日漸繁盛而興建。今日所見八角形白塔見證高雄港的航運發展；不同年代的塔體曾經改建。",
+    "src": "https://www.taiwan.net.tw/m1.aspx?id=a12-00183&sNo=0001016",
+    "label": "交通部觀光署：高雄燈塔",
+    "lesson": {
+      "fact": "高雄燈塔設置於清代，今日白色八角塔並非完全等同1883年最初的塔體。",
+      "key": "一座燈塔可以跨越清領、日治與戰後，不同時期的航運需求都留下痕跡。",
+      "src": "https://www.taiwan.net.tw/m1.aspx?id=a12-00183&sNo=0001016",
+      "label": "交通部觀光署：高雄燈塔"
+    },
+    "difficulty": 2,
+    "audit": {
+      "checkedAt": "2026-11-04",
+      "factStatus": "reviewed",
+      "locationType": "燈塔",
+      "locationPrecision": "official-point",
+      "locationNote": "採觀光署旗後燈塔 22.615459,120.26495；旗津區旗下巷34號。",
+      "factNote": "1883設置與現八角型塔見觀光署；塔體改建資料亦見高雄市文化局古蹟調查，避免將1883直接說成現塔建造年。",
+      "sourceAvailability": "readable",
+      "coordinateSource": "https://www.taiwan.net.tw/m1.aspx?id=a12-00183&sNo=0001016"
+    },
+    "topic": "heritage"
+  },
+  {
+    "id": "chiayi-tropic",
+    "c": "history",
+    "region": "south",
+    "county": "嘉義市",
+    "year": "2004",
+    "title": "2004 年夏至，嘉義一處路口正式啟用多座歷年北回歸線標誌群。這座「全球北回歸線標誌第十處」在哪裡？",
+    "name": "嘉義市西區・北回歸線標誌群",
+    "lat": 23.466307,
+    "lng": 120.42613,
+    "story": "嘉義市博愛路與世賢路口在2004年6月21日啟用北回歸線標誌群，結合地球科學、地方地名與城市道路景觀，是可以在街道上認識地理的一處特殊場址。",
+    "src": "https://www.taiwan.net.tw/m1.aspx?id=8969&sNo=0001117",
+    "label": "交通部觀光署：全球北回歸線標誌第十處",
+    "lesson": {
+      "fact": "北回歸線不是只在課本上的緯線：嘉義市某個日常路口就有一組跨年代留下的標誌。",
+      "key": "一座路口的地標，也可以連結地球科學和城市歷史。",
+      "src": "https://www.taiwan.net.tw/m1.aspx?id=8969&sNo=0001117",
+      "label": "交通部觀光署：全球北回歸線標誌第十處"
+    },
+    "difficulty": 3,
+    "audit": {
+      "checkedAt": "2026-11-04",
+      "factStatus": "reviewed",
+      "locationType": "地理標誌群",
+      "locationPrecision": "official-point",
+      "locationNote": "採觀光署列示 23.466307,120.42613；位置是嘉義市博愛路與世賢路交會處，非嘉義縣其他北回歸線公園。",
+      "factNote": "2004/6/21及全球第十處等表述直接取自觀光署特定景點頁。",
+      "sourceAvailability": "readable",
+      "coordinateSource": "https://www.taiwan.net.tw/m1.aspx?id=8969&sNo=0001117"
+    },
+    "topic": "heritage"
+  },
+  {
+    "id": "changhua-roundhouse",
+    "c": "history",
+    "region": "central",
+    "county": "彰化縣",
+    "year": "1922",
+    "title": "1922 年興建、鐵軌圍繞中央調車轉盤像扇子張開，被暱稱「火車頭旅館」的車庫位於哪裡？",
+    "name": "彰化市・扇形車庫",
+    "lat": 24.085948,
+    "lng": 120.54017,
+    "story": "彰化扇形車庫建於1922年，火車頭可由中央轉盤進入不同股道接受保養與休息。十二股軌道像扇骨向外展開，讓它成為鐵道文化的重要古蹟。",
+    "src": "https://www.tad.gov.tw/m1.aspx?id=A12-00401&sNo=0001113",
+    "label": "交通部觀光署：彰化扇形車庫",
+    "lesson": {
+      "fact": "扇形車庫被稱作「火車頭旅館」，因為火車頭長途運轉後會回到這裡檢修、保養。",
+      "key": "工業設施也可以成為城市文化記憶的一部分。",
+      "src": "https://www.tad.gov.tw/m1.aspx?id=A12-00401&sNo=0001113",
+      "label": "交通部觀光署：彰化扇形車庫"
+    },
+    "difficulty": 2,
+    "audit": {
+      "checkedAt": "2026-11-04",
+      "factStatus": "reviewed",
+      "locationType": "鐵道車庫",
+      "locationPrecision": "official-point",
+      "locationNote": "採觀光署 24.085948,120.54017；彰化市彰美路一段1號。",
+      "factNote": "1922建造、調車轉盤與十二股道依交通部觀光署。",
+      "sourceAvailability": "readable",
+      "coordinateSource": "https://www.tad.gov.tw/m1.aspx?id=A12-00401&sNo=0001113"
+    },
+    "topic": "railway"
+  },
+  {
+    "id": "pinegarden",
+    "c": "history",
+    "region": "east",
+    "county": "花蓮縣",
+    "year": "日治晚期",
+    "name": "花蓮市・松園別館",
+    "lat": 23.9828738,
+    "lng": 121.6155061,
+    "difficulty": 2,
+    "topic": "military",
+    "title": "老松樹環繞的軍事辦公建築，曾是花蓮港兵事部辦公室，如今成為藝文空間。松園別館在哪裡？",
+    "story": "松園別館利用美崙山麓的制高點，面向美崙溪口與花蓮港。軍事辦公空間轉為展演場所後，建築與松林一起保留了城市的另一面。",
+    "src": "https://hualien.travel/zh-tw/attraction/12/",
+    "label": "花蓮縣政府：松園別館",
+    "lesson": {
+      "fact": "今日可以看展、讀詩的松園，原先是軍事辦公空間。",
+      "key": "一座建築的用途改變，也會改變人們接近它的方式。",
+      "src": "https://hualien.travel/zh-tw/attraction/12/",
+      "label": "花蓮縣政府：松園別館"
+    },
+    "audit": {
+      "checkedAt": "2026-11-04",
+      "reviewBatch": "v3.1",
+      "factStatus": "reviewed",
+      "locationType": "歷史建築",
+      "locationPrecision": "official-point",
+      "locationNote": "採官方頁導航點；僅使用日治晚期，不引用神風特攻隊傳說。",
+      "factNote": "今日可以看展、讀詩的松園，原先是軍事辦公空間。",
+      "sourceAvailability": "readable",
+      "coordinateSource": "https://hualien.travel/zh-tw/attraction/12/"
+    }
+  },
+  {
+    "id": "hualien-sugar",
+    "c": "social",
+    "region": "east",
+    "county": "花蓮縣",
+    "year": "產業轉型",
+    "name": "花蓮光復・花蓮觀光糖廠",
+    "lat": 23.658718,
+    "lng": 121.42063,
+    "difficulty": 1,
+    "topic": "industry",
+    "title": "從製糖工廠轉型為觀光文化園區，留下日式員工宿舍，也承載許多人吃冰的回憶。這座光復的糖廠在哪裡？",
+    "story": "工廠不只是機器，也包括員工生活的宿舍。花蓮糖廠轉型後，保存的和式木造宿舍成為旅宿，產業空間逐漸走進旅人的日常。",
+    "src": "https://www.tad.gov.tw/m1.aspx?id=C100_176&sNo=0001016",
+    "label": "交通部觀光署：花蓮觀光糖廠",
+    "lesson": {
+      "fact": "光復糖廠的日式宿舍原本是員工的生活空間。",
+      "key": "吃一口冰之外，也能從老房子認識製糖產業與勞動生活。",
+      "src": "https://www.tad.gov.tw/m1.aspx?id=C100_176&sNo=0001016",
+      "label": "交通部觀光署：花蓮觀光糖廠"
+    },
+    "audit": {
+      "checkedAt": "2026-11-04",
+      "reviewBatch": "v3.1",
+      "factStatus": "reviewed",
+      "locationType": "糖廠園區",
+      "locationPrecision": "official-point",
+      "locationNote": "採官方園區點；不將園區代表點稱為廠房精確中心。",
+      "factNote": "光復糖廠的日式宿舍原本是員工的生活空間。",
+      "sourceAvailability": "readable",
+      "coordinateSource": "https://www.tad.gov.tw/m1.aspx?id=C100_176&sNo=0001016"
+    }
+  },
+  {
+    "id": "guanshan-old",
+    "c": "history",
+    "region": "east",
+    "county": "臺東縣",
+    "year": "日治時期",
+    "name": "臺東關山・舊關山車站",
+    "lat": 23.046799,
+    "lng": 121.164724,
+    "difficulty": 3,
+    "topic": "railway",
+    "title": "日治時期稱為「里壠驛」，新站南移後保留的舊站房，後經修復再利用。這座老車站在哪裡？",
+    "story": "鐵路拓寬後，新的站房設於舊站南側，老站得以保留。修繕讓原本送往迎來的地方，繼續述說縱谷的交通生活。",
+    "src": "https://tcmb.culture.tw/zh-tw/detail?id=273954&indexCode=Culture_Place",
+    "label": "國家文化記憶庫：舊關山車站",
+    "lesson": {
+      "fact": "新站啟用不一定意味舊站必須拆除；關山留下了舊站房。",
+      "key": "找的是舊站場址，並不是現行列車的月台。",
+      "src": "https://tcmb.culture.tw/zh-tw/detail?id=273954&indexCode=Culture_Place",
+      "label": "國家文化記憶庫：舊關山車站"
+    },
+    "audit": {
+      "checkedAt": "2026-11-04",
+      "reviewBatch": "v3.1",
+      "factStatus": "reviewed",
+      "locationType": "舊站房",
+      "locationPrecision": "official-point",
+      "locationNote": "採文化處建檔點，觀光頁近似點亦可比對；設站年代有1919與1922不同敘述，不作唯一年份考題。",
+      "factNote": "新站啟用不一定意味舊站必須拆除；關山留下了舊站房。",
+      "sourceAvailability": "readable",
+      "coordinateSource": "https://tcmb.culture.tw/zh-tw/detail?id=273954&indexCode=Culture_Place"
+    }
+  },
+  {
+    "id": "baxian",
+    "c": "history",
+    "region": "east",
+    "county": "臺東縣",
+    "year": "史前",
+    "name": "臺東長濱・八仙洞",
+    "lat": 23.397167,
+    "lng": 121.476649,
+    "difficulty": 2,
+    "topic": "archaeology",
+    "title": "東海岸的海蝕洞穴群保存舊石器時代文化線索。「八仙洞」遺址位於哪裡？",
+    "story": "海水侵蝕與地殼抬升塑造了洞穴，也留下史前人類活動的線索。在長濱的岩壁前，地質時間與人類時間交會。",
+    "src": "https://tcmb.culture.tw/zh-tw/detail?id=274388&indexCode=Culture_Place",
+    "label": "國家文化記憶庫：八仙洞",
+    "lesson": {
+      "fact": "八仙洞不只有海蝕景觀，也保存了史前文化的研究線索。",
+      "key": "洞穴的形成與人類使用洞穴，是兩種不同的時間尺度。",
+      "src": "https://tcmb.culture.tw/zh-tw/detail?id=274388&indexCode=Culture_Place",
+      "label": "國家文化記憶庫：八仙洞"
+    },
+    "audit": {
+      "checkedAt": "2026-11-04",
+      "reviewBatch": "v3.1",
+      "factStatus": "reviewed",
+      "locationType": "洞穴群代表點",
+      "locationPrecision": "official-point",
+      "locationNote": "採文化處列點；不把代表點宣稱單一發掘坑，也不用最早人類活動絕對斷言。",
+      "factNote": "八仙洞不只有海蝕景觀，也保存了史前文化的研究線索。",
+      "sourceAvailability": "readable",
+      "coordinateSource": "https://tcmb.culture.tw/zh-tw/detail?id=274388&indexCode=Culture_Place"
+    }
+  },
+  {
+    "id": "dulan-sugar",
+    "c": "culture",
+    "region": "east",
+    "county": "臺東縣",
+    "year": "文化空間",
+    "name": "臺東東河・都蘭新東糖廠",
+    "lat": 22.872189,
+    "lng": 121.22544,
+    "difficulty": 2,
+    "topic": "industry",
+    "title": "阿美族部落的歌謠、工藝與創作氣息，走進昔日的紅糖產業空間。都蘭新東糖廠文化園區在哪裡？",
+    "story": "都蘭位於東部海岸南段，周邊有部落、遺址與海岸地景。新東糖廠成為接近地方藝術的一個入口，工業空間與當代文化在此相遇。",
+    "src": "https://www.tad.gov.tw/m1.aspx?id=A12-00286&sNo=0001016",
+    "label": "交通部觀光署：都蘭新東糖廠文化園區",
+    "lesson": {
+      "fact": "新東糖廠是認識都蘭文化的一個入口，卻不能代表整個部落。",
+      "key": "部落文化持續由在地人創作與傳承，並非停留在過去的展品。",
+      "src": "https://www.tad.gov.tw/m1.aspx?id=A12-00286&sNo=0001016",
+      "label": "交通部觀光署：都蘭新東糖廠文化園區"
+    },
+    "audit": {
+      "checkedAt": "2026-11-04",
+      "reviewBatch": "v3.1",
+      "factStatus": "reviewed",
+      "locationType": "糖廠文化園區",
+      "locationPrecision": "official-point",
+      "locationNote": "採官方列點；不附未核對的停產或轉型精確年份。",
+      "factNote": "新東糖廠是認識都蘭文化的一個入口，卻不能代表整個部落。",
+      "sourceAvailability": "readable",
+      "coordinateSource": "https://www.tad.gov.tw/m1.aspx?id=A12-00286&sNo=0001016"
+    }
+  },
+  {
+    "id": "penghu-temple",
+    "c": "culture",
+    "region": "islands",
+    "county": "澎湖縣",
+    "year": "1604",
+    "name": "澎湖馬公・澎湖天后宮",
+    "lat": 23.56469,
+    "lng": 119.56404,
+    "difficulty": 1,
+    "topic": "faith",
+    "title": "保存「沈有容諭退紅毛番韋麻郎等」石碑的媽祖廟，見證早期海上往來。澎湖天后宮在哪裡？",
+    "story": "媽宮是馬公的舊稱，也與在地媽祖信仰密切相連。廟中的石碑留下1604年的歷史線索，讓一座信仰中心同時成為閱讀海洋史的地方。",
+    "src": "https://taiwangods.moi.gov.tw/html/landscape/1_0011.aspx?i=62",
+    "label": "內政部臺灣宗教文化地圖：澎湖天后宮",
+    "lesson": {
+      "fact": "1604年的石碑是核對天后宮早期歷史的重要實物線索。",
+      "key": "可考的碑記年份，不能直接當成廟宇的創建年。",
+      "src": "https://taiwangods.moi.gov.tw/html/landscape/1_0011.aspx?i=62",
+      "label": "內政部臺灣宗教文化地圖：澎湖天后宮"
+    },
+    "audit": {
+      "checkedAt": "2026-11-04",
+      "reviewBatch": "v3.1",
+      "factStatus": "reviewed",
+      "locationType": "寺廟",
+      "locationPrecision": "official-point",
+      "locationNote": "採內政部經緯度；1604指碑記史事，避開創建年代推測。",
+      "factNote": "1604年的石碑是核對天后宮早期歷史的重要實物線索。",
+      "sourceAvailability": "readable",
+      "coordinateSource": "https://taiwangods.moi.gov.tw/html/landscape/1_0011.aspx?i=62"
+    }
+  },
+  {
+    "id": "erkan",
+    "c": "culture",
+    "region": "islands",
+    "county": "澎湖縣",
+    "year": "聚落記憶",
+    "name": "澎湖西嶼・二崁傳統聚落",
+    "lat": 23.605174,
+    "lng": 119.51961,
+    "difficulty": 2,
+    "topic": "settlement",
+    "title": "硓𥑮石與玄武岩砌成牆身，老屋保存閩南合院工藝，也延續傳香等地方生活。二崁聚落在哪裡？",
+    "story": "西嶼的老屋並非只有外觀值得看。陳家古厝的石材、交趾陶與泥塑，透露島民如何運用材料；修復後的聚落又發展出小型展示與地方產業。",
+    "src": "https://www.tad.gov.tw/m1.aspx?id=11487&sNo=0001016",
+    "label": "交通部觀光署：二崁傳統聚落",
+    "lesson": {
+      "fact": "二崁古厝利用在地石材建造，裝飾則呈現傳統工藝。",
+      "key": "聚落保存也包括生活與技藝，並不只是留下幾面牆。",
+      "src": "https://www.tad.gov.tw/m1.aspx?id=11487&sNo=0001016",
+      "label": "交通部觀光署：二崁傳統聚落"
+    },
+    "audit": {
+      "checkedAt": "2026-11-04",
+      "reviewBatch": "v3.1",
+      "factStatus": "reviewed",
+      "locationType": "聚落代表點",
+      "locationPrecision": "official-point",
+      "locationNote": "官方列點為聚落代表位置；不同資料的保存區年份不一，本題不考指定年。",
+      "factNote": "二崁古厝利用在地石材建造，裝飾則呈現傳統工藝。",
+      "sourceAvailability": "readable",
+      "coordinateSource": "https://www.tad.gov.tw/m1.aspx?id=11487&sNo=0001016"
+    }
+  },
+  {
+    "id": "yuweng-lighthouse",
+    "c": "history",
+    "region": "islands",
+    "county": "澎湖縣",
+    "year": "1875",
+    "name": "澎湖西嶼・漁翁島燈塔",
+    "lat": 23.5624207488885,
+    "lng": 119.469579885518,
+    "difficulty": 3,
+    "topic": "maritime",
+    "title": "西嶼曾有塔頂懸燈的古塔，1875年改建為西式鑄鐵燈塔。今天的漁翁島燈塔在哪裡？",
+    "story": "從石造塔燈到白色鑄鐵塔身，西嶼的海上導航設施歷經變化。門楣留下的工程師題字，與實際施工年份還必須分開理解。",
+    "src": "https://tcmb.culture.tw/zh-tw/detail?id=19870417000003&indexCode=BOCH_CountryCulture_11",
+    "label": "國家文化記憶庫：西嶼燈塔",
+    "lesson": {
+      "fact": "現存西式燈塔建於1875年，門楣上的1874是設計相關年份。",
+      "key": "看見建築上的年份，仍要查清楚它記錄的是設計、動工或完工。",
+      "src": "https://tcmb.culture.tw/zh-tw/detail?id=19870417000003&indexCode=BOCH_CountryCulture_11",
+      "label": "國家文化記憶庫：西嶼燈塔"
+    },
+    "audit": {
+      "checkedAt": "2026-11-04",
+      "reviewBatch": "v3.1",
+      "factStatus": "reviewed",
+      "locationType": "燈塔",
+      "locationPrecision": "official-point",
+      "locationNote": "採文資官方列點；以1875改建為西式燈塔，與1778舊塔及1874設計區分。",
+      "factNote": "現存西式燈塔建於1875年，門楣上的1874是設計相關年份。",
+      "sourceAvailability": "readable",
+      "coordinateSource": "https://tcmb.culture.tw/zh-tw/detail?id=19870417000003&indexCode=BOCH_CountryCulture_11"
+    }
+  },
+  {
+    "id": "zhaishan",
+    "c": "history",
+    "region": "islands",
+    "county": "金門縣",
+    "year": "戰地時期",
+    "name": "金門金城・翟山坑道",
+    "lat": 24.390301,
+    "lng": 118.32061,
+    "difficulty": 2,
+    "topic": "military",
+    "title": "花崗岩山腹內鑿出A字形水道，戰時讓小艇停泊運補。金門的翟山坑道在哪裡？",
+    "story": "坑道與水道相連，將軍事運補藏入山腹。今日走入這處場址，可以從停靠空間想像戰地交通的條件，卻不必將整座島的戰史簡化為一處工事。",
+    "src": "https://www.tad.gov.tw/m1.aspx?id=c100_230&sNo=0001016",
+    "label": "交通部觀光署：翟山坑道",
+    "lesson": {
+      "fact": "翟山坑道包含讓小艇運補的水道，不只是步兵走的山洞。",
+      "key": "工事的形狀與用途，透露當時人們面對的交通與防禦需求。",
+      "src": "https://www.tad.gov.tw/m1.aspx?id=c100_230&sNo=0001016",
+      "label": "交通部觀光署：翟山坑道"
+    },
+    "audit": {
+      "checkedAt": "2026-11-04",
+      "reviewBatch": "v3.1",
+      "factStatus": "reviewed",
+      "locationType": "坑道",
+      "locationPrecision": "official-point",
+      "locationNote": "採官方列點；國家公園與觀光資料對開挖年份不同，僅用戰地時期。",
+      "factNote": "翟山坑道包含讓小艇運補的水道，不只是步兵走的山洞。",
+      "sourceAvailability": "readable",
+      "coordinateSource": "https://www.tad.gov.tw/m1.aspx?id=c100_230&sNo=0001016"
+    }
+  },
+  {
+    "id": "lukang-longshan",
+    "c": "culture",
+    "region": "central",
+    "county": "彰化縣",
+    "year": "清代",
+    "name": "彰化鹿港・龍山寺",
+    "lat": 24.05042,
+    "lng": 120.43523,
+    "difficulty": 2,
+    "topic": "faith",
+    "title": "精緻木雕與戲台見證清代匠藝；1786年遷建現址的鹿港龍山寺，位於哪裡？",
+    "story": "先民迎請觀音信仰來臺，寺廟逐步形成地方生活的中心。今天的木構與雕刻，讓人從信仰之外，也能細看匠師如何表達故事與祝願。",
+    "src": "https://taiwangods.moi.gov.tw/html/cultural/3_0011.aspx?i=10",
+    "label": "內政部臺灣宗教文化地圖：鹿港龍山寺",
+    "lesson": {
+      "fact": "1786年指遷建現址，早期創建則仍有傳說與史料的差別。",
+      "key": "建築的歷史通常經過多次遷建與重修，並非只有一個年份。",
+      "src": "https://taiwangods.moi.gov.tw/html/cultural/3_0011.aspx?i=10",
+      "label": "內政部臺灣宗教文化地圖：鹿港龍山寺"
+    },
+    "audit": {
+      "checkedAt": "2026-11-04",
+      "reviewBatch": "v3.1",
+      "factStatus": "reviewed",
+      "locationType": "寺廟",
+      "locationPrecision": "official-point",
+      "locationNote": "採內政部座標；不用缺乏文獻的明代創建傳說作定論。",
+      "factNote": "1786年指遷建現址，早期創建則仍有傳說與史料的差別。",
+      "sourceAvailability": "readable",
+      "coordinateSource": "https://taiwangods.moi.gov.tw/html/cultural/3_0011.aspx?i=10"
+    }
+  },
+  {
+    "id": "jiji",
+    "c": "social",
+    "region": "central",
+    "county": "南投縣",
+    "year": "震後重建",
+    "name": "南投集集・集集車站",
+    "lat": 23.826451,
+    "lng": 120.78489,
+    "difficulty": 1,
+    "topic": "railway",
+    "title": "九二一地震毀壞後重建，仍保有日式木造外觀的集集線小站，是哪裡？",
+    "story": "車站既是往返鄉鎮的門戶，也承載震後重建的記憶。重建保留熟悉的外觀，讓地方地標與居民的日常重新接上軌道。",
+    "src": "https://travel.nantou.gov.tw/attractions/jiji-station/",
+    "label": "南投縣政府：集集車站",
+    "lesson": {
+      "fact": "現在看到的集集站外觀，包含九二一震後重建的成果。",
+      "key": "熟悉的老樣貌，可能承載著修復與重建的新歷程。",
+      "src": "https://travel.nantou.gov.tw/attractions/jiji-station/",
+      "label": "南投縣政府：集集車站"
+    },
+    "audit": {
+      "checkedAt": "2026-11-04",
+      "reviewBatch": "v3.1",
+      "factStatus": "reviewed",
+      "locationType": "車站",
+      "locationPrecision": "official-point",
+      "locationNote": "座標另採觀光署集集駅列點；不宣稱現存建物全部為1930原構件。",
+      "factNote": "現在看到的集集站外觀，包含九二一震後重建的成果。",
+      "sourceAvailability": "readable",
+      "coordinateSource": "https://jp.taiwan.net.tw/m1.aspx?id=A12-00195&sNo=0003016"
+    }
+  },
+  {
+    "id": "wufeng-lin",
+    "c": "history",
+    "region": "central",
+    "county": "臺中市",
+    "year": "清代",
+    "name": "臺中霧峰・林家宅第",
+    "lat": 24.063055,
+    "lng": 120.70078,
+    "difficulty": 3,
+    "topic": "settlement",
+    "title": "古稱「阿罩霧」的地方，留下林家下厝、頂厝與萊園等宅園記憶。霧峰林家宅第在哪裡？",
+    "story": "下厝與頂厝的人物，在軍事、文化與教育留下不同影響。宅第群分布在霧峰，不是一棟房子便能說完家族與地方的歷史。",
+    "src": "https://www.tad.gov.tw/m1.aspx?id=A12-00664&sNo=0001016",
+    "label": "交通部觀光署：霧峰林家宅第",
+    "lesson": {
+      "fact": "霧峰林家宅園有多個系統，不能用單一建築概括。",
+      "key": "認識大家族，也要看不同世代、不同角色如何影響地方。",
+      "src": "https://www.tad.gov.tw/m1.aspx?id=A12-00664&sNo=0001016",
+      "label": "交通部觀光署：霧峰林家宅第"
+    },
+    "audit": {
+      "checkedAt": "2026-11-04",
+      "reviewBatch": "v3.1",
+      "factStatus": "reviewed",
+      "locationType": "宅園代表點",
+      "locationPrecision": "official-point",
+      "locationNote": "採觀光署宅第群代表點，不等同大花廳入口；題目不指定單棟建物。",
+      "factNote": "霧峰林家宅園有多個系統，不能用單一建築概括。",
+      "sourceAvailability": "readable",
+      "coordinateSource": "https://www.tad.gov.tw/m1.aspx?id=A12-00664&sNo=0001016"
+    }
+  },
+  {
+    "id": "ntmofa",
+    "c": "culture",
+    "region": "central",
+    "county": "臺中市",
+    "year": "1988",
+    "name": "臺中西區・國立臺灣美術館",
+    "lat": 24.141362,
+    "lng": 120.66334,
+    "difficulty": 2,
+    "topic": "museum",
+    "title": "1988年開館，以臺灣現、當代視覺藝術的典藏、研究與展覽為主軸。國立臺灣美術館在哪裡？",
+    "story": "館內研究、保存藝術作品，戶外也有雕塑園區。美術館讓不同年代的創作者留下的觀看方式，成為公眾可以接近的文化資源。",
+    "src": "https://www.tad.gov.tw/m1.aspx?id=450&sNo=0001016",
+    "label": "交通部觀光署：國立臺灣美術館",
+    "lesson": {
+      "fact": "國美館不只舉辦展覽，也典藏與研究臺灣藝術。",
+      "key": "一件作品能被後人理解，背後還需要保存、研究與教育。",
+      "src": "https://www.tad.gov.tw/m1.aspx?id=450&sNo=0001016",
+      "label": "交通部觀光署：國立臺灣美術館"
+    },
+    "audit": {
+      "checkedAt": "2026-11-04",
+      "reviewBatch": "v3.1",
+      "factStatus": "reviewed",
+      "locationType": "美術館",
+      "locationPrecision": "official-point",
+      "locationNote": "採官方點位；1988為開館，不宣稱當時已使用現名。",
+      "factNote": "國美館不只舉辦展覽，也典藏與研究臺灣藝術。",
+      "sourceAvailability": "readable",
+      "coordinateSource": "https://www.tad.gov.tw/m1.aspx?id=450&sNo=0001016"
+    }
+  },
+  {
+    "id": "wushantou",
+    "c": "history",
+    "region": "south",
+    "county": "臺南市",
+    "year": "1930",
+    "name": "臺南官田・烏山頭水庫",
+    "lat": 23.207888,
+    "lng": 120.36338,
+    "difficulty": 2,
+    "topic": "water",
+    "title": "1930年完成、與嘉南大圳灌溉密切相關，曲折湖岸又有「珊瑚潭」之稱的水庫在哪裡？",
+    "story": "水利工程把河川、水庫與農田連在一起。烏山頭與嘉南大圳的工程在1930年完成，灌溉用途讓人看見嘉南平原農業與工程的關係。",
+    "src": "https://www.siraya-nsa.gov.tw/zh-tw/about-siraya/discover",
+    "label": "西拉雅國家風景區管理處：從源頭說起",
+    "lesson": {
+      "fact": "1930年是工程完工年，之前還有長期探勘與設計。",
+      "key": "地圖上的一片水面，也連著看不見的灌溉系統。",
+      "src": "https://www.siraya-nsa.gov.tw/zh-tw/about-siraya/discover",
+      "label": "西拉雅國家風景區管理處：從源頭說起"
+    },
+    "audit": {
+      "checkedAt": "2026-11-04",
+      "reviewBatch": "v3.1",
+      "factStatus": "reviewed",
+      "locationType": "水庫園區代表點",
+      "locationPrecision": "official-point",
+      "locationNote": "史事採西拉雅管理處，座標採觀光署園區點；不作壩體或水域中心精確定位。",
+      "factNote": "1930年是工程完工年，之前還有長期探勘與設計。",
+      "sourceAvailability": "readable",
+      "coordinateSource": "https://www.tad.gov.tw/m1.aspx?id=C100_142&sNo=0001016"
+    }
+  },
+  {
+    "id": "chimei",
+    "c": "culture",
+    "region": "south",
+    "county": "臺南市",
+    "year": "文化典藏",
+    "name": "臺南仁德・奇美博物館",
+    "lat": 22.934752,
+    "lng": 120.22605,
+    "difficulty": 1,
+    "topic": "museum",
+    "title": "許文龍創辦，收藏西洋藝術、樂器與自然史標本，座落臺南都會公園的私人博物館在哪裡？",
+    "story": "許文龍的收藏成為公眾接近藝術的窗口。從樂器到自然史，不同展品讓人帶著自己的興趣，走入博物館的世界。",
+    "src": "https://www.tad.gov.tw/m1.aspx?id=2574&sNo=0001016",
+    "label": "交通部觀光署：奇美博物館",
+    "lesson": {
+      "fact": "奇美博物館除了西洋藝術，也蒐藏樂器、兵器與自然史藏品。",
+      "key": "博物館可以從不同入口被認識；不懂繪畫也能從音樂開始。",
+      "src": "https://www.tad.gov.tw/m1.aspx?id=2574&sNo=0001016",
+      "label": "交通部觀光署：奇美博物館"
+    },
+    "audit": {
+      "checkedAt": "2026-11-04",
+      "reviewBatch": "v3.1",
+      "factStatus": "reviewed",
+      "locationType": "博物館",
+      "locationPrecision": "official-point",
+      "locationNote": "採官方列點；不列易變動的館藏數量或世界排名。",
+      "factNote": "奇美博物館除了西洋藝術，也蒐藏樂器、兵器與自然史藏品。",
+      "sourceAvailability": "readable",
+      "coordinateSource": "https://www.tad.gov.tw/m1.aspx?id=2574&sNo=0001016"
+    }
+  },
+  {
+    "id": "nmth",
+    "c": "culture",
+    "region": "south",
+    "county": "臺南市",
+    "year": "歷史教育",
+    "name": "臺南安南・國立臺灣歷史博物館",
+    "lat": 23.058373,
+    "lng": 120.23498,
+    "difficulty": 2,
+    "topic": "museum",
+    "title": "以多族群的生活與土地故事述說臺灣，戶外有太陽能「雲牆」意象。國立臺灣歷史博物館在哪裡？",
+    "story": "臺史博保存許多來自民眾捐贈的物件，從日常生活理解大歷史。展館與戶外公園的設計，也把渡海、島嶼與族群交流放進空間。",
+    "src": "https://www.tad.gov.tw/m1.aspx?id=A12-00403&sNo=0001016",
+    "label": "交通部觀光署：國立臺灣歷史博物館",
+    "lesson": {
+      "fact": "民眾的日常物件也能成為歷史博物館的館藏。",
+      "key": "歷史不只由大人物留下，也由生活中看似普通的東西累積。",
+      "src": "https://www.tad.gov.tw/m1.aspx?id=A12-00403&sNo=0001016",
+      "label": "交通部觀光署：國立臺灣歷史博物館"
+    },
+    "audit": {
+      "checkedAt": "2026-11-04",
+      "reviewBatch": "v3.1",
+      "factStatus": "reviewed",
+      "locationType": "博物館",
+      "locationPrecision": "official-point",
+      "locationNote": "採官方列點；不考查未另外核對的建館精確日期。",
+      "factNote": "民眾的日常物件也能成為歷史博物館的館藏。",
+      "sourceAvailability": "readable",
+      "coordinateSource": "https://www.tad.gov.tw/m1.aspx?id=A12-00403&sNo=0001016"
+    }
+  },
+  {
+    "id": "chiayi-prison",
+    "c": "social",
+    "region": "south",
+    "county": "嘉義市",
+    "year": "日治時期",
+    "name": "嘉義市・嘉義舊監獄",
+    "lat": 23.486047,
+    "lng": 120.458656,
+    "difficulty": 3,
+    "topic": "justice",
+    "title": "保存日治時期監獄建築群，讓人認識收容、教化與近代獄政變遷。嘉義舊監獄在哪裡？",
+    "story": "監舍、工場與管理空間，一起構成監獄的生活環境。保存這處建築，讓制度如何落在日常空間裡，成為可以被觀察與討論的問題。",
+    "src": "https://tcmb.culture.tw/zh-tw/detail?id=188384&indexCode=Culture_Place",
+    "label": "國家文化記憶庫：國定古蹟嘉義舊監獄",
+    "lesson": {
+      "fact": "舊監獄保存的不只建築技術，也提供理解近代獄政的材料。",
+      "key": "閱讀制度的歷史，也要看人在其中如何生活。",
+      "src": "https://tcmb.culture.tw/zh-tw/detail?id=188384&indexCode=Culture_Place",
+      "label": "國家文化記憶庫：國定古蹟嘉義舊監獄"
+    },
+    "audit": {
+      "checkedAt": "2026-11-04",
+      "reviewBatch": "v3.1",
+      "factStatus": "reviewed",
+      "locationType": "舊監獄園區",
+      "locationPrecision": "official-point",
+      "locationNote": "採文化局建檔點；不把一般監獄一律等同政治受難者監禁場所。",
+      "factNote": "舊監獄保存的不只建築技術，也提供理解近代獄政的材料。",
+      "sourceAvailability": "readable",
+      "coordinateSource": "https://tcmb.culture.tw/zh-tw/detail?id=188384&indexCode=Culture_Place"
+    }
+  },
+  {
+    "id": "liudui",
+    "c": "culture",
+    "region": "south",
+    "county": "屏東縣",
+    "year": "2011",
+    "name": "屏東內埔・六堆客家文化園區",
+    "lat": 22.658456,
+    "lng": 120.558808,
+    "difficulty": 2,
+    "topic": "settlement",
+    "title": "2011年開園，以傘架聚落、田園地景與常民生活展示南部客家文化。六堆客家文化園區在哪裡？",
+    "story": "園區以草原、農田與傘架構成理解客庄生活的路徑。從語言傳習到展演，現代園區持續與地方社群互動，連起生活與文化。",
+    "src": "https://www.tad.gov.tw/m1.aspx?id=a12-00390&sNo=0001016",
+    "label": "交通部觀光署：六堆客家文化園區",
+    "lesson": {
+      "fact": "傘架聚落等園區景觀，用現代設計詮釋客家生活與團結意象。",
+      "key": "文化園區是認識六堆的一站，不等於整個六堆客庄的範圍。",
+      "src": "https://www.tad.gov.tw/m1.aspx?id=a12-00390&sNo=0001016",
+      "label": "交通部觀光署：六堆客家文化園區"
+    },
+    "audit": {
+      "checkedAt": "2026-11-04",
+      "reviewBatch": "v3.1",
+      "factStatus": "reviewed",
+      "locationType": "文化園區",
+      "locationPrecision": "official-point",
+      "locationNote": "座標採客家文化發展中心交通頁；2011指園區開園，非六堆歷史起源。",
+      "factNote": "傘架聚落等園區景觀，用現代設計詮釋客家生活與團結意象。",
+      "sourceAvailability": "readable",
+      "coordinateSource": "https://thcdc.hakka.gov.tw/8268/8269/8270/8272/9521/post"
+    }
+  },
+  {
+    "id": "kano",
+    "c": "sports",
+    "region": "south",
+    "county": "嘉義市",
+    "year": "棒球文化",
+    "name": "嘉義市・KANO園區",
+    "lat": 23.48169,
+    "lng": 120.46481,
+    "difficulty": 2,
+    "topic": "baseball",
+    "title": "以市立棒球場為中心，巨型棒球雕塑與露天劇場把棒球文化帶進公園。嘉義的KANO園區在哪裡？",
+    "story": "園區把運動記憶轉成可散步、停留的公共空間。棒球場之外，巨型球體與戶外設施，也讓不同年齡的人能接近嘉義的棒球文化。",
+    "src": "https://beta.taiwantrip.tad.gov.tw/Attractions/TripSpecialp/S11596",
+    "label": "交通部觀光署台灣好行：KANO園區",
+    "lesson": {
+      "fact": "KANO園區是以棒球文化為主題的公共空間，不是日本甲子園的比賽場。",
+      "key": "運動的集體記憶，也能透過城市公園被保存與分享。",
+      "src": "https://beta.taiwantrip.tad.gov.tw/Attractions/TripSpecialp/S11596",
+      "label": "交通部觀光署台灣好行：KANO園區"
+    },
+    "audit": {
+      "checkedAt": "2026-11-04",
+      "reviewBatch": "v3.1",
+      "factStatus": "reviewed",
+      "locationType": "棒球文化園區",
+      "locationPrecision": "official-point",
+      "locationNote": "座標採觀光開放資料（嘉義市政府）data-px/data-py；非1931決賽現場。",
+      "factNote": "KANO園區是以棒球文化為主題的公共空間，不是日本甲子園的比賽場。",
+      "sourceAvailability": "readable",
+      "coordinateSource": "https://media.taiwan.net.tw/zh-tw/portal/travel/details/attraction_376600000a_000043"
     }
   }
 ];

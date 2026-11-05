@@ -1,0 +1,486 @@
+{
+  "checkedAt": "2026-11-05T14:24:23.585Z",
+  "scope": "All 50 questions and their coordinate sources; HTTP availability only. Semantic review and changes are in QUESTION-AUDIT.md. Original 21 retain the 2026-10-26 editorial audit except explicitly documented maintenance.",
+  "results": [
+    {
+      "url": "https://beta.taiwantrip.tad.gov.tw/Attractions/TripSpecialp/S11596",
+      "status": 200,
+      "finalURL": "https://beta.taiwantrip.tad.gov.tw/Attractions/TripSpecialp/S11596",
+      "title": "台灣好行 - KANO園區 - 好行景點",
+      "bytes": 112531,
+      "sha256": "b922405c76586ab02516182670e54a31b0f6c108fdd86a624b16be3c1655ee4e"
+    },
+    {
+      "url": "https://hualien.travel/zh-tw/attraction/12/",
+      "status": 200,
+      "finalURL": "https://hualien.travel/zh-tw/attraction/12/",
+      "title": "松園別館－花蓮旅遊網",
+      "bytes": 64114,
+      "sha256": "9faa010038e09508349fc58f82890e9926885ff904a5fdd9c28bc49608f61de0"
+    },
+    {
+      "url": "https://jp.taiwan.net.tw/m1.aspx?id=A12-00195&sNo=0003016",
+      "status": 200,
+      "finalURL": "https://jp.taiwan.net.tw/m1.aspx?id=A12-00195&sNo=0003016",
+      "title": "集集駅 > 観光スポット > 交通部観光署",
+      "bytes": 167606,
+      "sha256": "f0ebdb1d33477f67d0527f67fff844ccb7e9adfe1022f38d78d9fc4e13446ccc"
+    },
+    {
+      "url": "https://khh.travel/zh-tw/attractions/detail/164/",
+      "status": 403,
+      "finalURL": "https://khh.travel/zh-tw/attractions/detail/164/",
+      "title": "Just a moment...",
+      "bytes": 5541,
+      "sha256": "b6e16bf000a6f3d6d1875f30fbb06edda25e9150cca6ab5292b072f4284a6f56"
+    },
+    {
+      "url": "https://khh.travel/zh-tw/attractions/detail/52/",
+      "status": 403,
+      "finalURL": "https://khh.travel/zh-tw/attractions/detail/52/",
+      "title": "Just a moment...",
+      "bytes": 5538,
+      "sha256": "711346f776c8401d4c54c27937048dc428395ab50da2435b1e26e0911e0c159c"
+    },
+    {
+      "url": "https://media.taiwan.net.tw/en-us/portal/travel/details/attraction_376540000a_000233",
+      "status": 200,
+      "finalURL": "https://media.taiwan.net.tw/en-us/portal/travel/details/attraction_376540000a_000233",
+      "title": "紅葉少棒紀念館 :: 觀光多媒體開放資料—Open Multimedia Data in Tourism",
+      "bytes": 40874,
+      "sha256": "87148f6b946f73aa5f467b799d952a62a110927047f03d0816af0e31d1eb2e89"
+    },
+    {
+      "url": "https://media.taiwan.net.tw/en-us/portal/travel/details/attraction_a15010300h_000056",
+      "status": 200,
+      "finalURL": "https://media.taiwan.net.tw/en-us/portal/travel/details/attraction_a15010300h_000056",
+      "title": "紅葉少棒紀念館 :: 觀光多媒體開放資料—Open Multimedia Data in Tourism",
+      "bytes": 41125,
+      "sha256": "ec4371c7c93d158bdfcf41b5db828d1506c09b0b7989ebd785dd1542f8ab3598"
+    },
+    {
+      "url": "https://media.taiwan.net.tw/zh-tw/portal/travel/details/attraction_376600000a_000043",
+      "status": 200,
+      "finalURL": "https://media.taiwan.net.tw/zh-tw/portal/travel/details/attraction_376600000a_000043",
+      "title": "KANO園區 :: 觀光多媒體開放資料—Open Multimedia Data in Tourism",
+      "bytes": 44519,
+      "sha256": "037ce3abc2efc30af7299b954969bd18b60a4e3df58ff035cffd691e272fb67e"
+    },
+    {
+      "url": "https://niaosong.kcg.gov.tw/cp.aspx?n=D03E02AAC03A7B22",
+      "status": 200,
+      "finalURL": "https://niaosong.kcg.gov.tw/cp.aspx?n=D03E02AAC03A7B22",
+      "title": "鳥松區公所-其他設施",
+      "bytes": 161106,
+      "sha256": "53b6d7cc10eefbdf6dd17daae2d9c327cb71b5ff1c4d1448e849eba74a189fdc"
+    },
+    {
+      "url": "https://publicworks.chcg.gov.tw/getFile.aspx?did=25347&file=2&file_id=422161&type=2",
+      "status": 200,
+      "finalURL": "https://www.chcg.gov.tw/DTO/publicworks/00home/index03.aspx",
+      "title": "彰化縣政府全球資訊網-工務處",
+      "bytes": 139656,
+      "sha256": "07228696cc78e13f9928e460602acaaa6aad640de0e5aed44d51ee133c37b872"
+    },
+    {
+      "url": "https://taiwangods.moi.gov.tw/html/cultural/3_0011.aspx?i=10",
+      "status": 200,
+      "finalURL": "https://taiwangods.moi.gov.tw/html/cultural/3_0011.aspx?i=10",
+      "title": "鹿港龍山寺-臺灣宗教文化地圖-臺灣宗教文化資產",
+      "bytes": 91210,
+      "sha256": "b549e91bd861c840a806e77bd3b937657768bac3f31197be37f5d1351ce312a9"
+    },
+    {
+      "url": "https://taiwangods.moi.gov.tw/html/landscape/1_0011.aspx?i=62",
+      "status": 200,
+      "finalURL": "https://taiwangods.moi.gov.tw/html/landscape/1_0011.aspx?i=62",
+      "title": "澎湖天后宮-臺灣宗教文化地圖-臺灣宗教百景",
+      "bytes": 116010,
+      "sha256": "64716efc45c90cad3a6030a0e706b047d34e74237de32d28dfe7e122c04b51c6"
+    },
+    {
+      "url": "https://tcmb.culture.tw/zh-tw/detail?id=148080&indexCode=Culture_Place",
+      "status": 200,
+      "finalURL": "https://tcmb.culture.tw/zh-tw/detail?id=148080&indexCode=Culture_Place",
+      "title": "九二一地震教育園區光復國中基地｜國家文化記憶庫",
+      "bytes": 373114,
+      "sha256": "0dd72050e5fc6902314be3752fca123f405113aecda8924c120eeab8569d361c"
+    },
+    {
+      "url": "https://tcmb.culture.tw/zh-tw/detail?id=188384&indexCode=Culture_Place",
+      "status": 200,
+      "finalURL": "https://tcmb.culture.tw/zh-tw/detail?id=188384&indexCode=Culture_Place",
+      "title": "國定古蹟嘉義舊監獄｜國家文化記憶庫",
+      "bytes": 374803,
+      "sha256": "0c7031b3445158a1d4b27c568f768ae2b4a2fd8d5ab85e26c945a537a9f07788"
+    },
+    {
+      "url": "https://tcmb.culture.tw/zh-tw/detail?id=19870417000003&indexCode=BOCH_CountryCulture_11",
+      "status": 200,
+      "finalURL": "https://tcmb.culture.tw/zh-tw/detail?id=19870417000003&indexCode=BOCH_CountryCulture_11",
+      "title": "西嶼燈塔(漁翁島燈塔)｜國家文化記憶庫",
+      "bytes": 395581,
+      "sha256": "39d35560b1e383301c5067774dcde6ca7b7f40cbb59fd0d98e5c78153ae9d06c"
+    },
+    {
+      "url": "https://tcmb.culture.tw/zh-tw/detail?id=273954&indexCode=Culture_Place",
+      "status": 200,
+      "finalURL": "https://tcmb.culture.tw/zh-tw/detail?id=273954&indexCode=Culture_Place",
+      "title": "舊關山車站｜國家文化記憶庫",
+      "bytes": 375137,
+      "sha256": "6b8767ad7108d0d5ba1dc3d179593beee0871257214ddb919552ebcc0f1c3284"
+    },
+    {
+      "url": "https://tcmb.culture.tw/zh-tw/detail?id=274387&indexCode=Culture_Place",
+      "status": 200,
+      "finalURL": "https://tcmb.culture.tw/zh-tw/detail?id=274387&indexCode=Culture_Place",
+      "title": "臺東卑南遺址｜國家文化記憶庫",
+      "bytes": 373477,
+      "sha256": "531a548c7082e8fbc5a436a6220c597d426b8284943c98752d9b4cfe736d838a"
+    },
+    {
+      "url": "https://tcmb.culture.tw/zh-tw/detail?id=274388&indexCode=Culture_Place",
+      "status": 200,
+      "finalURL": "https://tcmb.culture.tw/zh-tw/detail?id=274388&indexCode=Culture_Place",
+      "title": "八仙洞｜國家文化記憶庫",
+      "bytes": 373768,
+      "sha256": "3eb49713f13df053d40c11fcd5de67b21a6f860eb416c0e59717dd16a30c3d49"
+    },
+    {
+      "url": "https://tcmb.culture.tw/zh-tw/detail?id=28310051057&indexCode=MOCCOLLECTIONS",
+      "status": 200,
+      "finalURL": "https://tcmb.culture.tw/zh-tw/detail?id=28310051057&indexCode=MOCCOLLECTIONS",
+      "title": "《敢動年代》系列06｜國家文化記憶庫",
+      "bytes": 366195,
+      "sha256": "21135efee5688f9e1bb1093961a6a1f1b7b1404d5322662aa3bc7cfb13a9dad5"
+    },
+    {
+      "url": "https://tcmb.culture.tw/zh-tw/detail?id=476225&indexCode=Culture_Place",
+      "status": 200,
+      "finalURL": "https://tcmb.culture.tw/zh-tw/detail?id=476225&indexCode=Culture_Place",
+      "title": "天馬茶房舊址現況｜國家文化記憶庫",
+      "bytes": 377171,
+      "sha256": "fb70ec4a9dba199a825dba006ed5016b5b62fb80a58b90a1563d7cba031ac84f"
+    },
+    {
+      "url": "https://tcmb.culture.tw/zh-tw/detail?id=618941&indexCode=Culture_Place",
+      "status": 200,
+      "finalURL": "https://tcmb.culture.tw/zh-tw/detail?id=618941&indexCode=Culture_Place",
+      "title": "霧社｜國家文化記憶庫",
+      "bytes": 370767,
+      "sha256": "ea8536319238c6b733f92fe87a747ec585716175f66b1d17d75da6ebc920d364"
+    },
+    {
+      "url": "https://thcdc.hakka.gov.tw/8268/8269/8270/8272/9521/post",
+      "status": 200,
+      "finalURL": "https://thcdc.hakka.gov.tw/8268/8269/8270/8272/9521/post",
+      "title": "交通及停車-六堆客家文化園區-中文網",
+      "bytes": 71185,
+      "sha256": "ee24ea031fc5c422e5f274f1e8c73b19caa540f3740b297abeae39fddba5a6a0"
+    },
+    {
+      "url": "https://travel.nantou.gov.tw/attractions/jiji-station/",
+      "status": 200,
+      "finalURL": "https://travel.nantou.gov.tw/attractions/jiji-station/",
+      "title": "集集車站 | 南投旅遊網",
+      "bytes": 176071,
+      "sha256": "3200bcf6d9be5789c658e66843bc827aec265e6cde3826cc9ad5f8862ab39871"
+    },
+    {
+      "url": "https://www-ws.gov.taipei/001/Upload/public/MMO/READ/585_01.pdf",
+      "status": 200,
+      "finalURL": "https://www-ws.gov.taipei/001/Upload/public/MMO/READ/585_01.pdf",
+      "title": null,
+      "bytes": 1697437,
+      "sha256": "21a29f0f69b5a300f90e84e3b41723eca7d6ef182798f1214ce13ad6c1380c26"
+    },
+    {
+      "url": "https://www.archives.gov.tw/tw/arctw/336-8865.html",
+      "status": 200,
+      "finalURL": "https://www.archives.gov.tw/tw/arctw/336-8865.html",
+      "title": "國家發展委員會檔案管理局－檔案瑰寶－西螺大橋：遠東第一大橋在臺灣",
+      "bytes": 110279,
+      "sha256": "40db076c0dd657cd6d947cc753d922a365b21b9d79bb2e27c3a2c59161a7a7ba"
+    },
+    {
+      "url": "https://www.dst.tycg.gov.tw/cp.aspx?Create=1&n=11738",
+      "status": 200,
+      "finalURL": "https://www.dst.tycg.gov.tw/cp.aspx?Create=1&n=11738",
+      "title": "桃園市政府體育局-簡介",
+      "bytes": 105152,
+      "sha256": "2ba84e9b495f0f4673f696bd4f34381537addc4ace9fc3c17fa578893dec9cd6"
+    },
+    {
+      "url": "https://www.fisu.net/2017/08/19/29th-summer-universiade-opens-in-splendor/",
+      "status": 200,
+      "finalURL": "https://www.fisu.net/2017/08/19/29th-summer-universiade-opens-in-splendor/",
+      "title": "29th Summer Universiade opens in Splendor - FISU",
+      "bytes": 81326,
+      "sha256": "8151dc591970c2c7f91ca0e076278a513c6688f3d7e2081091355e71ef8fde55"
+    },
+    {
+      "url": "https://www.forest.gov.tw/0000221",
+      "status": 200,
+      "finalURL": "https://www.forest.gov.tw/0000221",
+      "title": "林田山林業文化園區",
+      "bytes": 233913,
+      "sha256": "21ee2bf98f3a5b155f523b364f8ae2336f3f8939959bf2c8678f9860cbb2e60d"
+    },
+    {
+      "url": "https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&s=4FCD6FEB4EAA1171&sms=72544237BBE4C5F6",
+      "status": 200,
+      "finalURL": "https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&s=4FCD6FEB4EAA1171&sms=72544237BBE4C5F6",
+      "title": "臺北市政府全球資訊網-市府新聞稿-世大運開幕典禮及公路賽期間交通管制訊息",
+      "bytes": 214699,
+      "sha256": "6a983122fb816f71081ab5a5597e4f566724065d32eefc721d9a29ef272e691c"
+    },
+    {
+      "url": "https://www.hccc.gov.tw/zh-tw/LocalCulturalHall/Detail/23",
+      "status": 200,
+      "finalURL": "https://www.hccc.gov.tw/zh-tw/LocalCulturalHall/Detail/23",
+      "title": "吉安慶修院－花蓮縣文化局",
+      "bytes": 76597,
+      "sha256": "073bcc70a222b4e42657bebd5fbd164d615e80c9e07d84ab3effcd44bd45b558"
+    },
+    {
+      "url": "https://www.lym.gov.tw/ch/audience-service/faq/",
+      "status": 200,
+      "finalURL": "https://www.lym.gov.tw/ch/audience-service/faq/",
+      "title": "蘭陽博物館-常見問答",
+      "bytes": 89569,
+      "sha256": "aa7200c0d25c393929c88e8bef4bb5e183ba0c54e641f4bb85e17911be1770e1"
+    },
+    {
+      "url": "https://www.mlb.com/world-baseball-classic/2023-bracket-standings",
+      "status": 200,
+      "finalURL": "https://www.mlb.com/world-baseball-classic/2023-bracket-standings",
+      "title": "2023 Standings &amp; Bracket | World Baseball Classic | MLB.com",
+      "bytes": 799552,
+      "sha256": "04bd3803347ea4eece7f5d4be479266c77b20854ae5b1d62e1d433fe4a007531"
+    },
+    {
+      "url": "https://www.siraya-nsa.gov.tw/zh-tw/about-siraya/discover",
+      "status": 200,
+      "finalURL": "https://www.siraya-nsa.gov.tw/zh-tw/about-siraya/discover",
+      "title": "發現西拉雅-從源頭說起 | 西拉雅國家風景區管理處",
+      "bytes": 44290,
+      "sha256": "24bb4fe001bba6f3d49c83ee7ec5bdc5778ada5dd3b48a6acdfde5c0e9633e11"
+    },
+    {
+      "url": "https://www.tad.gov.tw/m1.aspx?id=10447&sNo=0001127",
+      "status": 200,
+      "finalURL": "https://www.tad.gov.tw/m1.aspx?id=10447&sNo=0001127",
+      "title": "八八坑道 > 連江縣(馬祖) > 交通部觀光署",
+      "bytes": 252474,
+      "sha256": "11d190a1fb91118d6bc191746cd00fccaf9b52f9b2cfcc322c8ce471edb8cc69"
+    },
+    {
+      "url": "https://www.tad.gov.tw/m1.aspx?id=11487&sNo=0001016",
+      "status": 200,
+      "finalURL": "https://www.tad.gov.tw/m1.aspx?id=11487&sNo=0001016",
+      "title": "二崁傳統聚落 > 觀光景點 > 交通部觀光署",
+      "bytes": 257252,
+      "sha256": "e03450f3ff1e8f6608616556864d99b225b21c50ff9b244df2b4ddeade32b790"
+    },
+    {
+      "url": "https://www.tad.gov.tw/m1.aspx?id=147&sno=0001016",
+      "status": 200,
+      "finalURL": "https://www.tad.gov.tw/m1.aspx?id=147&sno=0001016",
+      "title": "安平古堡 > 觀光景點 > 交通部觀光署",
+      "bytes": 253170,
+      "sha256": "7fbc8a1c720e16198901c6d83407932fbffe0e266c4e68c0cf740d491c6de81c"
+    },
+    {
+      "url": "https://www.tad.gov.tw/m1.aspx?id=2139&sNo=0001016",
+      "status": 200,
+      "finalURL": "https://www.tad.gov.tw/m1.aspx?id=2139&sNo=0001016",
+      "title": "西嶼西臺 > 觀光景點 > 交通部觀光署",
+      "bytes": 250376,
+      "sha256": "c97bbc31da8b034013621d3e88473ea8c50a4534e73e8d741d4cf7b36dcff437"
+    },
+    {
+      "url": "https://www.tad.gov.tw/m1.aspx?id=2574&sNo=0001016",
+      "status": 200,
+      "finalURL": "https://www.tad.gov.tw/m1.aspx?id=2574&sNo=0001016",
+      "title": "奇美博物館 > 觀光景點 > 交通部觀光署",
+      "bytes": 257277,
+      "sha256": "cde976ba3a42263c3f836b7e0619c8a2424dd9c8a1130c49ea5dea0be67e05f0"
+    },
+    {
+      "url": "https://www.tad.gov.tw/m1.aspx?id=450&sNo=0001016",
+      "status": 200,
+      "finalURL": "https://www.tad.gov.tw/m1.aspx?id=450&sNo=0001016",
+      "title": "國立臺灣美術館 > 觀光景點 > 交通部觀光署",
+      "bytes": 264651,
+      "sha256": "e3dd52396884d2adcb8303b006b7f6507e6dbc2ec6dbf56af2543b9fae81d171"
+    },
+    {
+      "url": "https://www.tad.gov.tw/m1.aspx?id=658&sNo=0001016",
+      "status": 200,
+      "finalURL": "https://www.tad.gov.tw/m1.aspx?id=658&sNo=0001016",
+      "title": "澎湖跨海大橋 > 觀光景點 > 交通部觀光署",
+      "bytes": 249858,
+      "sha256": "504b63c25fb49e854d58b96482efe8daee4ac5fce716a41d18a3a0b2743ee790"
+    },
+    {
+      "url": "https://www.tad.gov.tw/m1.aspx?id=A12-00286&sNo=0001016",
+      "status": 200,
+      "finalURL": "https://www.tad.gov.tw/m1.aspx?id=A12-00286&sNo=0001016",
+      "title": "都蘭新東糖廠文化園區 > 觀光景點 > 交通部觀光署",
+      "bytes": 247306,
+      "sha256": "ea0ea77e2318240d68b36feaebdf4000839a65714a9d2801e064aa22fa917f32"
+    },
+    {
+      "url": "https://www.tad.gov.tw/m1.aspx?id=a12-00390&sNo=0001016",
+      "status": 200,
+      "finalURL": "https://www.tad.gov.tw/m1.aspx?id=a12-00390&sNo=0001016",
+      "title": "六堆客家文化園區 > 觀光景點 > 交通部觀光署",
+      "bytes": 258219,
+      "sha256": "95b59899f92fcad7efc80a203bdf5f936e9548bd4f29930bb02fc51080956cb4"
+    },
+    {
+      "url": "https://www.tad.gov.tw/m1.aspx?id=A12-00401&sNo=0001113",
+      "status": 200,
+      "finalURL": "https://www.tad.gov.tw/m1.aspx?id=A12-00401&sNo=0001113",
+      "title": "扇形車庫 > 彰化縣 > 交通部觀光署",
+      "bytes": 254039,
+      "sha256": "e443d8dd6b52d4168fd2bbd4bdf27f48496113abdb6ecfcadd29e0040f3d11d4"
+    },
+    {
+      "url": "https://www.tad.gov.tw/m1.aspx?id=A12-00403&sNo=0001016",
+      "status": 200,
+      "finalURL": "https://www.tad.gov.tw/m1.aspx?id=A12-00403&sNo=0001016",
+      "title": "國立臺灣歷史博物館 > 觀光景點 > 交通部觀光署",
+      "bytes": 267355,
+      "sha256": "86cf3486249bc0f497b943f8f7f81fc82d232f4abda6f6a3050a2de973ece6cc"
+    },
+    {
+      "url": "https://www.tad.gov.tw/m1.aspx?id=A12-00664&sNo=0001016",
+      "status": 200,
+      "finalURL": "https://www.tad.gov.tw/m1.aspx?id=A12-00664&sNo=0001016",
+      "title": "霧峰林家宅第 > 觀光景點 > 交通部觀光署",
+      "bytes": 268406,
+      "sha256": "81abbdda40a630b1d3dafbf1a2334efdea73e4c6c1faa09f94f6aeca26bd0767"
+    },
+    {
+      "url": "https://www.tad.gov.tw/m1.aspx?id=C100_142&sNo=0001016",
+      "status": 200,
+      "finalURL": "https://www.tad.gov.tw/m1.aspx?id=C100_142&sNo=0001016",
+      "title": "烏山頭水庫風景區 > 觀光景點 > 交通部觀光署",
+      "bytes": 268380,
+      "sha256": "2079a3f545a70c7374346c30863464214e3f3ad857dedb6792c00939004df28c"
+    },
+    {
+      "url": "https://www.tad.gov.tw/m1.aspx?id=C100_176&sNo=0001016",
+      "status": 200,
+      "finalURL": "https://www.tad.gov.tw/m1.aspx?id=C100_176&sNo=0001016",
+      "title": "花蓮觀光糖廠 > 觀光景點 > 交通部觀光署",
+      "bytes": 243899,
+      "sha256": "635b77d0dd2cd13121d740019e0d717095e20ea5e578068ebc0b8e9df921e2a1"
+    },
+    {
+      "url": "https://www.tad.gov.tw/m1.aspx?id=C100_216&sNo=0001126",
+      "status": 200,
+      "finalURL": "https://www.tad.gov.tw/m1.aspx?id=C100_216&sNo=0001126",
+      "title": "古寧頭戰史館 > 金門縣 > 交通部觀光署",
+      "bytes": 241357,
+      "sha256": "6ced3152431122d892b2c9a4b63df274bcbb53d79c644fd24f8d6f81197d6b13"
+    },
+    {
+      "url": "https://www.tad.gov.tw/m1.aspx?id=c100_230&sNo=0001016",
+      "status": 200,
+      "finalURL": "https://www.tad.gov.tw/m1.aspx?id=c100_230&sNo=0001016",
+      "title": "翟山坑道 > 觀光景點 > 交通部觀光署",
+      "bytes": 240651,
+      "sha256": "e99804432727150e394ce710984db1c3fc2741effc0f9f30cb4df7e8cddc13ac"
+    },
+    {
+      "url": "https://www.tad.gov.tw/m1.aspx?id=C100_342&sno=0001016",
+      "status": 200,
+      "finalURL": "https://www.tad.gov.tw/m1.aspx?id=C100_342&sno=0001016",
+      "title": "龍騰斷橋 > 觀光景點 > 交通部觀光署",
+      "bytes": 246867,
+      "sha256": "b4ded61eb7731969f414ea6c64894a801f88ad9d8205e32a8a877016b5bd1959"
+    },
+    {
+      "url": "https://www.taiwan.net.tw/m1.aspx?id=10889&sno=0001016",
+      "status": 200,
+      "finalURL": "https://www.taiwan.net.tw/m1.aspx?id=10889&sno=0001016",
+      "title": "赤崁樓 > 觀光景點 > 交通部觀光署",
+      "bytes": 256852,
+      "sha256": "2f2c419f557a931b9b0c618c4f51441dd968325b3b40a22e86bbd88fcd50bfea"
+    },
+    {
+      "url": "https://www.taiwan.net.tw/m1.aspx?id=8969&sNo=0001117",
+      "status": 200,
+      "finalURL": "https://www.taiwan.net.tw/m1.aspx?id=8969&sNo=0001117",
+      "title": "全球北回歸線標誌第十處 > 嘉義市 > 交通部觀光署",
+      "bytes": 249161,
+      "sha256": "14225bdaadbe6d595a2b29d694f619e4017cccdaede5d2ea95d7e7e3c208821e"
+    },
+    {
+      "url": "https://www.taiwan.net.tw/m1.aspx?id=9576&sno=0001123",
+      "status": 200,
+      "finalURL": "https://www.taiwan.net.tw/m1.aspx?id=9576&sno=0001123",
+      "title": "國立臺灣史前文化博物館-卑南遺址公園 > 臺東縣 > 交通部觀光署",
+      "bytes": 259929,
+      "sha256": "8af5bfb55b03e9084d830ba11ae3beea69f5b61277597474ce97f42c791761e7"
+    },
+    {
+      "url": "https://www.taiwan.net.tw/m1.aspx?id=a12-00183&sNo=0001016",
+      "status": 200,
+      "finalURL": "https://www.taiwan.net.tw/m1.aspx?id=a12-00183&sNo=0001016",
+      "title": "高雄燈塔（旗后燈塔） > 觀光景點 > 交通部觀光署",
+      "bytes": 259998,
+      "sha256": "86f86f6adf3979f76bb734cbe51fcf7965c7637d7b15879280757bbb3f087104"
+    },
+    {
+      "url": "https://www.taiwan.net.tw/m1.aspx?id=A12-00213&sno=0001016",
+      "status": 200,
+      "finalURL": "https://www.taiwan.net.tw/m1.aspx?id=A12-00213&sno=0001016",
+      "title": "東引島燈塔 > 觀光景點 > 交通部觀光署",
+      "bytes": 246453,
+      "sha256": "222f0ae1a764c407b57b797fea1b4f6a4d067bd2f422c3fea6b0df28de1dc63a"
+    },
+    {
+      "url": "https://www.taiwan.net.tw/m1.aspx?id=A12-00292&sno=0001016",
+      "status": 200,
+      "finalURL": "https://www.taiwan.net.tw/m1.aspx?id=A12-00292&sno=0001016",
+      "title": "吉安慶修院 > 觀光景點 > 交通部觀光署",
+      "bytes": 254517,
+      "sha256": "50ee85d20d6b80c7be8642d40168c312aab14bfd30227a0ad5317a059ca449e6"
+    },
+    {
+      "url": "https://www.taiwan.net.tw/m1.aspx?id=A12-00569&sNo=0001106",
+      "status": 200,
+      "finalURL": "https://www.taiwan.net.tw/m1.aspx?id=A12-00569&sNo=0001106",
+      "title": "蘭陽博物館 > 宜蘭縣 > 交通部觀光署",
+      "bytes": 255123,
+      "sha256": "76bda87f1cfdc1ff9857ed5091b13aa3f2efedc123c7e577b539429472f76c25"
+    },
+    {
+      "url": "https://www.taiwan.net.tw/m1.aspx?id=A12-00590&sNo=0001127",
+      "status": 200,
+      "finalURL": "https://www.taiwan.net.tw/m1.aspx?id=A12-00590&sNo=0001127",
+      "title": "南竿北海坑道 > 連江縣(馬祖) > 交通部觀光署",
+      "bytes": 249979,
+      "sha256": "e994cb618946ed718addd0ce62b5e98f4c61f0ce6c8353c8b535f61c455ae7d7"
+    },
+    {
+      "url": "https://www.tbkc.gov.tw/FileOutput/Page/%E5%85%AC%E8%BB%8A%E5%A5%97%E6%9B%B82%E8%BF%BD%E5%85%AC%E8%BB%8A%E7%9A%84%E8%A8%98%E6%86%B6%28%E5%85%A8%29-%E5%96%AE%E9%A0%81-%E5%90%88%E4%BD%B5.pdf?id=bd57dd88-361f-43ea-93e0-7e0fa8fd9861",
+      "status": 200,
+      "finalURL": "https://www.tbkc.gov.tw/FileOutput/Page/%E5%85%AC%E8%BB%8A%E5%A5%97%E6%9B%B82%E8%BF%BD%E5%85%AC%E8%BB%8A%E7%9A%84%E8%A8%98%E6%86%B6%28%E5%85%A8%29-%E5%96%AE%E9%A0%81-%E5%90%88%E4%BD%B5.pdf?id=bd57dd88-361f-43ea-93e0-7e0fa8fd9861",
+      "title": null,
+      "bytes": 9017657,
+      "sha256": "18b9beb3943b244339ccfa8ecb3f44e9f03f8d879eba9975060239bbb62cc167"
+    },
+    {
+      "url": "https://www.th.gov.tw/Epaper_Content/238/7969/",
+      "status": 200,
+      "finalURL": "https://www.th.gov.tw/Epaper_Content/238/7969/",
+      "title": "&#x570B;&#x53F2;&#x9928;-&#x81FA;&#x7063;&#x6587;&#x737B;&#x9928;-&#x81FA;&#x7063;&#x4EBA;&#x3001;&#x81FA;&#x7063;&#x4E8B;-&#x9022;&#x4E2D;&#x83EF;&#x8077;&#x68D2;&#x958B;&#x5E55;&#x6230;&#x8AC7;&#x8077;&#x68D2;&#x6210;&#x7ACB;&#x7D93;&#x904E;",
+      "bytes": 113340,
+      "sha256": "5d0418045b5bde3ba3c1f33a7caf74d6e2c3c42d33fd2098aa7088a98daa99f5"
+    }
+  ]
+}
